@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Stackly • Login / Signup</title>
+
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="auth.css">
+</head>
+<body>
+
+  <main class="auth-wrap">
+    <div class="auth-card">
+      <div class="branding">
+        <h1>STACKLY</h1>
+        <p class="muted">IT Service Management</p>
+      </div>
+
+      <div class="forms">
+        <!-- LOGIN -->
+        <form id="loginForm" class="form active">
+          <h3>Sign in</h3>
+          <div class="field"><label>Email</label><input type="email" id="loginEmail" required /></div>
+          <div class="field"><label>Password</label><input type="password" id="loginPass" required /></div>
+          <div class="row between">
+            <label><input type="checkbox" id="remember"/> Remember me</label>
+            <a href="#" id="forgotLink">Forgot?</a>
+          </div>
+          <button class="btn primary" type="submit">Sign in</button>
+          <p class="muted">Don't have an account? <a href="#" id="showSignup">Sign up</a></p>
+        </form>
+
+        <!-- SIGNUP -->
+        <form id="signupForm" class="form">
+          <h3>Create account</h3>
+          <div class="field"><label>Full name</label><input type="text" id="signName" required /></div>
+          <div class="field"><label>Email</label><input type="email" id="signEmail" required /></div>
+          <div class="field"><label>Password</label><input type="password" id="signPass" required /></div>
+          <button class="btn primary" type="submit">Sign up</button>
+          <p class="muted">Already have an account? <a href="#" id="showLogin">Sign in</a></p>
+        </form>
+      </div>
+    </div>
+
+    <div class="auth-illustration">
+      <div class="illus-box">
+        <h2>Welcome to Stackly</h2>
+        <p class="muted">Submit, track and resolve IT issues quickly.</p>
+        <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981b?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="support" />
+      </div>
+    </div>
+  </main>
+
+  <script src="auth.js"></script>
+</body>
+</html>

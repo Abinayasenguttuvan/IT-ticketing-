@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stackly ITSM – ServiceNow Style</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<style>
+  /* ===== HERO SECTION WITH BACKGROUND IMAGE ===== */
+.hero {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 60px 10%;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+
+  /* Background Image */
+  background-image: url("./img1.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Dark overlay (ServiceNow style) */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  /* background: rgba(0, 0, 0, 0.55); */
+  backdrop-filter: blur(1px);
+  z-index: 0;
+}
+
+/* Text stays above overlay */
+.hero .hero-text,
+.hero .hero-img {
+  position: relative;
+  z-index: 1;
+}
+
+
+@media (max-width: 900px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 40px 7%;
+    height: auto;
+    padding-top: 120px;
+  }
+
+  .hero-img img {
+    width: 60%;
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 500px) {
+  .hero-img img {
+    width: 80%;
+  }
+}
+
+/* Feature Card Base */
+.feature-box {
+  display: flex;
+  gap: 25px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.feature {
+  background: #ffffff;
+  padding: 30px 25px;
+  border-radius: 15px;
+  text-align: center;
+  width: 300px;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  cursor: pointer;
+}
+
+/* Icon Style */
+.feature i {
+  font-size: 45px;
+  margin-bottom: 15px;
+  color: #0ea5e9; /* sky-blue */
+  transition: 0.3s ease;
+}
+
+/* Title */
+.feature h3 {
+  margin: 10px 0;
+  font-size: 20px;
+}
+
+/* Hover Effects */
+.feature:hover {
+  transform: translateY(-12px) scale(1.03);
+  background: linear-gradient(135deg, #647e2b, #2563eb);
+  color: #fff;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+/* Change icon + text color on hover */
+.feature:hover i {
+  color: #fff;
+}
+
+.feature:hover p {
+  color: #e8e8e8;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .feature {
+    width: 100%;
+  }
+}
+
+/* Section styling */
+.how {
+  text-align: center;
+  padding: 80px 20px;
+  background: #f5f8ff;
+}
+
+.how h2 {
+  font-size: 32px;
+  color: #1b2945;
+  margin-bottom: 40px;
+  opacity: 0;
+  animation: fadeUp 1s forwards ease-in-out;
+}
+
+/* Step container */
+.step-box {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+/* Step card */
+.step {
+  background: linear-gradient(135deg, #647e2b, #2563eb);
+  width: 260px;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  transition: 0.4s ease;
+  cursor: pointer;
+  transform: translateY(40px);
+  opacity: 0;
+}
+
+/* Fade-up animation with delay for stagger effect */
+.step:nth-child(1) { animation: fadeUp 0.8s forwards ease-in-out 0.2s; }
+.step:nth-child(2) { animation: fadeUp 0.8s forwards ease-in-out 0.4s; }
+.step:nth-child(3) { animation: fadeUp 0.8s forwards ease-in-out 0.6s; }
+
+/* Hover effects */
+.step:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 10px 25px rgba(118, 175, 193, 0.4);
+}
+
+/* Number styling */
+.step span {
+  font-size: 38px;
+  font-weight: bold;
+  color: #4cc9f0;
+  margin-bottom: 10px;
+  display: inline-block;
+  transition: 0.3s ease;
+}
+
+/* Number hover animation */
+.step:hover span {
+  transform: rotate(10deg) scale(1.2);
+}
+
+/* Title */
+.step h3 {
+  margin-bottom: 10px;
+  font-size: 22px;
+  color: #1b2945;
+}
+
+/* Text */
+.step p {
+  color: #444;
+  line-height: 1.5;
+}
+
+/* Fade-up animation */
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.how {
+  text-align: center;
+  padding: 80px 20px;
+  background: linear-gradient(135deg, #0f1f3d, #1e335c);
+  color: #fff;
+}
+.how h2,
+.step h3,
+.step p,
+.step span {
+  color: #fff;
+}
+/* .step {
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.2);
+} */
+
+
+
+</style>
+
+<body>
+<!-- ===== HEADER ===== -->
+<header class="header">
+  <div class="logo">STACKLY</div>
+
+  <nav class="nav">
+    <ul class="nav-links">
+
+      <!-- HOME DROPDOWN -->
+      <li class="dropdown">
+        <a href="./index.html">Home1 <i class="fa fa-angle-down"></i></a>
+        <ul class="dropdown-menu">
+          <li><a href="./home2.html">Home2</a></li>
+         
+        </ul>
+      </li>
+
+      <li><a href="./about.html">About</a></li>
+      <li><a href="./services.html">Services</a></li>
+
+      <!-- TICKET DROPDOWN -->
+      <li class="dropdown">
+        <a href="#">Tickets <i class="fa fa-angle-down"></i></a>
+        <ul class="dropdown-menu">
+          <li><a href="./ticket.html">Create Ticket</a></li>
+          <li><a href="./ticket-details.html">Ticket Details</a></li>
+        </ul>
+      </li>
+
+      <!-- <li><a href="./profile.html">Profile</a></li> -->
+      <li><a href="./contact.html">Contact</a></li>
+      <li><a href="./admin-dashboard.html">Dashboard</a></li>
+    </ul>
+  </nav>
+
+  <!-- LOGIN BUTTON -->
+  <a href="./auth.html" class="login-btn">Login</a>
+
+  <!-- PROFILE LOGO -->
+  
+  <!-- MENU ICON -->
+  <div class="menu-icon">
+    <i class="fa fa-bars"></i>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-text">
+    <h1>Streamline Your IT Support with Stackly Ticketing</h1>
+    <p>Submit, track, and resolve IT issues faster with an intuitive ticketing tool designed for efficiency and transparency.</p>
+    <a href="./auth.html" class="hero-btn">Get Started</a>
+  </div>
+
+
+  <div class="hero-img">
+    <img src="https://cdn-icons-png.flaticon.com/512/9412/9412103.png" alt="IT Ticketing">
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="features">
+  <h2>Why Choose Stackly?</h2>
+  <div class="feature-box">
+
+    <div class="feature">
+      <i class="fa-solid fa-ticket"></i>
+      <h3>Easy Ticket Creation</h3>
+      <p>Create support tickets with simple forms and quick priority options.</p>
+    </div>
+
+    <div class="feature">
+      <i class="fa-solid fa-chart-line"></i>
+      <h3>Track Progress</h3>
+      <p>Monitor ticket status, updates, and resolution in real-time.</p>
+    </div>
+
+    <div class="feature">
+      <i class="fa-solid fa-users"></i>
+      <h3>User Friendly</h3>
+      <p>Designed for both users and admins with clean UI layouts.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how">
+  <h2>How It Works</h2>
+  <div class="step-box">
+
+    <div class="step">
+      <span>1</span>
+      <h3>Submit Issue</h3>
+      <p>Provide details, screenshots, and priority levels.</p>
+    </div>
+
+    <div class="step">
+      <span>2</span>
+      <h3>IT Team Assigns</h3>
+      <p>Tickets get assigned instantly to the right technician.</p>
+    </div>
+
+    <div class="step">
+      <span>3</span>
+      <h3>Track & Resolve</h3>
+      <p>Get notified about every update until the issue is resolved.</p>
+    </div>
+
+  </div>
+</section>
+
+
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="footer-container">
+
+    <!-- LOGO -->
+    <div class="footer-section">
+      <h2 class="footer-logo">STACKLY</h2>
+      <p>Delivering reliable IT solutions with modern workflow automation.</p>
+    </div>
+
+    <!-- QUICK LINKS -->
+    <div class="footer-section">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Tickets</a></li>
+        <li><a href="#">Profile</a></li>
+        <li><a href="#">Dashboard</a></li>
+        <li><a href="#">Login</a></li>
+      </ul>
+    </div>
+
+    <!-- GET IN TOUCH -->
+    <div class="footer-section">
+      <h3>Get in Touch</h3>
+      <p>Email: support@stackly.com</p>
+      <p>Phone: +91 98765 43210</p>
+
+      <div class="social-icons">
+        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+        <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+      </div>
+    </div>
+
+    <!-- MAP -->
+    <div class="footer-section">
+      <h3>Location</h3>
+      <iframe 
+      src="https://maps.google.com/maps?q=chennai&t=&z=13&ie=UTF8&iwloc=&output=embed"
+      class="footer-map">
+    </iframe>
+    </div>
+    
+    <div class="footer-bottom">
+      © 2025 Stackly. All rights reserved.
+    </div>
+  </footer>
+
+
+<!-- Script -->
+<script src="script.js"></script>

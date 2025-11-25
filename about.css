@@ -1,0 +1,119 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+  }
+  
+  
+  /* HERO */
+  .about-hero {
+    padding-top: 130px;
+    text-align: center;
+    padding-bottom: 50px;
+  }
+  .about-hero h1 { font-size: 40px; }
+  .about-hero p { color: #6b7280; margin-top: 10px; }
+  
+  /* ABOUT SECTION */
+  .about-info {
+    width: 90%;
+    max-width: 900px;
+    margin: auto;
+    text-align: center;
+    padding: 40px 0;
+  }
+  .about-info p {
+    margin-top: 15px;
+    color: #4b5563;
+  }
+  
+  /* MISSION / VISION */
+  .mv-section {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    width: 90%;
+    margin: auto;
+    padding: 40px 0;
+  }
+  .mv-item {
+    background: #f4f4f9;
+    padding: 25px;
+    border-radius: 12px;
+    text-align: center;
+    width: 30%;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  }
+  .mv-item i {
+    font-size: 35px;
+    margin-bottom: 10px;
+    color: #4f46e5;
+  }
+  
+  /* WHY CHOOSE US */
+  .choose-us { text-align: center; margin-top: 50px; }
+  .choose-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    width: 90%;
+    margin: 25px auto;
+  }
+  .choose-card {
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  }
+  .choose-card i {
+    font-size: 35px;
+    color: #4f46e5;
+  }
+  
+  /* TEAM */
+  .team-section { text-align: center; margin-top: 50px; }
+  .team-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    width: 90%;
+    margin: 25px auto 60px;
+  }
+  .team-card img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+  }
+  .team-card {
+    background: #f4f4f9;
+    padding: 25px;
+    border-radius: 12px;
+  }
+  
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    .nav-links {
+      display: none;
+      position: absolute;
+      top: 65px; right: 0;
+      background: #111827;
+      width: 100%;
+      padding: 20px 0;
+      flex-direction: column;
+      text-align: center;
+    }
+    .nav-links li { margin: 15px 0; }
+    .menu-icon { display: block; }
+  
+    .mv-section, .choose-grid, .team-grid, .footer {
+      grid-template-columns: 1fr;
+    }
+  
+    .mv-item, .choose-card, .team-card {
+      width: 100%;
+    }
+  }
+  

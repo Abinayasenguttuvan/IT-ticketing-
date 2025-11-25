@@ -1,0 +1,24 @@
+/* Auth page */
+*{box-sizing:border-box;margin:0;padding:0;font-family:"Poppins",sans-serif}
+:root{--bg:#f7f8fb;--card:#fff;--accent:#4f46e5;--muted:#6b7280}
+body{background:var(--bg);min-height:100vh}
+.auth-wrap{display:flex;min-height:100vh;align-items:center;justify-content:center;gap:30px;padding:24px}
+.auth-card{width:420px;background:var(--card);padding:28px;border-radius:12px;box-shadow:0 10px 30px rgba(15,23,42,0.06)}
+.branding h1{font-size:22px;margin-bottom:6px}
+.muted{color:var(--muted);font-size:13px}
+.forms .form{display:none}
+.forms .form.active{display:block}
+.form h3{margin-bottom:12px}
+.field{margin-bottom:12px}
+.field input{width:100%;padding:10px;border-radius:8px;border:1px solid #e6e9ef}
+.row.between{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
+.btn{width:100%;padding:10px;border-radius:8px;border:0;background:var(--accent);color:#fff;font-weight:700;cursor:pointer}
+.auth-illustration{display:flex;align-items:center;justify-content:center}
+.illus-box{max-width:360px;text-align:left}
+.illus-box img{width:100%;border-radius:12px;margin-top:12px}
+
+/* responsive */
+@media (max-width:900px){
+  .auth-wrap{flex-direction:column;padding:18px}
+  .auth-illustration{order:2}
+}

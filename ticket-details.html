@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stackly ITSM – ServiceNow Style</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="ticket-details.css">
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+<!-- ===== HEADER ===== -->
+<header class="header">
+  <div class="logo">STACKLY</div>
+
+  <nav class="nav">
+    <ul class="nav-links">
+
+      <!-- HOME DROPDOWN -->
+      <li class="dropdown">
+        <a href="./index.html">Home1 <i class="fa fa-angle-down"></i></a>
+        <ul class="dropdown-menu">
+          <li><a href="./home2.html">Home2</a></li>
+         
+        </ul>
+      </li>
+
+      <li><a href="./about.html">About</a></li>
+      <li><a href="./services.html">Services</a></li>
+
+      <!-- TICKET DROPDOWN -->
+      <li class="dropdown">
+        <a href="#">Tickets <i class="fa fa-angle-down"></i></a>
+        <ul class="dropdown-menu">
+          <li><a href="./ticket.html">Create Ticket</a></li>
+          <li><a href="./ticket-details.html">Ticket Details</a></li>
+        </ul>
+      </li>
+
+      <!-- <li><a href="./profile.html">Profile</a></li> -->
+      <li><a href="./contact.html">Contact</a></li>
+      <li><a href="./admin-dashboard.html">Dashboard</a></li>
+    </ul>
+  </nav>
+
+  <!-- LOGIN BUTTON -->
+  <a href="./auth.html" class="login-btn">Login</a>
+
+  <!-- PROFILE LOGO -->
+  
+  <!-- MENU ICON -->
+  <div class="menu-icon">
+    <i class="fa fa-bars"></i>
+  </div>
+</header>
+
+
+  <!-- ====== MAIN ====== -->
+  <main class="container">
+
+    <!-- Ticket Top Info -->
+    <section class="ticket-top card">
+      <div class="ticket-meta">
+        <div class="id">
+          <span class="t-id">TCK-00124</span>
+          <h1 class="title">Cannot connect to VPN from home network</h1>
+          <p class="subtitle">Affected user: abinaya.s — Windows 11 laptop</p>
+        </div>
+
+        <div class="controls">
+          <div class="status-pill status-open" id="statusPill">Open</div>
+
+          <div class="priority">Priority: <strong id="priorityLabel">High</strong></div>
+
+          <div class="assignee">Assignee: <strong id="assigneeLabel">Unassigned</strong></div>
+
+          <div class="button-group">
+            <button class="btn primary" id="editBtn"><i class="fa fa-pen"></i> Edit</button>
+            <button class="btn" id="assignBtn"><i class="fa fa-user-plus"></i> Assign</button>
+            <button class="btn danger" id="closeBtn"><i class="fa fa-check"></i> Close</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="layout">
+
+      <!-- Left column: description + attachments + comments -->
+      <section class="main-col">
+
+        <!-- Description -->
+        <article class="card description">
+          <h3>Issue Description</h3>
+          <p id="ticketDescription">
+            The user reports that the VPN client (StackVPN v3.2) fails to connect on their home network.
+            Error shown: "Connection timeout". The user can connect from office network without issue.
+            Tried restarting the client and PC. Needs priority investigation — remote work blocked.
+          </p>
+
+          <!-- Attachments -->
+          <div class="attachments">
+            <h4>Attachments</h4>
+            <div class="att-grid">
+              <div class="att">
+                <div class="att-thumb">PNG</div>
+                <div class="att-meta">vpn-error.png</div>
+                <button class="att-download" title="Download"><i class="fa fa-download"></i></button>
+              </div>
+
+              <div class="att">
+                <div class="att-thumb">LOG</div>
+                <div class="att-meta">vpn-log.txt</div>
+                <button class="att-download" title="Download"><i class="fa fa-download"></i></button>
+              </div>
+
+            </div>
+          </div>
+        </article>
+
+        <!-- Comments -->
+        <article class="card comments">
+          <h3>Activity & Comments</h3>
+
+          <div class="timeline" id="timeline">
+            <!-- timeline entries inserted by JS -->
+            <div class="timeline-item">
+              <div class="time">Nov 20, 2025 — 09:12</div>
+              <div class="entry">
+                <div class="entry-head"><strong>System</strong> changed status to <em>Open</em></div>
+                <div class="entry-body">Ticket created by user via portal.</div>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="time">Nov 20, 2025 — 09:20</div>
+              <div class="entry">
+                <div class="entry-head"><strong>Helpdesk</strong> added comment</div>
+                <div class="entry-body">Please confirm your home router model and ISP.</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Add comment -->
+          <form id="commentForm" class="comment-form">
+            <textarea id="commentInput" placeholder="Add a comment..." required></textarea>
+            <div class="comment-actions">
+              <input type="file" id="commentFile" />
+              <button type="submit" class="btn primary"><i class="fa fa-comment"></i> Post Comment</button>
+            </div>
+          </form>
+        </article>
+
+      </section>
+
+      <!-- Right column: details & quick actions -->
+      <aside class="side-col">
+
+        <div class="card details">
+          <h4>Details</h4>
+          <dl>
+            <div class="row">
+              <dt>Created</dt>
+              <dd id="createdOn">Nov 20, 2025 — 09:12</dd>
+            </div>
+
+            <div class="row">
+              <dt>Requester</dt>
+              <dd>abinaya.s</dd>
+            </div>
+
+            <div class="row">
+              <dt>Department</dt>
+              <dd>IT Support</dd>
+            </div>
+
+            <div class="row">
+              <dt>Category</dt>
+              <dd>Network</dd>
+            </div>
+
+            <div class="row">
+              <dt>Location</dt>
+              <dd>Chennai (Remote)</dd>
+            </div>
+
+            <div class="row">
+              <dt>Tags</dt>
+              <dd><span class="tag">VPN</span> <span class="tag">Remote</span></dd>
+            </div>
+          </dl>
+        </div>
+
+        <div class="card quick-actions">
+          <h4>Quick Actions</h4>
+          <button class="btn full" id="escalateBtn"><i class="fa fa-exclamation-triangle"></i> Escalate</button>
+          <button class="btn full" id="reopenBtn" style="display:none"><i class="fa fa-rotate-left"></i> Reopen</button>
+          <button class="btn full ghost" id="printBtn"><i class="fa fa-print"></i> Print</button>
+        </div>
+
+      </aside>
+
+    </div>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="footer-container">
+
+    <!-- LOGO -->
+    <div class="footer-section">
+      <h2 class="footer-logo">STACKLY</h2>
+      <p>Delivering reliable IT solutions with modern workflow automation.</p>
+    </div>
+
+    <!-- QUICK LINKS -->
+    <div class="footer-section">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Tickets</a></li>
+        <li><a href="#">Profile</a></li>
+        <li><a href="#">Dashboard</a></li>
+        <li><a href="#">Login</a></li>
+      </ul>
+    </div>
+
+    <!-- GET IN TOUCH -->
+    <div class="footer-section">
+      <h3>Get in Touch</h3>
+      <p>Email: support@stackly.com</p>
+      <p>Phone: +91 98765 43210</p>
+
+      <div class="social-icons">
+        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+        <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+      </div>
+    </div>
+
+    <!-- MAP -->
+    <div class="footer-section">
+      <h3>Location</h3>
+      <iframe 
+      src="https://maps.google.com/maps?q=chennai&t=&z=13&ie=UTF8&iwloc=&output=embed"
+      class="footer-map">
+    </iframe>
+    </div>
+
+    
+    </div>
+  </footer>
+
+  </div>
+
+  <div class="footer-bottom">
+    © 2025 Stackly. All rights reserved.
+  </div>
+</footer>
+
+<!-- Script -->
+<script src="script.js"></script>
+<script src="ticket-details.js"></script>
+</body>
+</html>
