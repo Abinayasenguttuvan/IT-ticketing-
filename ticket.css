@@ -76,7 +76,7 @@
   
   /* TICKET TABLE */
   .ticket-table {
-    width: 90%;
+    width: 100%;
     margin: auto;
   }
   
@@ -127,4 +127,5 @@
     .filters { flex-direction: column; }
     table { font-size: 14px; }
   }
+  
   

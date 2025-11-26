@@ -4,17 +4,220 @@
     padding: 0;
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
+    
   }
+
+
   
   
-  /* HERO */
-  .about-hero {
-    padding-top: 130px;
-    text-align: center;
-    padding-bottom: 50px;
+  /* ===== Mission / Vision / Values Section ===== */
+.mv-section {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  width: 90%;
+  margin: auto;
+  padding: 40px 0;
+}
+
+.mv-item {
+  background: linear-gradient(135deg, #647e2b, #2563eb);
+  padding: 25px;
+  border-radius: 12px;
+  text-align: center;
+  width: 30%;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* ===== RESPONSIVE MEDIA QUERIES ===== */
+
+/* Tablet View (Below 900px) */
+@media (max-width: 900px) {
+  .mv-section {
+    flex-direction: column;
+    gap: 25px;
   }
-  .about-hero h1 { font-size: 40px; }
-  .about-hero p { color: #6b7280; margin-top: 10px; }
+
+  .mv-item {
+    width: 100%;
+  }
+}
+
+/* Mobile View (Below 600px) */
+@media (max-width: 600px) {
+  .mv-item {
+    padding: 20px;
+  }
+
+  .mv-item h3 {
+    font-size: 20px;
+  }
+
+  .mv-item p {
+    font-size: 15px;
+  }
+
+  .mv-item i {
+    font-size: 30px;
+  }
+}
+
+  /* ===== Hero Image Background ===== */
+.hero-image-section {
+  width: 100%;
+  height: 90vh; /* Adjust height as needed */
+  background-image: url('./corp1.webp'); /* <-- Add your image path */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  color: black;
+  padding: 20px;
+}
+
+/* Hero Text Styling */
+.hero-content h1 {
+  font-size: 50px;
+  font-weight: 700;
+}
+
+.hero-content p {
+  font-size: 40px;
+  margin-top: 20px;
+}
+
+.hero-content {
+  animation: slideUp 1.3s ease-out forwards;
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+@keyframes slideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* ===== Responsive Media Queries ===== */
+@media (max-width: 768px) {
+  .hero-image-section {
+    height: 50vh; /* smaller for mobile */
+  }
+
+  .hero-content h1 {
+    font-size: 32px;
+  }
+
+  .hero-content p {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-image-section {
+    height: 45vh;
+  }
+
+  .hero-content h1 {
+    font-size: 28px;
+  }
+
+  .hero-content p {
+    font-size: 14px;
+  }
+}
+
+
+
+/* Keyframes */
+@keyframes cardFadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+  
+  .about-info {
+    padding: 80px 10%;
+    background: #f7faff;
+  }
+  
+  .about-container {
+    
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    justify-content: space-between;
+  }
+  
+  .about-text {
+    width: 55%;
+  }
+  
+  .about-text h2 {
+    font-size: 32px;
+    margin-bottom: 15px;
+    color: #0f1f3d;
+  }
+  
+  .about-text p {
+    font-size: 18px;
+    line-height: 1.7;
+    color: #444;
+  }
+  
+  .about-img {
+    width: 40%;
+  }
+  
+  .about-img img {
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    transition: 0.3s ease;
+  }
+  
+  .about-img img:hover {
+    transform: scale(1.05);
+  }
+  
+  @media (max-width: 900px) {
+    .about-container {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .about-text, .about-img {
+      width: 100%;
+    }
+  
+    .about-img img {
+      width: 80%;
+      margin: auto;
+    }
+  }
+  
+  @media (max-width: 500px) {
+    .about-img img {
+      width: 100%;
+    }
+  }
   
   /* ABOUT SECTION */
   .about-info {
@@ -39,7 +242,7 @@
     padding: 40px 0;
   }
   .mv-item {
-    background: #f4f4f9;
+    background: linear-gradient(135deg, #647e2b, #2563eb);
     padding: 25px;
     border-radius: 12px;
     text-align: center;
@@ -62,7 +265,7 @@
     margin: 25px auto;
   }
   .choose-card {
-    background: #ffffff;
+    background: linear-gradient(135deg, #647e2b, #2563eb);
     padding: 25px;
     border-radius: 12px;
     text-align: center;
@@ -83,15 +286,18 @@
     margin: 25px auto 60px;
   }
   .team-card img {
+    
     width: 120px;
     height: 120px;
     border-radius: 50%;
   }
   .team-card {
-    background: #f4f4f9;
+    /* background:rgb(58, 123, 136); */
+    background: linear-gradient(135deg, #647e2b, #2563eb);
     padding: 25px;
     border-radius: 12px;
   }
+  
   
   /* RESPONSIVE */
   @media (max-width: 768px) {
@@ -116,4 +322,5 @@
       width: 100%;
     }
   }
+  
   

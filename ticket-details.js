@@ -1,13 +1,13 @@
 
 
 // SIMPLE TICKET STATE (simulate server)
-let ticket = {
-  id: 'TCK-00124',
-  status: 'Open',           // Open | In Progress | Resolved | Closed
-  priority: 'High',
-  assignee: null,
-  description: document.getElementById('ticketDescription').innerText.trim(),
-};
+// let ticket = {
+//   id: 'TCK-00124',
+//   status: 'Open',           // Open | In Progress | Resolved | Closed
+//   priority: 'High',
+//   assignee: null,
+//   description: document.getElementById('ticketDescription').innerText.trim(),
+// };
 
 // ELEMENTS
 const statusPill = document.getElementById('statusPill');

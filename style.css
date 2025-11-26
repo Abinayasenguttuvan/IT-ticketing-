@@ -4,7 +4,7 @@
 /* ===== HEADER ===== */
 .header {
   width: 100%;
-  background:blue;
+  background:rgb(58, 123, 136);
   padding: 15px 35px;
   display: flex;
   align-items: center;
@@ -28,37 +28,40 @@
 }
 
 .nav-links a {
-  color: #d1d5db;
+  color: black;
   text-decoration: none;
   font-weight: 500;
   transition: 0.3s;
 }
 
-.nav-links a:hover { color: #ffffff; }
+.nav-links a:hover { color: rgb(13, 139, 235); }
 
 /* DROPDOWN */
 .dropdown { position: relative; }
 
 .dropdown-menu {
   display: none;
-  position: absolute;
-  background: #1f2937;
+  position: static;
   list-style: none;
   top: 40px;
-  left: 0;
-  width: 170px;
+  left: -100%;
+  width: 100px;
+  height:calc(100vh-70vh);
   border-radius: 6px;
   padding: 8px 0;
 }
 
 .dropdown-menu li a {
-  padding: 10px 15px;
+  padding: 30px 15px;
   display: block;
+  position:fixed;
 }
 
-.dropdown:hover .dropdown-menu {
-  display: block;
+.dropdown:hover .dropdown-menu { 
+  display: block; 
+  
 }
+
 
 /* LOGIN BUTTON */
 .login-btn {
@@ -130,6 +133,7 @@
 
   /* FEATURES */
   .features {
+    background:rgb(58, 123, 136);
     padding: 60px 5%;
     text-align: center;
   }
@@ -147,7 +151,7 @@
   }
 
   .feature {
-    background: #fff;
+    /* background: #fff; */
     padding: 25px;
     border-radius: 10px;
     box-shadow: 0 2px 10px rgba(0,0,0,0.08);
@@ -167,7 +171,7 @@
   /* HOW IT WORKS */
   .how {
     padding: 70px 5%;
-    background: #eaf0ff;
+    background:rgb(58, 123, 136); 
   }
 
   .how h2 {
@@ -184,7 +188,7 @@
   }
 
   .step {
-    background: #fff;
+    background: linear-gradient(135deg, #647e2b, #2563eb);
     padding: 25px;
     border-radius: 10px;
     text-align: center;
@@ -205,10 +209,10 @@
   }
 /* ===== FOOTER ===== */
 .footer {
-  background: #111827;
+  background: url('https://www.shutterstock.com/image-illustration/abstract-art-blue-paint-background-260nw-2461406397.jpg')no-repeat center center/cover;;
   color: white;
   padding: 50px 35px;
-  margin-top: 120px;
+  /* margin-top: 120px; */
 }
 
 .footer-container {
@@ -249,7 +253,7 @@
   margin-top: 35px;
   padding-top: 10px;
   font-size: 14px;
-  border-top: 1px solid #374151;
+  /* border-top: 1px solid #374151; */
 }
 
 /* ===== RESPONSIVE ===== */
@@ -263,6 +267,7 @@
 
   .nav-links,
   .login-btn,
+  .dropdown-menu,
   .profile-icon {
     display: none;
   }
@@ -271,7 +276,8 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-    background: #111827;
+    background: linear-gradient(135deg, #647e2b, #2563eb);
+    width: 260px;
     position: absolute;
     top: 65px;
     left: 0;
@@ -294,3 +300,4 @@
   .header { padding: 12px 20px; }
   .logo { font-size: 22px; }
 }
+

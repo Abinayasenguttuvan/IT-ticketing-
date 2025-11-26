@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Stackly | Login</title>
+  <link rel="stylesheet" href="auth.css" />
+</head>
+<style>
+    body {
+      background: linear-gradient(135deg, #647e2b, #2563eb);  /* Light blue-gray background */
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+  .forgot-password {
+      display: block;
+      text-align: right;
+      margin-top: 10px;
+      margin-bottom: 15px;
+    }
+
+    .forgot-password a {
+      color: #ffe6f2;
+      font-size: 0.9rem;
+      text-decoration: underline;
+    }
+
+
+    .back-btn {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  text-decoration: none;
+  color: #333;
+  font-size: 18px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: linear-gradient(135deg, #647e2b, #2563eb); 
+  padding: 8px 14px;
+  border-radius: 8px;
+  backdrop-filter: blur(5px);
+  transition: 0.3s ease;
+  z-index: 1000;
+}
+
+.back-btn i {
+  font-size: 18px;
+}
+
+.back-btn:hover {
+  background: #b17f1d;
+  color: #fff;
+}
+
+</style>
+<body>
+  <div class="auth-container" >
+    <div class="auth-box">
+      <h1 class="logo">STACKLY</h1>
+      <h2>Welcome Back</h2>
+      <p>Login to continue your shopping experience</p>
+
+      <form id="loginForm" class="auth-form">
+        <div class="input-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" placeholder="Enter your email" required />
+        </div>
+
+        <div class="input-group">
+          <label for="password">Password</label>
+          <div class="password-wrapper">
+            <input type="password" id="password" placeholder="Enter your password" required />
+            
+            <span class="toggle-password" onclick="togglePassword('password')">👁️</span>
+          </div>
+          
+          <div class="forgot-password">
+            
+            <a href="forgot.html"><a href="./404.html" >Forgot Password?</a></a>
+
+            <a href="index.html" class="back-btn">
+              <i class="fa fa-arrow-left"></i> Back
+            </a>
+            
+        </div>
+
+        <button type="submit" class="btn new-auth-submit">Login</button>
+<p id="newAuthError" class="new-auth-error"></p>
+
+
+        
+        <!-- <button  type="submit" class="btn" onclick="window.location.href='./404.html'">Login</button> -->
+
+
+        <p class="switch-text">Don't have an account? 
+          <a href="signup.html">Sign Up</a>
+        </p>
+      </form>
+    </div>
+  </div>
+  <script>
+    
+document.getElementById("loginForm").addEventListener("submit", function (event) {
+    event.preventDefault(); // stop auto reload
+
+    let email = document.getElementById("email").value.trim();
+    let password = document.getElementById("password").value.trim();
+    let errorBox = document.getElementById("newAuthError");
+
+    if (email === "" || password === "") {
+        errorBox.innerText = "⚠️ Please fill all fields";
+        errorBox.style.color = "red";
+        return; 
+    }
+
+    // if fields filled → redirect
+    window.location.href = "./404.html";
+});
+
+
+  </script>
+
+  <script src="auth.js"></script>
+</body>
+</html>
+

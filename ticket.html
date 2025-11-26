@@ -13,7 +13,7 @@
 <body>
 <!-- ===== HEADER ===== -->
 <header class="header">
-    <div class="logo">STACKLY</div>
+  <img src="./logo.webp" alt="Stackly Logo" style="height:60px;";>
   
     <nav class="nav">
       <ul class="nav-links">
@@ -32,9 +32,9 @@
   
         <!-- TICKET DROPDOWN -->
         <li class="dropdown">
-          <a href="#">Tickets <i class="fa fa-angle-down"></i></a>
+          <a href="./ticket.html">Tickets <i class="fa fa-angle-down"></i></a>
           <ul class="dropdown-menu">
-            <li><a href="./ticket.html">Create Ticket</a></li>
+
             <li><a href="./ticket-details.html">Ticket Details</a></li>
           </ul>
         </li>
@@ -59,29 +59,29 @@
 
 
 <!-- ===== PAGE TITLE ===== -->
-<section class="ticket-title">
-  <h1>Ticket Management</h1>
-  <p>Create a new ticket or manage existing ones.</p>
+<section class="ticket-title" style="text-align:center; background-image: url('./img1.webp'); padding:120px 20px;">
+  <h1 style="font-size:2.5rem; color:#333;">Ticket Management</h1>
+  <p style="color:#040404;">Create a new ticket or manage existing ones.</p>
 </section>
 
 <!-- ===== CREATE TICKET FORM ===== -->
-<section class="create-ticket">
-  <h2>Create New Ticket</h2>
+<section class="create-ticket" style="max-width:600px; margin:40px auto; padding:30px; background-color:#ffffff; border-radius:10px; box-shadow:0 4px 10px rgba(0,0,0,0.1);">
+  <h2 style="text-align:center; margin-bottom:20px; color:#333;">Create New Ticket</h2>
 
   <form id="ticketForm">
-    <div class="form-group">
-      <label>Issue Title</label>
-      <input type="text" id="title" placeholder="Enter issue title" required>
+    <div class="form-group" style="margin-bottom:15px;">
+      <label style="display:block; margin-bottom:5px; color:#555;">Issue Title</label>
+      <input type="text" id="title" placeholder="Enter issue title" required style="width:100%; padding:10px; border-radius:5px; border:1px solid #ccc;">
     </div>
 
-    <div class="form-group">
-      <label>Description</label>
-      <textarea id="description" placeholder="Describe your issue" required></textarea>
+    <div class="form-group" style="margin-bottom:15px;">
+      <label style="display:block; margin-bottom:5px; color:#555;">Description</label>
+      <textarea id="description" placeholder="Describe your issue" required style="width:100%; padding:10px; border-radius:5px; border:1px solid #ccc;"></textarea>
     </div>
 
-    <div class="form-group">
-      <label>Priority</label>
-      <select id="priority">
+    <div class="form-group" style="margin-bottom:15px;">
+      <label style="display:block; margin-bottom:5px; color:#555;">Priority</label>
+      <select id="priority" style="width:100%; padding:10px; border-radius:5px; border:1px solid #ccc;">
         <option value="Low">Low</option>
         <option value="Medium" selected>Medium</option>
         <option value="High">High</option>
@@ -89,9 +89,9 @@
       </select>
     </div>
 
-    <div class="form-group">
-      <label>Department</label>
-      <select id="department">
+    <div class="form-group" style="margin-bottom:20px;">
+      <label style="display:block; margin-bottom:5px; color:#555;">Department</label>
+      <select id="department" style="width:100%; padding:10px; border-radius:5px; border:1px solid #ccc;">
         <option>IT Support</option>
         <option>HR</option>
         <option>Network</option>
@@ -99,9 +99,44 @@
       </select>
     </div>
 
-    <button type="submit" class="submit-btn">Submit Ticket</button>
+    <button type="button" class="submit-btn" 
+      style="width:100%; padding:12px; background-color:#007BFF; color:white; border:none; border-radius:5px; cursor:pointer; font-size:1rem; transition:all 0.3s ease;"
+      onmouseover="this.style.backgroundColor='#0056b3'; this.style.transform='scale(1.05)';"
+      onmouseout="this.style.backgroundColor='#007BFF'; this.style.transform='scale(1)';"
+      onclick="
+        if(!document.getElementById('title').value || 
+           !document.getElementById('description').value) {
+          alert('Please fill all details');
+        } else {
+          window.location.href='404.html';
+        }
+      ">
+      Submit Ticket
+    </button>
   </form>
 </section>
+
+<!-- ===== RESPONSIVE MEDIA QUERY ===== -->
+<style>
+  @media (max-width: 768px) {
+    .create-ticket {
+      margin: 20px;
+      padding: 20px;
+    }
+    .ticket-title h1 {
+      font-size: 2rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .ticket-title h1 {
+      font-size: 1.5rem;
+    }
+    .ticket-title p {
+      font-size: 0.9rem;
+    }
+  }
+</style>
 
 <!-- ===== SEARCH + FILTER ===== -->
 <section class="filters">
@@ -145,62 +180,58 @@
 </section>
 <!-- ===== FOOTER ===== -->
 <footer class="footer">
-    <div class="footer-container">
-  
-      <!-- LOGO -->
-      <div class="footer-section">
-        <h2 class="footer-logo">STACKLY</h2>
-        <p>Delivering reliable IT solutions with modern workflow automation.</p>
-      </div>
-  
-      <!-- QUICK LINKS -->
-      <div class="footer-section">
-        <h3>Quick Links</h3>
-        <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Tickets</a></li>
-          <li><a href="#">Profile</a></li>
-          <li><a href="#">Dashboard</a></li>
-          <li><a href="#">Login</a></li>
-        </ul>
-      </div>
-  
-      <!-- GET IN TOUCH -->
-      <div class="footer-section">
-        <h3>Get in Touch</h3>
-        <p>Email: support@stackly.com</p>
-        <p>Phone: +91 98765 43210</p>
-  
-        <div class="social-icons">
-          <a href="#"><i class="fa-brands fa-facebook"></i></a>
-          <a href="#"><i class="fa-brands fa-instagram"></i></a>
-          <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-          <a href="#"><i class="fa-brands fa-linkedin"></i></a>
-        </div>
-      </div>
-  
-      <!-- MAP -->
-      <div class="footer-section">
-        <h3>Location</h3>
-        <iframe 
-        src="https://maps.google.com/maps?q=chennai&t=&z=13&ie=UTF8&iwloc=&output=embed"
-        class="footer-map">
-      </iframe>
-      </div>
-  
-      
-      </div>
-    </footer>
-  
+  <div class="footer-container">
+
+    <!-- LOGO -->
+    <div class="footer-section">
+      <img src="./logo.webp" alt="Stackly Logo" class="footer-logo"  style="height:60px;">
+   
+      <p>Delivering reliable IT solutions with modern workflow automation.</p>
     </div>
-  
-    <div class="footer-bottom">
-      © 2025 Stackly. All rights reserved.
+
+    <!-- QUICK LINKS -->
+    <div class="footer-section">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="./index.html">Home</a></li>
+        <li><a href="./about.html">About</a></li>
+        <li><a href="./services.html">services</a></li>
+        <li><a href="./ticket.html">Tickets</a></li>
+        <li><a href="./admin-dashboard.html">Dashboard</a></li>
+        <li><a href="./contact.html">contact</a></li>
+      </ul>
+    </div>
+
+    <!-- GET IN TOUCH -->
+    <div class="footer-section">
+      <h3>Get in Touch</h3>
+      <p>Email: support@thestackly.com</p>
+      <p>Phone: +91 98765 43210</p>
+
+      <div class="social-icons">
+        <a href="./404.html"><i class="fa-brands fa-facebook"></i></a>
+        <a href="./404.html"><i class="fa-brands fa-instagram"></i></a>
+        <a href="./404.html"><i class="fa-brands fa-x-twitter"></i></a>
+        <a href="./404.html"><i class="fa-brands fa-linkedin"></i></a>
+      </div>
+    </div>
+
+    <!-- MAP -->
+    <div class="footer-section">
+      <h3>Location</h3>
+      <iframe 
+      src="https://www.google.com/maps?q=Salem%20Tamil%20Nadu&output=embed"
+      class="footer-map">
+    </iframe>
+    </div> 
+    
+    <!-- <div class="footer-bottom">
+      <p>© 2025 Stackly. All rights reserved</p>
     </div>
   </footer>
-  
-  <!-- Script -->
-  <script src="script.js"></script>
-  <script src="ticket.js"></script>
-</body>
-</html>
+ -->
+
+<!-- Script -->
+<script src="script.js"></script>
+<script src="ticket.js"></script>
+

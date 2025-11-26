@@ -1,0 +1,22 @@
+/* Profile page styles */
+*{box-sizing:border-box;margin:0;padding:0;font-family:"Poppins",sans-serif}
+:root{--bg:#f7f8fb;--card:#fff;--muted:#6b7280;--accent:#4f46e5}
+
+.container{max-width:1000px;margin:90px auto;padding:0 18px;display:flex;flex-direction:column;gap:18px}
+.profile-card{display:flex;gap:18px;padding:18px;border-radius:12px;box-shadow:0 6px 18px rgba(15,23,42,0.06);align-items:flex-start}
+.profile-left{width:260px;text-align:center}
+.avatar-large{width:110px;height:110px;border-radius:14px;background:#2b3440;color:#fff;display:flex;align-items:center;justify-content:center;font-size:32px;margin:0 auto 12px}
+.profile-right{flex:1}
+.profile-actions{display:flex;gap:10px;justify-content:center;margin-top:12px}
+.muted{color:var(--muted);font-size:13px}
+.pref{display:block;margin:8px 0}
+.ticket-history{padding:12px;border-radius:12px;box-shadow:0 6px 18px rgba(15,23,42,0.06)}
+table{width:100%;border-collapse:collapse}
+th{background:#0f1724;color:#fff;padding:10px;text-align:left}
+td{padding:10px;border-bottom:1px solid #eef2f6}
+
+/* responsive */
+@media (max-width:800px){
+  .profile-card{flex-direction:column;align-items:center;text-align:center}
+  .profile-left{width:100%}
+}

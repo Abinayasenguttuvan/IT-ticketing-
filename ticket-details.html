@@ -13,7 +13,7 @@
 <body>
 <!-- ===== HEADER ===== -->
 <header class="header">
-  <div class="logo">STACKLY</div>
+  <img src="./logo.webp" alt="Stackly Logo" style="height:60px;";>
 
   <nav class="nav">
     <ul class="nav-links">
@@ -32,9 +32,8 @@
 
       <!-- TICKET DROPDOWN -->
       <li class="dropdown">
-        <a href="#">Tickets <i class="fa fa-angle-down"></i></a>
+        <a href="./ticket.html">Tickets <i class="fa fa-angle-down"></i></a>
         <ul class="dropdown-menu">
-          <li><a href="./ticket.html">Create Ticket</a></li>
           <li><a href="./ticket-details.html">Ticket Details</a></li>
         </ul>
       </li>
@@ -70,19 +69,24 @@
         </div>
 
         <div class="controls">
-          <div class="status-pill status-open" id="statusPill">Open</div>
+          <a href="404.html" style="text-decoration:none;">
+          <div class="status-pill status-open" id="statusPill">Open</div></a>
 
           <div class="priority">Priority: <strong id="priorityLabel">High</strong></div>
 
           <div class="assignee">Assignee: <strong id="assigneeLabel">Unassigned</strong></div>
 
           <div class="button-group">
+            <a href="404.html" style="text-decoration:none;">
             <button class="btn primary" id="editBtn"><i class="fa fa-pen"></i> Edit</button>
+            <a href="404.html" style="text-decoration:none;">
             <button class="btn" id="assignBtn"><i class="fa fa-user-plus"></i> Assign</button>
+            <a href="404.html" style="text-decoration:none;">
             <button class="btn danger" id="closeBtn"><i class="fa fa-check"></i> Close</button>
-          </div>
-        </div>
-      </div>
+          </div></a>
+        </div></a>
+      </div></a>
+    
     </section>
 
     <div class="layout">
@@ -104,8 +108,10 @@
             <h4>Attachments</h4>
             <div class="att-grid">
               <div class="att">
-                <div class="att-thumb">PNG</div>
-                <div class="att-meta">vpn-error.png</div>
+                <a href="404.html" style="text-decoration:none;">
+                <div class="att-thumb">PNG</div></a>
+                <a href="404.html" style="text-decoration:none;">
+                <div class="att-meta">vpn-error.png</div></a>
                 <button class="att-download" title="Download"><i class="fa fa-download"></i></button>
               </div>
 
@@ -121,7 +127,7 @@
 
         <!-- Comments -->
         <article class="card comments">
-          <h3>Activity & Comments</h3>
+          <h3>Activity & Comments</h3></a>
 
           <div class="timeline" id="timeline">
             <!-- timeline entries inserted by JS -->
@@ -143,13 +149,43 @@
           </div>
 
           <!-- Add comment -->
+
+          
           <form id="commentForm" class="comment-form">
+  
             <textarea id="commentInput" placeholder="Add a comment..." required></textarea>
+          
             <div class="comment-actions">
-              <input type="file" id="commentFile" />
-              <button type="submit" class="btn primary"><i class="fa fa-comment"></i> Post Comment</button>
+              
+              
+              <input 
+              type="file" 
+              id="commentFile" 
+              style="cursor:pointer;" 
+              onclick="window.location.href='404.html'"
+            >
+            
+          
+              <button 
+                type="button" 
+                class="btn primary"
+                style="cursor:pointer;"
+                onclick="
+                  let comment = document.getElementById('commentInput').value.trim();
+                  if(!comment){
+                    alert('Please fill details');
+                    return;
+                  }
+                  window.location.href='404.html';
+                "
+              >
+                <i class='fa fa-comment'></i> Post Comment
+              </button>
+          
             </div>
+          
           </form>
+          
         </article>
 
       </section>
@@ -194,9 +230,11 @@
 
         <div class="card quick-actions">
           <h4>Quick Actions</h4>
-          <button class="btn full" id="escalateBtn"><i class="fa fa-exclamation-triangle"></i> Escalate</button>
+          <a href="404.html" style="text-decoration:none;">
+          <button class="btn full" id="escalateBtn"><i class="fa fa-exclamation-triangle"></i> Escalate</button></a>
           <button class="btn full" id="reopenBtn" style="display:none"><i class="fa fa-rotate-left"></i> Reopen</button>
-          <button class="btn full ghost" id="printBtn"><i class="fa fa-print"></i> Print</button>
+          <a href="404.html" style="text-decoration:none;">
+          <button class="btn full ghost" id="printBtn"><i class="fa fa-print"></i> Print</button></a>
         </div>
 
       </aside>
@@ -211,7 +249,8 @@
 
     <!-- LOGO -->
     <div class="footer-section">
-      <h2 class="footer-logo">STACKLY</h2>
+      <img src="./logo.webp" alt="Stackly Logo" class="footer-logo"  style="height:60px;">
+   
       <p>Delivering reliable IT solutions with modern workflow automation.</p>
     </div>
 
@@ -219,25 +258,26 @@
     <div class="footer-section">
       <h3>Quick Links</h3>
       <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Tickets</a></li>
-        <li><a href="#">Profile</a></li>
-        <li><a href="#">Dashboard</a></li>
-        <li><a href="#">Login</a></li>
+        <li><a href="./index.html">Home</a></li>
+        <li><a href="./about.html">About</a></li>
+        <li><a href="./services.html">services</a></li>
+        <li><a href="./ticket.html">Tickets</a></li>
+        <li><a href="./admin-dashboard.html">Dashboard</a></li>
+        <li><a href="./contact.html">contact</a></li>
       </ul>
     </div>
 
     <!-- GET IN TOUCH -->
     <div class="footer-section">
       <h3>Get in Touch</h3>
-      <p>Email: support@stackly.com</p>
+      <p>Email: support@thestackly.com</p>
       <p>Phone: +91 98765 43210</p>
 
       <div class="social-icons">
-        <a href="#"><i class="fa-brands fa-facebook"></i></a>
-        <a href="#"><i class="fa-brands fa-instagram"></i></a>
-        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-        <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="./404.html"><i class="fa-brands fa-facebook"></i></a>
+        <a href="./404.html"><i class="fa-brands fa-instagram"></i></a>
+        <a href="./404.html"><i class="fa-brands fa-x-twitter"></i></a>
+        <a href="./404.html"><i class="fa-brands fa-linkedin"></i></a>
       </div>
     </div>
 
@@ -245,24 +285,18 @@
     <div class="footer-section">
       <h3>Location</h3>
       <iframe 
-      src="https://maps.google.com/maps?q=chennai&t=&z=13&ie=UTF8&iwloc=&output=embed"
+      src="https://www.google.com/maps?q=Salem%20Tamil%20Nadu&output=embed"
       class="footer-map">
     </iframe>
-    </div>
-
+    </div> 
     
+    <!-- <div class="footer-bottom">
+      <p>© 2025 Stackly. All rights reserved</p>
     </div>
   </footer>
-
-  </div>
-
-  <div class="footer-bottom">
-    © 2025 Stackly. All rights reserved.
-  </div>
-</footer>
+ -->
 
 <!-- Script -->
 <script src="script.js"></script>
-<script src="ticket-details.js"></script>
-</body>
-</html>
+<!-- <script src="ticket-details.js"></script> -->
+
