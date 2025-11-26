@@ -5,15 +5,147 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Stackly ITSM – ServiceNow Style</title>
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="admin.css">
+  <!-- <link rel="stylesheet" href="admin.css"> -->
   <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
+<style>
+  /* ===== Dashboard Background ===== */
+.admin-dashboard {
+  padding: 20px;
+  background: url("./img1.webp") no-repeat center/cover fixed;
+}
+
+/* Banner */
+.dash-banner {
+  text-align: center;
+  padding: 40px 15px;
+  color: white;
+  background-image: url('./corp1.webp');
+  border-radius: 12px;
+  margin-bottom: 30px;
+  backdrop-filter: blur(6px);
+}
+
+/* ===== METRICS CARDS ===== */
+.dash-metrics {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  margin-bottom: 40px;
+}
+
+.metric-card {
+  background: white;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  text-align: center;
+  animation: fadeUp 1s ease forwards;
+}
+
+.metric-card h3 {
+  color: #444;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.metric-card .value {
+  font-size: 42px;
+  font-weight: bold;
+  color: #2e7d32;
+}
+
+.trend {
+  font-size: 14px;
+  display: inline-block;
+  margin-top: 6px;
+}
+
+.trend.positive { color: #2e7d32; }
+.trend.warning { color: #ef6c00; }
+.trend.neutral { color: #039be5; }
+
+
+/* ===== Small mobile (max-width: 480px) ===== */
+@media (max-width: 480px) {
+  .dash-metrics {
+    grid-template-columns: 1fr; /* full width cards */
+  }
+
+  .metric-card {
+    padding: 16px;
+  }
+
+  .metric-card h3 {
+    font-size: 15px;
+  }
+
+  .metric-card .value {
+    font-size: 28px;
+  }
+
+  .trend {
+    font-size: 12px;
+  }
+}
+
+/* ===== CHART SECTION ===== */
+.charts-section {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+}
+
+.chart-box {
+  text-align: center;
+  background: white;
+  /* padding: 20px; */
+  border-radius: 16px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  animation: fadeIn 1s ease forwards;
+}
+
+/* Animations */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* ===== MOBILE RESPONSIVE ===== */
+@media (max-width: 900px) {
+  .dash-metrics {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .charts-section {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .dash-metrics {
+    grid-template-columns: 1fr;
+  }
+  .dash-banner h1 {
+    font-size: 24px;
+  }
+  .metric-card .value {
+    font-size: 32px;
+  }
+}
+
+</style>
 
 <body>
 <!-- ===== HEADER ===== -->
 <header class="header">
-  <div class="logo">STACKLY</div>
+  <img src="./logo.webp" alt="Stackly Logo" style="height:60px;";>
+  
 
   <nav class="nav">
     <ul class="nav-links">
@@ -32,9 +164,9 @@
 
       <!-- TICKET DROPDOWN -->
       <li class="dropdown">
-        <a href="#">Tickets <i class="fa fa-angle-down"></i></a>
+        <a href="./ticket.html">Tickets <i class="fa fa-angle-down"></i></a>
         <ul class="dropdown-menu">
-          <li><a href="./ticket.html">Create Ticket</a></li>
+          
           <li><a href="./ticket-details.html">Ticket Details</a></li>
         </ul>
       </li>
@@ -46,7 +178,7 @@
   </nav>
 
   <!-- LOGIN BUTTON -->
-  <a href="./auth.html" class="login-btn">Login</a>
+  <a href="./login.html" class="login-btn">Login</a>
 
   <!-- PROFILE LOGO -->
   
@@ -56,129 +188,147 @@
   </div>
 </header>
 
-  <!-- MAIN -->
-  <main class="container">
 
-    <!-- Dashboard header -->
-    <section class="dash-head">
-      <h1>Admin Dashboard</h1>
-      <p class="muted">Overview of tickets, users and system health.</p>
-    </section>
+<!-- ===== ADMIN DASHBOARD MAIN AREA ===== -->
+<main class="admin-dashboard">
 
-    <!-- Grid: metrics + charts + lists -->
-    <section class="grid">
+  <!-- Background Banner -->
+  <section class="dash-banner">
+    <h1>Admin Dashboard</h1>
+    <p>Monitor IT service operations, ticket flow, user activity & system performance.</p>
+  </section>
 
-      <!-- Metrics -->
-      <div class="metrics">
-        <div class="metric card">
-          <div class="m-top">
-            <div class="m-title">Open Tickets</div>
-            <div class="m-value" id="openTickets">24</div>
-          </div>
-          <div class="m-foot muted">Since last 24h: +4</div>
-        </div>
+  <!-- ===== METRICS CARDS ===== -->
+  <section class="dash-metrics">
 
-        <div class="metric card">
-          <div class="m-top">
-            <div class="m-title">In Progress</div>
-            <div class="m-value" id="inProgress">8</div>
-          </div>
-          <div class="m-foot muted">SLA at risk: 2</div>
-        </div>
+    <div class="metric-card">
+      <h3>Open Tickets</h3>
+      <p class="value">42</p>
+      <span class="trend positive">+12 today</span>
+    </div>
 
-        <div class="metric card">
-          <div class="m-top">
-            <div class="m-title">Resolved</div>
-            <div class="m-value" id="resolved">312</div>
-          </div>
-          <div class="m-foot muted">Today: 18</div>
-        </div>
+    <div class="metric-card">
+      <h3>In Progress</h3>
+      <p class="value">18</p>
+      <span class="trend warning">SLA risk: 3</span>
+    </div>
 
-        <div class="metric card">
-          <div class="m-top">
-            <div class="m-title">Active Users</div>
-            <div class="m-value" id="activeUsers">136</div>
-          </div>
-          <div class="m-foot muted">Last 7 days</div>
-        </div>
-      </div>
+    <div class="metric-card">
+      <h3>Resolved</h3>
+      <p class="value">520</p>
+      <span class="trend positive">+41 this week</span>
+    </div>
 
-      <!-- Charts -->
-      <div class="charts">
-        <div class="card chart-card">
-          <h4>Tickets by Priority</h4>
-          <canvas id="priorityChart" height="140"></canvas>
-        </div>
+    <div class="metric-card">
+      <h3>Active Users</h3>
+      <p class="value">210</p>
+      <span class="trend neutral">Last 24 hrs</span>
+    </div>
 
-        <div class="card chart-card">
-          <h4>Tickets Trend (7 days)</h4>
-          <canvas id="trendChart" height="140"></canvas>
-        </div>
-      </div>
+  </section>
 
-      <!-- Tables and controls -->
-      <div class="lower-grid">
+  <!-- ===== CHARTS WRAPPER ===== -->
+  <section class="charts-section">
 
-        <!-- Users table -->
-        <div class="card table-card">
-          <div class="table-head">
-            <h4>Users</h4>
-            <div class="table-actions">
-              <button class="btn" id="addUserBtn"><i class="fa fa-plus"></i> New User</button>
-              <button class="btn ghost" id="exportUsers"><i class="fa fa-file-export"></i> Export</button>
-            </div>
-          </div>
+    <!-- Bar Chart -->
+    <div class="chart-box">
+      <h3>Tickets by Priority</h3>
+      <canvas id="barChart"></canvas>
+    </div>
 
-          <div class="table-wrap">
-            <table id="usersTable">
-              <thead>
-                <tr><th>Name</th><th>Email</th><th>Role</th><th>Status</th><th>Actions</th></tr>
-              </thead>
-              <tbody>
-                <!-- JS populates -->
-              </tbody>
-            </table>
-          </div>
-        </div>
+    <!-- Pie Chart -->
+    <div class="chart-box">
+      <h3>Ticket Categories</h3>
+      <canvas id="pieChart"></canvas>
+    </div>
 
-        <!-- Tickets table -->
-        <div class="card table-card">
-          <div class="table-head">
-            <h4>Recent Tickets</h4>
-            <div class="table-actions">
-              <select id="ticketFilterDept">
-                <option value="">All Departments</option>
-                <option>IT Support</option>
-                <option>Network</option>
-                <option>HR</option>
-              </select>
-            </div>
-          </div>
+    <!-- Line Chart -->
+    <div class="chart-box">
+      <h3>7-Day Ticket Trend</h3>
+      <canvas id="lineChart"></canvas>
+    </div>
 
-          <div class="table-wrap">
-            <table id="ticketsTable">
-              <thead>
-                <tr><th>ID</th><th>Issue</th><th>Priority</th><th>Assignee</th><th>Status</th></tr>
-              </thead>
-              <tbody>
-                <!-- JS populates -->
-              </tbody>
-            </table>
-          </div>
-        </div>
+    <!-- Donut Chart -->
+    <div class="chart-box">
+      <h3>Ticket Status Breakdown</h3>
+      <canvas id="donutChart"></canvas>
+    </div>
 
-      </div> <!-- lower-grid -->
-    </section>
+  </section>
 
-  </main>
+</main>
 
-  <!-- ===== FOOTER ===== -->
+<!-- CHART.JS CDN -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+/* ===== BAR CHART ===== */
+new Chart(document.getElementById("barChart"), {
+  type: "bar",
+  data: {
+    labels: ["Low", "Medium", "High", "Critical"],
+    datasets: [{
+      label: "Tickets",
+      data: [45, 68, 32, 10],
+      backgroundColor: ["#4caf50", "#ffca28", "#ff7043", "#d32f2f"],
+      borderRadius: 8
+    }]
+  },
+  options: { responsive: true, animation: { duration: 1200 } }
+});
+
+/* ===== PIE CHART ===== */
+new Chart(document.getElementById("pieChart"), {
+  type: "pie",
+  data: {
+    labels: ["Network", "Hardware", "Software", "Access"],
+    datasets: [{
+      data: [32, 25, 29, 14],
+      backgroundColor: ["#42a5f5", "#ab47bc", "#66bb6a", "#ffa726"]
+    }]
+  },
+  options: { animation: { duration: 1500 } }
+});
+
+/* ===== LINE CHART ===== */
+new Chart(document.getElementById("lineChart"), {
+  type: "line",
+  data: {
+    labels: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+    datasets: [{
+      label: "Tickets",
+      data: [50, 60, 55, 70, 65, 80, 90],
+      borderColor: "#42a5f5",
+      borderWidth: 3,
+      tension: 0.4
+    }]
+  },
+  options: { responsive: true, animation: { duration: 1300 } }
+});
+
+/* ===== DONUT CHART ===== */
+new Chart(document.getElementById("donutChart"), {
+  type: "doughnut",
+  data: {
+    labels: ["Open", "In Progress", "Resolved"],
+    datasets: [{
+      data: [40, 25, 70],
+      backgroundColor: ["#ff5252", "#29b6f6", "#66bb6a"]
+    }]
+  },
+  options: { animation: { duration: 1400 } }
+});
+</script>
+
+
+<!-- ===== FOOTER ===== -->
 <footer class="footer">
   <div class="footer-container">
 
     <!-- LOGO -->
     <div class="footer-section">
-      <h2 class="footer-logo">STACKLY</h2>
+      <img src="./logo.webp" alt="Stackly Logo" class="footer-logo"  style="height:60px;">
+   
       <p>Delivering reliable IT solutions with modern workflow automation.</p>
     </div>
 
@@ -186,25 +336,26 @@
     <div class="footer-section">
       <h3>Quick Links</h3>
       <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Tickets</a></li>
-        <li><a href="#">Profile</a></li>
-        <li><a href="#">Dashboard</a></li>
-        <li><a href="#">Login</a></li>
+        <li><a href="./index.html">Home</a></li>
+        <li><a href="./about.html">About</a></li>
+        <li><a href="./services.html">services</a></li>
+        <li><a href="./ticket.html">Tickets</a></li>
+        <li><a href="./admin-dashboard.html">Dashboard</a></li>
+        <li><a href="./contact.html">contact</a></li>
       </ul>
     </div>
 
     <!-- GET IN TOUCH -->
     <div class="footer-section">
       <h3>Get in Touch</h3>
-      <p>Email: support@stackly.com</p>
+      <p>Email: support@thestackly.com</p>
       <p>Phone: +91 98765 43210</p>
 
       <div class="social-icons">
-        <a href="#"><i class="fa-brands fa-facebook"></i></a>
-        <a href="#"><i class="fa-brands fa-instagram"></i></a>
-        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-        <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="./404.html"><i class="fa-brands fa-facebook"></i></a>
+        <a href="./404.html"><i class="fa-brands fa-instagram"></i></a>
+        <a href="./404.html"><i class="fa-brands fa-x-twitter"></i></a>
+        <a href="./404.html"><i class="fa-brands fa-linkedin"></i></a>
       </div>
     </div>
 
@@ -212,25 +363,20 @@
     <div class="footer-section">
       <h3>Location</h3>
       <iframe 
-      src="https://maps.google.com/maps?q=chennai&t=&z=13&ie=UTF8&iwloc=&output=embed"
+      src="https://www.google.com/maps?q=Salem%20Tamil%20Nadu&output=embed"
       class="footer-map">
     </iframe>
-    </div>
-
+    </div> 
     
+    <!-- <div class="footer-bottom">
+      <p>© 2025 Stackly. All rights reserved</p>
     </div>
   </footer>
-
-  </div>
-
-  <div class="footer-bottom">
-    © 2025 Stackly. All rights reserved.
-  </div>
-</footer>
+ -->
 
 <!-- Script -->
 <script src="script.js"></script>
-<script src="admin.js"></script>
 
-</body>
-</html>
+
+
+  

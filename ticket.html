@@ -46,7 +46,7 @@
     </nav>
   
     <!-- LOGIN BUTTON -->
-    <a href="./auth.html" class="login-btn">Login</a>
+    <a href="./login.html" class="login-btn">Login</a>
   
     <!-- PROFILE LOGO -->
     
@@ -65,23 +65,23 @@
 </section>
 
 <!-- ===== CREATE TICKET FORM ===== -->
-<section class="create-ticket" style="max-width:600px; margin:40px auto; padding:30px; background-color:#ffffff; border-radius:10px; box-shadow:0 4px 10px rgba(0,0,0,0.1);">
-  <h2 style="text-align:center; margin-bottom:20px; color:#333;">Create New Ticket</h2>
+<section class="create-ticket" style="max-width:600px; margin:40px auto; padding:30px; background-color:rgb(162, 207, 209); border-radius:10px; box-shadow:0 4px 10px rgba(0,0,0,0.1) ;">
+  <h2 style="text-align:center; margin-bottom:20px; color:black;">Create New Ticket</h2>
 
   <form id="ticketForm">
     <div class="form-group" style="margin-bottom:15px;">
-      <label style="display:block; margin-bottom:5px; color:#555;">Issue Title</label>
-      <input type="text" id="title" placeholder="Enter issue title" required style="width:100%; padding:10px; border-radius:5px; border:1px solid #ccc;">
+      <label style="display:block; margin-bottom:5px; color:black;">Issue Title</label>
+      <input type="text" id="title" placeholder="Enter issue title" required style="width:100%; padding:10px; border-radius:5px; border:3px solid #4594d0;">
     </div>
 
     <div class="form-group" style="margin-bottom:15px;">
-      <label style="display:block; margin-bottom:5px; color:#555;">Description</label>
-      <textarea id="description" placeholder="Describe your issue" required style="width:100%; padding:10px; border-radius:5px; border:1px solid #ccc;"></textarea>
+      <label style="display:block; margin-bottom:5px; color:black;">Description</label>
+      <textarea id="description" placeholder="Describe your issue" required style="width:100%; padding:10px; border-radius:5px;  border:3px solid #4594d0;"></textarea>
     </div>
 
     <div class="form-group" style="margin-bottom:15px;">
-      <label style="display:block; margin-bottom:5px; color:#555;">Priority</label>
-      <select id="priority" style="width:100%; padding:10px; border-radius:5px; border:1px solid #ccc;">
+      <label style="display:block; margin-bottom:5px; color:black;">Priority</label>
+      <select id="priority" style="width:100%; padding:10px; border-radius:5px;  border:3px solid #4594d0;">
         <option value="Low">Low</option>
         <option value="Medium" selected>Medium</option>
         <option value="High">High</option>
@@ -90,8 +90,8 @@
     </div>
 
     <div class="form-group" style="margin-bottom:20px;">
-      <label style="display:block; margin-bottom:5px; color:#555;">Department</label>
-      <select id="department" style="width:100%; padding:10px; border-radius:5px; border:1px solid #ccc;">
+      <label style="display:block; margin-bottom:5px; color:black;">Department</label>
+      <select id="department" style="width:100%; padding:10px; border-radius:5px; border:3px solid #4594d0;">
         <option>IT Support</option>
         <option>HR</option>
         <option>Network</option>
@@ -100,7 +100,7 @@
     </div>
 
     <button type="button" class="submit-btn" 
-      style="width:100%; padding:12px; background-color:#007BFF; color:white; border:none; border-radius:5px; cursor:pointer; font-size:1rem; transition:all 0.3s ease;"
+      style="width:100%; padding:12px; background-color:rgb(58, 123, 136); color:white; border:none; border-radius:5px; cursor:pointer; font-size:1rem; transition:all 0.3s ease;"
       onmouseover="this.style.backgroundColor='#0056b3'; this.style.transform='scale(1.05)';"
       onmouseout="this.style.backgroundColor='#007BFF'; this.style.transform='scale(1)';"
       onclick="
