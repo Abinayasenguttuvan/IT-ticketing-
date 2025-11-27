@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ESS Portal - Home</title>
+    <link rel="stylesheet" href="style1.css">
+</head>
+<style>
+    body{
+        background-color: rgb(20, 10, 29);
+    }
+</style>
+
+<body>
+    
+
+    <!-- ======= HEADER / NAVBAR ======= -->
+    <header class="header">
+
+        <a href="home2.html">
+            <img src="./logo.webp" alt="Stackly Logo" style="height: 60px; ">
+          </a>
+        
+        <nav class="navbar" id="navbar">
+            <a href="./home2.html">Home2</a>
+            <a href="./index.html">Home1</a>
+            <a href="./profile.html">My Profile</a>
+            <a href="./IT-ticket.html">IT tickets</a>
+            <a href="./dashboard.html">Dashboard</a>
+            <a href="./login1.html">Login</a>
+        </nav>
+
+        <!-- Hamburger -->
+        <div class="menu-icon" id="menuIcon">&#9776;</div>
+    </header>
+
+    <!-- ======= HERO SECTION ======= -->
+    <section class="hero">
+        <div class="hero-text">
+            <h1>Welcome to Employee Self-Service Portal</h1>
+            <p>Manage your profile, IT tickets, leave requests, payroll and more..</p>
+            <button class="hero-btn">Get Started</button>
+        </div>
+
+        <img src="./photo1.webp" class="hero-img">
+    </section>
+
+    <!-- ======= SERVICES SECTION ======= -->
+    <section class="services">
+        <h2>Quick Actions</h2>
+
+        <div class="service-grid">
+
+            <div class="card">
+                <img src="./sana.webp">
+                <h3>My Profile</h3>
+                <p>Update your personal details and official information.</p>
+            </div>
+
+            <div class="card">
+                <img src="./IT (1).webp">
+                <h3>IT Support Tickets</h3>
+                <p>Create and track your technical support issues.</p>
+            </div>
+
+            <div class="card">
+                <img src="./corp1.webp">
+                <h3>Leave Request</h3>
+                <p>Submit and monitor leave applications easily.</p>
+            </div>
+
+            <div class="card">
+                <img src="./corporate.webp">
+                <h3>Payroll</h3>
+                <p>View monthly salary slips & tax related information.</p>
+            </div>
+
+        </div>
+    </section>
+
+
+    <script>
+        // Mobile Toggle
+        const menuIcon = document.getElementById("menuIcon");
+        const navbar = document.getElementById("navbar");
+
+        menuIcon.addEventListener("click", () => {
+            navbar.classList.toggle("active");
+        });
+    </script>
+    <!-- ===== FOOTER ===== -->
+<footer class="footer">
+    <div class="footer-container">
+  
+      <!-- LOGO -->
+      <div class="footer-section">
+        <img src="./logo.webp" alt="Stackly Logo" class="footer-logo"  style="height:60px;">
+        <!-- <p>Delivering reliable IT solutions with modern workflow automation.</p> -->
+      </div>
+  
+      <!-- QUICK LINKS -->
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="./home2.html">Home</a></li>
+          <li><a href="./IT-ticket.html">Tickets</a></li>
+          <li><a href="./profile.html">Profile</a></li>
+          <li><a href="./dashboard.html">Dashboard</a></li>
+          <li><a href="./login1.html">Login</a></li>
+        </ul>
+      </div>
+  
+      <!-- GET IN TOUCH -->
+      <div class="footer-section">
+        <h3>Get in Touch</h3>
+        <p>Email: support@stackly.com</p>
+        <p>Phone: +91 98765 43210</p>
+  
+        <div class="social-icons">
+          <a href="./404.html"><i class="fa-brands fa-facebook"></i></a>
+          <a href="./404.html"><i class="fa-brands fa-instagram"></i></a>
+          <a href="./404.html"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="./404.html"><i class="fa-brands fa-linkedin"></i></a>
+        </div>
+      </div>
+  
+      <!-- MAP -->
+      <div class="footer-section">
+        <h3>Location</h3>
+        <iframe 
+        src="https://maps.google.com/maps?q=chennai&t=&z=13&ie=UTF8&iwloc=&output=embed"
+        class="footer-map">
+      </iframe>
+      </div>
+  
+      
+      </div>
+    </footer>
+  
+    </div>  
+</body>
+</html>

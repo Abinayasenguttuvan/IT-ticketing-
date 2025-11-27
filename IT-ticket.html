@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ESS Portal - Home</title>
+    <link rel="stylesheet" href="style1.css">
+</head>
+ 
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<!-- GSAP -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+<style>
+/* GLOBAL STYLE */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI";
+}
+
+body {
+  background: url("./aa.webp") 
+             no-repeat center/cover fixed;
+  min-height: 100vh;
+}
+
+
+/* WRAPPER */
+.container {
+  width: 90%;
+  max-width: 750px;
+  background: rgba(255,255,255,0.12);
+  padding: 30px;
+  margin: 50px auto;
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+  position: relative;
+  z-index: 10;
+  color: white;
+  transform: translateY(40px);
+  opacity: 0;
+}
+
+/* TITLE */
+.container h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+/* FORM FIELDS */
+.form-group {
+  margin-bottom: 18px;
+}
+
+label {
+  font-weight: 600;
+  font-size: 15px;
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  margin-top: 6px;
+  outline: none;
+  font-size: 15px;
+}
+
+/* BUTTON */
+button {
+  width: 100%;
+  padding: 14px;
+  background: #58165a;
+  border: none;
+  color: white;
+  font-size: 17px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 15px;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #0077b6;
+}
+
+/* ERROR MESSAGE */
+#errorMsg {
+  color: #ff4d4d;
+  text-align: center;
+  margin-top: 10px;
+  font-size: 16px;
+  display: none;
+  font-weight: bold;
+}
+
+/* FLOATING ICONS */
+.floating-icons i {
+  position: absolute;
+  color: rgba(255,255,255,0.4);
+  font-size: 45px;
+  animation: float 4s linear infinite;
+}
+
+.floating-icons i:nth-child(1) { top: 20%; left: 8%; }
+.floating-icons i:nth-child(2) { top: 70%; left: 85%; }
+.floating-icons i:nth-child(3) { top: 50%; left: 10%; }
+.floating-icons i:nth-child(4) { top: 25%; left: 80%; }
+
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+  100% { transform: translateY(0); }
+}
+
+/* RESPONSIVE MEDIA QUERIES */
+@media (max-width: 768px) {
+  .container {
+    margin-top: 80px;
+    padding: 20px;
+    
+  }
+  .container h2 {
+    font-size: 24px;
+  }
+  button {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    margin-top: 100px;
+  }
+  .floating-icons i {
+    font-size: 30px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+    <header class="header">
+        
+            <a href="home2.html">
+                <img src="./logo.webp" alt="Stackly Logo" style="height: 60px; ">
+              </a>
+          </a>
+        
+
+        <nav class="navbar" id="navbar">
+            <a href="./home2.html">Home2</a>
+            <a href="./index.html">Home1</a>
+            <a href="./profile.html">My Profile</a>
+            <a href="./IT-ticket.html">IT tickets</a>
+            <a href="./dashboard.html">Dashboard</a>
+            <a href="./login1.html">Login</a>
+        </nav>
+
+        <!-- Hamburger -->
+        <div class="menu-icon" id="menuIcon">&#9776;</div>
+    </header>
+
+<!-- OVERLAY -->
+<div class="page-overlay"></div>
+
+<!-- FLOATING ICONS -->
+<div class="floating-icons">
+  <i class="fa-solid fa-computer"></i>
+  <i class="fa-solid fa-gear"></i>
+  <i class="fa-solid fa-bug"></i>
+  <i class="fa-solid fa-network-wired"></i>
+</div>
+
+<!-- FORM -->
+<div class="container" id="ticketForm">
+  <h2>IT Ticket Creation</h2>
+
+  <div class="form-group">
+    <label>Employee Name</label>
+    <input type="text" id="empName" placeholder="Enter your name">
+  </div>
+
+  <div class="form-group">
+    <label>Employee ID</label>
+    <input type="text" id="empId" placeholder="Enter your employee ID">
+  </div>
+
+  <div class="form-group">
+    <label>Issue Category</label>
+    <select id="issueCategory">
+      <option value="">Select Issue</option>
+      <option>Laptop Issue</option>
+      <option>Software Error</option>
+      <option>Network Issue</option>
+      <option>Account Access Issue</option>
+      <option>Printer / Hardware Issue</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label>Issue Description</label>
+    <textarea id="issueDesc" rows="4" placeholder="Describe the problem in detail"></textarea>
+  </div>
+
+  <button id="submitBtn">Submit Ticket</button>
+
+  <!-- Error message -->
+  <p id="errorMsg">⚠ Please fill all details</p>
+</div>
+
+<script>
+/* ======================
+   GSAP PAGE ANIMATIONS
+====================== */
+
+// Fade in form
+gsap.to("#ticketForm", {
+  duration: 1,
+  opacity: 1,
+  y: 0,
+  ease: "power3.out"
+});
+
+// Floating icons animation
+gsap.from(".floating-icons i", {
+  opacity: 0,
+  y: 20,
+  duration: 1.2,
+  stagger: 0.3,
+  ease: "power2.out"
+});
+
+/* ======================
+   FORM VALIDATION LOGIC
+====================== */
+
+document.getElementById("submitBtn").addEventListener("click", function () {
+  
+  let name = document.getElementById("empName").value.trim();
+  let id = document.getElementById("empId").value.trim();
+  let category = document.getElementById("issueCategory").value.trim();
+  let desc = document.getElementById("issueDesc").value.trim();
+  let errorMsg = document.getElementById("errorMsg");
+
+  if (name === "" || id === "" || category === "" || desc === "") {
+    errorMsg.style.display = "block";   // Show error
+  } else {
+    errorMsg.style.display = "none";    // Hide error
+    window.location.href = "404.html";  // Redirect to 404
+  }
+});
+</script>
+
+ <!-- ===== FOOTER ===== -->
+ <footer class="footer">
+    <div class="footer-container">
+  
+      <!-- LOGO -->
+      <div class="footer-section">
+        <img src="./logo.webp" alt="Stackly Logo" class="footer-logo"  style="height:60px;">
+        <!-- <p>Delivering reliable IT solutions with modern workflow automation.</p> -->
+      </div>
+  
+      <!-- QUICK LINKS -->
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul>
+            <li><a href="./home2.html">Home</a></li>
+            <li><a href="./IT-ticket.html">Tickets</a></li>
+            <li><a href="./profile.html">Profile</a></li>
+            <li><a href="./dashboard.html">Dashboard</a></li>
+            <li><a href="./login1.html">Login</a></li>
+          </ul>
+      </div>
+  
+      <!-- GET IN TOUCH -->
+      <div class="footer-section">
+        <h3>Get in Touch</h3>
+        <p>Email: support@stackly.com</p>
+        <p>Phone: +91 98765 43210</p>
+  
+        <div class="social-icons">
+          <a href="./404.html"><i class="fa-brands fa-facebook"></i></a>
+          <a href="./404.html"><i class="fa-brands fa-instagram"></i></a>
+          <a href="./404.html"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="./404.html"><i class="fa-brands fa-linkedin"></i></a>
+        </div>
+      </div>
+  
+      <!-- MAP -->
+      <div class="footer-section">
+        <h3>Location</h3>
+        <iframe 
+        src="https://maps.google.com/maps?q=chennai&t=&z=13&ie=UTF8&iwloc=&output=embed"
+        class="footer-map">
+      </iframe>
+      </div>
+  
+      
+      </div>
+    </footer>
+  
+    </div>
+    <script>
+        // Mobile Toggle
+        const menuIcon = document.getElementById("menuIcon");
+        const navbar = document.getElementById("navbar");
+      
+        menuIcon.addEventListener("click", () => {
+            navbar.classList.toggle("active");
+        });
+      </script>
+  
+
+</body>
+</html>

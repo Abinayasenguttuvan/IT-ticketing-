@@ -1,163 +1,547 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Stackly ITSM – ServiceNow Style</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="profile.css">
-  <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ESS Portal - Home</title>
+    <!-- <link rel="stylesheet" href="style1.css"> -->
+</head>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+
+/* ---------- HEADER ---------- */
+.header {
+    background: #2f2953;
+    padding: 15px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: 600;
+    
+}
+
+.navbar a {
+    margin-left: 25px;
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.navbar a:hover {
+    color: #ffd166;
+}
+
+/* hamburger */
+.menu-icon {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+/* =====================
+   RESPONSIVE MEDIA QUERY
+   ===================== */
+
+/* Tablets */
+@media (max-width: 991px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+    .hero-img {
+        width: 80%;
+        margin-top: 20px;
+    }
+
+    .service-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* * Mobile */ 
+@media (max-width: 700px) {
+    .navbar {
+        position: absolute;
+        top: 70px;
+        right: 0;
+        background: #061b43;
+        width: 200px;
+        display: none;
+        flex-direction: column;
+        padding: 15px;
+    }
+    .navbar a {
+        margin: 12px 0;
+    }
+
+    .navbar.active {
+        display: flex;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+
+    .header {
+        padding: 15px 25px;
+    }
+
+    .service-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero h1 {
+        font-size: 28px;
+    }
+
+}
+
+
+
+/* BACKGROUND IMAGE */
+body {
+  background: url("./hand1\ \(1\).webp") no-repeat center/cover fixed;
+  backdrop-filter: blur(2px);
+}
+
+
+/* PROFILE SECTION */
+.profile-section {
+  display: flex;
+  justify-content: space-around;
+  padding: 60px 30px;
+  flex-wrap: wrap;
+}
+
+/* PROFILE CARD */
+.profile-card {
+  width: 320px;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(5px);
+  padding: 25px;
+  border-radius: 14px;
+  text-align: center;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 1s ease;
+}
+
+.profile-img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.emp-name {
+  margin-top: 15px;
+  font-size: 24px;
+  color: #003d66;
+}
+
+/* QUICK INFO BOXES */
+.info-grid {
+  margin: 20px auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+
+.info-box {
+  padding: 15px;
+  background: #003d66;
+  color: white;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+/* PROFILE FORM */
+.profile-form {
+  width: 460px;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(5px);
+  padding: 25px;
+  border-radius: 14px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+}
+
+.profile-form h2 {
+  margin-bottom: 15px;
+  color: #003d66;
+}
+
+.profile-form input,
+.profile-form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccd6e0;
+  border-radius: 6px;
+  margin-bottom: 12px;
+}
+
+.profile-form button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  background: #003d66;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.profile-form button:hover {
+  opacity: 0.9;
+}
+
+/* MEDIA RESPONSIVE */
+@media (max-width: 991px) {
+  .profile-section {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .profile-form {
+    margin-top: 30px;
+  }
+}
+
+@media (max-width: 700px) {
+  .profile-card,
+  .profile-form {
+    width: 90%;
+    z-index: -1;
+  }
+}
+/* ---------- FOOTER ---------- */
+.footer {
+    text-align: center;
+    padding: 15px;
+    background: #003d66;
+    color: white;
+    margin-top: 40px;
+}
+
+
+/* =====================
+   RESPONSIVE MEDIA QUERY
+   ===================== */
+
+/* Tablets */
+@media (max-width: 991px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+    .hero-img {
+        width: 80%;
+        margin-top: 20px;
+    }
+
+    .service-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+    .navbar {
+        position: absolute;
+        top: 70px;
+        right: 0;
+        background: #061b43;
+        width: 200px;
+        display: none;
+        flex-direction: column;
+        padding: 15px;
+    }
+    .navbar a {
+        margin: 12px 0;
+    }
+
+    .navbar.active {
+        display: flex;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+
+    .header {
+        padding: 15px 25px;
+    }
+
+    .service-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero h1 {
+        font-size: 28px;
+    }
+
+}
+
+
+
+/* ===== FOOTER ===== */
+.footer {
+    background: url('./foot2.webp')no-repeat center center/cover;;
+    color: white;
+    padding: 50px 35px;
+    /* margin-top: 120px; */
+  }
+  
+  .footer-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 35px;
+  }
+  
+  .footer-logo { font-size: 28px; }
+  
+  .footer-section ul { list-style: none; }
+  .footer-section ul li { margin: 8px 0; }
+  
+  .footer-section ul li a {
+    color: #d1d5db;
+    text-decoration: none;
+  }
+  .footer-section ul li a:hover { color: #ffffff; }
+  
+  /* SOCIAL ICONS */
+  .social-icons a {
+    color: #d1d5db;
+    margin-right: 12px;
+    font-size: 22px;
+  }
+  .social-icons a:hover { color: #ffffff; }
+  
+  /* MAP */
+  .footer-map {
+    width: 100%;
+    height: 160px;
+    border-radius: 6px;
+    border: 0;
+  }
+  
+  .footer-bottom {
+    text-align: center;
+    margin-top: 35px;
+    padding-top: 10px;
+    font-size: 14px;
+    /* border-top: 1px solid #374151; */
+  }
+  
+  /* ===== RESPONSIVE ===== */
+  
+  @media (max-width: 992px) {
+    .nav-links { gap: 20px; }
+  }
+  
+  @media (max-width: 768px) {
+    .menu-icon { display: block; }
+  
+    .nav-links,
+    .login-btn,
+    .dropdown-menu,
+    .profile-icon {
+      display: none;
+    }
+  
+    .nav-links.active {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      background: linear-gradient(135deg, #647e2b, #2563eb);
+      width: 260px;
+      position: absolute;
+      top: 65px;
+      left: 0;
+      padding: 20px 0;
+    }
+  
+    .dropdown-menu {
+      position: relative;
+      background: #1f2937;
+      top: 0;
+      width: 100%;
+    }
+  
+    .dropdown-menu li a {
+      padding: 0px 0px;
+      display: block;
+      position: relative;
+    }
+  
+    .footer-container {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .header { padding: 12px 20px; }
+    .logo { font-size: 22px; }
+  }
+  
+
+
+  </style>
 </head>
 
 <body>
-<!-- ===== HEADER ===== -->
-<header class="header">
-  <div class="logo">STACKLY</div>
 
-  <nav class="nav">
-    <ul class="nav-links">
+  <header class="header">
+    <a href="home2.html">
+      <img src="./logo.webp" alt="Stackly Logo" style="height: 60px;">
+    </a>
+  
 
-      <!-- HOME DROPDOWN -->
-      <li class="dropdown">
-        <a href="./index.html">Home1 <i class="fa fa-angle-down"></i></a>
-        <ul class="dropdown-menu">
-          <li><a href="./home2.html">Home2</a></li>
-         
-        </ul>
-      </li>
+    <nav class="navbar" id="navbar">
+      <a href="./home2.html">Home2</a>
+      <a href="./index.html">Home1</a>
+        <a href="./profile.html">My Profile</a>
+        <a href="./IT-ticket.html">IT tickets</a>
+        <a href="./dashboard.html">Dashboard</a>
+        <a href="./login1.html">Login</a>
+    </nav>
 
-      <li><a href="./about.html">About</a></li>
-      <li><a href="./services.html">Services</a></li>
-
-      <!-- TICKET DROPDOWN -->
-      <li class="dropdown">
-        <a href="#">Tickets <i class="fa fa-angle-down"></i></a>
-        <ul class="dropdown-menu">
-          <li><a href="./ticket.html">Create Ticket</a></li>
-          <li><a href="./ticket-details.html">Ticket Details</a></li>
-        </ul>
-      </li>
-
-      <!-- <li><a href="./profile.html">Profile</a></li> -->
-      <li><a href="./contact.html">Contact</a></li>
-      <li><a href="./admin-dashboard.html">Dashboard</a></li>
-    </ul>
-  </nav>
-
-  <!-- LOGIN BUTTON -->
-  <a href="./auth.html" class="login-btn">Login</a>
-
-  <!-- PROFILE LOGO -->
-  <div class="profile-icon">
-    <a href="./profile.html">
-    <i class="fa fa-user-circle"></i>
-  </div>
-
-  <!-- MENU ICON -->
-  <div class="menu-icon">
-    <i class="fa fa-bars"></i>
-  </div>
+    <!-- Hamburger -->
+    <div class="menu-icon" id="menuIcon">&#9776;</div>
 </header>
+  <!-- PROFILE SECTION -->
+  <section class="profile-section">
 
+    <!-- LEFT CARD -->
+    <div class="profile-card">
 
+      <img src="https://images.unsplash.com/photo-1529665253569-6d01c0eaf7b6?w=800"
+           class="profile-img">
 
-  <main class="container profile-page">
-    <section class="profile-card card">
-      <div class="profile-left">
-        <div class="avatar-large">AS</div>
-        <h2 id="userName">Abinaya S</h2>
-        <p class="muted" id="userRole">User</p>
-        <div class="profile-actions">
-          <button class="btn primary" id="editProfileBtn"><i class="fa fa-pen"></i> Edit Profile</button>
-          <button class="btn ghost" id="logoutBtn">Logout</button>
-        </div>
+      <h2 class="emp-name">Abinaya</h2>
+      <p class="emp-role">Software Developer</p>
+
+      <div class="info-grid">
+        <div class="info-box">Payslip</div>
+        <div class="info-box">Leave Balance</div>
+        <div class="info-box">Attendance</div>
+        <div class="info-box">IT Tickets</div>
       </div>
 
-      <div class="profile-right">
-        <h4>Contact</h4>
-        <p id="userEmail">abinaya@stackly.com</p>
-        <p id="userPhone">+91 98765 43210</p>
+      <div class="emp-details">
+        <p><strong>ID:</strong> EMP-45321</p>
+        <p><strong>Department:</strong> IT</p>
+        <p><strong>Location:</strong> Bangalore</p>
+      </div>
 
-        <h4>Preferences</h4>
-        <label class="pref"><input type="checkbox" id="prefEmail" checked/> Email notifications</label>
-        <label class="pref"><input type="checkbox" id="prefSMS"/> SMS alerts</label>
-
-        <h4>Recent Activity</h4>
-        <ul class="activity-list" id="activityList">
-          <li>Logged in — Nov 24, 2025</li>
-          <li>Viewed Ticket TCK-00124 — Nov 20, 2025</li>
-        </ul>
-      </div>
-    </section>
-
-    <section class="ticket-history card">
-      <h3>Your Tickets</h3>
-      <table id="userTickets">
-        <thead><tr><th>ID</th><th>Issue</th><th>Priority</th><th>Status</th></tr></thead>
-        <tbody><!-- JS populate --></tbody>
-      </table>
-    </section>
-  </main>
-
- <!-- ===== FOOTER ===== -->
-<footer class="footer">
-    <div class="footer-container">
-  
-      <!-- LOGO -->
-      <div class="footer-section">
-        <h2 class="footer-logo">STACKLY</h2>
-        <p>Delivering reliable IT solutions with modern workflow automation.</p>
-      </div>
-  
-      <!-- QUICK LINKS -->
-      <div class="footer-section">
-        <h3>Quick Links</h3>
-        <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Tickets</a></li>
-          <li><a href="#">Profile</a></li>
-          <li><a href="#">Dashboard</a></li>
-          <li><a href="#">Login</a></li>
-        </ul>
-      </div>
-  
-      <!-- GET IN TOUCH -->
-      <div class="footer-section">
-        <h3>Get in Touch</h3>
-        <p>Email: support@stackly.com</p>
-        <p>Phone: +91 98765 43210</p>
-  
-        <div class="social-icons">
-          <a href="#"><i class="fa-brands fa-facebook"></i></a>
-          <a href="#"><i class="fa-brands fa-instagram"></i></a>
-          <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-          <a href="#"><i class="fa-brands fa-linkedin"></i></a>
-        </div>
-      </div>
-  
-      <!-- MAP -->
-      <div class="footer-section">
-        <h3>Location</h3>
-        <iframe 
-        src="https://maps.google.com/maps?q=chennai&t=&z=13&ie=UTF8&iwloc=&output=embed"
-        class="footer-map">
-      </iframe>
-      </div>
-  
-      
-      </div>
-    </footer>
-  
     </div>
-  
-    <div class="footer-bottom">
-      © 2025 Stackly. All rights reserved.
+
+    <!-- RIGHT FORM -->
+    <form class="profile-form">
+      <h2>Update Profile Information</h2>
+
+      <label>Full Name</label>
+      <input type="text" value="Abinaya">
+
+      <label>Email</label>
+      <input type="email" value="abinaya@example.com">
+
+      <label>Mobile</label>
+      <input type="text" value="9876543210">
+
+      <label>Address</label>
+      <textarea rows="3">Bangalore, India</textarea>
+
+      <button type="submit">Update Profile</button>
+    </form>
+
+  </section>
+
+  <!-- GSAP ANIMATIONS -->
+  <script>
+    gsap.from(".profile-card", { duration: 1, y: 50, opacity: 0, ease: "power3.out" });
+    gsap.from(".profile-form", { duration: 1, y: 60, opacity: 0, delay: 0.3, ease: "power3.out" });
+    gsap.from(".info-box", { duration: 0.8, opacity: 0, scale: 0.7, stagger: 0.2 });
+
+</script>
+<script>
+  // Mobile Toggle
+  const menuIcon = document.getElementById("menuIcon");
+  const navbar = document.getElementById("navbar");
+
+  menuIcon.addEventListener("click", () => {
+      navbar.classList.toggle("active");
+  });
+</script>
+  </script>
+   <!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="footer-container">
+
+    <!-- LOGO -->
+    <div class="footer-section">
+      <img src="./logo.webp" alt="Stackly Logo" class="footer-logo"  style="height:60px;">
+      <!-- <p>Delivering reliable IT solutions with modern workflow automation.</p> -->
+    </div>
+
+    <!-- QUICK LINKS -->
+    <div class="footer-section">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="./home2.html">Home</a></li>
+        <li><a href="./IT-ticket.html">Tickets</a></li>
+        <li><a href="./profile.html">Profile</a></li>
+        <li><a href="./dashboard.html">Dashboard</a></li>
+        <li><a href="./login1.html">Login</a></li>
+      </ul>
+    </div>
+
+    <!-- GET IN TOUCH -->
+    <div class="footer-section">
+      <h3>Get in Touch</h3>
+      <p>Email: support@stackly.com</p>
+      <p>Phone: +91 98765 43210</p>
+
+      <div class="social-icons">
+        <a href="./404.html"><i class="fa-brands fa-facebook"></i></a>
+        <a href="./404.html"><i class="fa-brands fa-instagram"></i></a>
+        <a href="./404.html"><i class="fa-brands fa-x-twitter"></i></a>
+        <a href="./404.html"><i class="fa-brands fa-linkedin"></i></a>
+      </div>
+    </div>
+
+    <!-- MAP -->
+    <div class="footer-section">
+      <h3>Location</h3>
+      <iframe 
+      src="https://maps.google.com/maps?q=chennai&t=&z=13&ie=UTF8&iwloc=&output=embed"
+      class="footer-map">
+    </iframe>
+    </div>
+
+    
     </div>
   </footer>
-  
-  <!-- Script -->
-  <script src="script.js"></script>
-  <script src="profile.js"></script>
 </body>
+<script>
+  // Mobile Toggle
+  const menuIcon = document.getElementById("menuIcon");
+  const navbar = document.getElementById("navbar");
+
+  menuIcon.addEventListener("click", () => {
+      navbar.classList.toggle("active");
+  });
+</script>
+
 </html>
