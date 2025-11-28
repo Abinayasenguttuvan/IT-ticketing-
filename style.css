@@ -4,12 +4,12 @@
 /* ===== HEADER ===== */
 .header {
   width: 100%;
-  background:rgb(58, 123, 136);
+  background:rgb(240, 241, 241);
   padding: 15px 35px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  color: white;
+  /* color: white; */
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -61,6 +61,7 @@
   display: block; 
   
 }
+
 /* MOBILE */
 .menu-icon {
   display: none;
@@ -281,12 +282,13 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-    background: linear-gradient(135deg, #647e2b, #2563eb);
+    background:rgb(187, 215, 187);
     width: 260px;
     position: absolute;
     top: 65px;
     left: 0;
     padding: 20px 0;
+    align-items: center;
   }
 
   /* .dropdown-menu {
@@ -327,3 +329,6 @@
   .dropdown-toggle i {
     margin-left: 6px;
   }
+
+
+  

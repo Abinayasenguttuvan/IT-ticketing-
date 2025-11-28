@@ -1,605 +1,288 @@
-/* RESET */
-* { margin: 0; padding: 0; box-sizing: border-box; font-family: Poppins, sans-serif; }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stackly ITSM – ServiceNow Style</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<style>
+    /* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Poppins, sans-serif;
+}
 
-/* ===== HEADER ===== */
+/* HEADER */
 .header {
   width: 100%;
-  background:rgb(58, 123, 136);
+  background: rgb(58, 123, 136);
   padding: 15px 35px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   color: white;
-  position: fixed;
+  position: sticky;
   top: 0;
   z-index: 1000;
-}
-
-.logo {
-  font-size: 26px;
-  font-weight: 700;
 }
 
 /* NAVIGATION */
 .nav-links {
   display: flex;
   list-style: none;
-  gap: 25px;
+  gap: 23px;
 }
 
-.nav-links a {
-  color: #d1d5db;
+.nav-links li a {
+  color: white;
   text-decoration: none;
   font-weight: 500;
-  transition: 0.3s;
 }
 
-.nav-links a:hover { color: #ffffff; }
-
 /* DROPDOWN */
-.dropdown { position: relative; }
+.dropdown {
+  position: relative;
+}
 
 .dropdown-menu {
-  display: none;
-  position: static;
+  position: absolute;
+  background: white;
   list-style: none;
-  top: 40px;
-  left: -100%;
-  width: 100px;
-  height:calc(100vh-70vh);
+  min-width: 160px;
+  padding: 10px 0;
+  display: none;
   border-radius: 6px;
-  padding: 8px 0;
+  top: 40px;
 }
 
 .dropdown-menu li a {
-  /* padding: 10px 15px; */
+  color: black;
+  padding: 10px 15px;
   display: block;
 }
 
-.dropdown:hover .dropdown-menu { 
-  display: block; 
+.dropdown:hover .dropdown-menu {
+  display: block; /* Desktop hover */
 }
 
-
-/* LOGIN BUTTON */
-.login-btn {
-  background: #2563eb;
-  padding: 8px 18px;
-  border-radius: 6px;
-  color: white;
-  text-decoration: none;
-  margin-right: 10px;
-  font-weight: 600;
-}
-
-/* PROFILE ICON */
-.profile-icon {
-  font-size: 27px;
-  cursor: pointer;
-}
-
-/* HAMBURGER */
+/* MOBILE */
 .menu-icon {
-  font-size: 28px;
   display: none;
+  font-size: 28px;
   cursor: pointer;
 }
 
+/* ---------- RESPONSIVE ---------- */
+@media(max-width: 768px) {
 
-/* HERO SECTION */
-.hero {
-    margin-top: 90px;
-    padding: 80px 5%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
+  .menu-icon {
+    display: block;
   }
 
-  .hero-text {
-    max-width: 550px;
-  }
-
-  .hero-text h1 {
-    font-size: 48px;
-    color: #0b2a66;
-    line-height: 1.3;
-  }
-
-  .hero-text p {
-    margin: 15px 0;
-    font-size: 18px;
-    color: #444;
-  }
-
-  .hero-btn {
-    background: #0a4cff;
-    padding: 12px 25px;
-    border-radius: 6px;
-    color: #fff;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 17px;
-    display: inline-block;
-    margin-top: 10px;
-  }
-
-  .hero-img img {
-    width: 500px;
-    max-width: 100%;
-  }
-
-  /* FEATURES */
-  .features {
-    background:rgb(58, 123, 136);;
-    padding: 60px 5%;
-    text-align: center;
-  }
-
-  .features h2 {
-    font-size: 32px;
-    margin-bottom: 30px;
-    color: #0b2a66;
-  }
-
-  .feature-box {
-    display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
-    gap: 25px;
-  }
-
-  .feature {
-    background: #fff;
-    padding: 25px;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-    transition: 0.3s;
-  }
-
-  .feature i {
-    font-size: 40px;
-    color: #0a4cff;
-    margin-bottom: 10px;
-  }
-
-  .feature:hover {
-    transform: translateY(-5px);
-  }
-
-  /* HOW IT WORKS */
-  .how {
-    padding: 70px 5%;
-    background:white;
-  }
-
-  .how h2 {
-    text-align: center;
-    margin-bottom: 30px;
-    font-size: 32px;
-    color: #0b2a66;
-  }
-
-  .step-box {
-    display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(260px,1fr));
-    gap: 25px;
-  }
-
-  .step {
-    background: linear-gradient(135deg, #647e2b, #2563eb);
-    padding: 25px;
-    border-radius: 10px;
-    text-align: center;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
-  }
-
-  .step span {
-    background: #0a4cff;
-    color: #fff;
-    width: 45px;
-    height: 45px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    font-size: 20px;
-    margin-bottom: 10px;
-  }
-/* ===== FOOTER ===== */
-.footer {
-  background: url('https://www.shutterstock.com/image-illustration/abstract-art-blue-paint-background-260nw-2461406397.jpg')no-repeat center center/cover;;
-  color: white;
-  padding: 50px 35px;
-  margin-top: 120px;
-}
-
-.footer-container {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 35px;
-}
-
-.footer-logo { font-size: 28px; }
-
-.footer-section ul { list-style: none; }
-.footer-section ul li { margin: 8px 0; }
-
-.footer-section ul li a {
-  color: #d1d5db;
-  text-decoration: none;
-}
-.footer-section ul li a:hover { color: #ffffff; }
-
-/* SOCIAL ICONS */
-.social-icons a {
-  color: #d1d5db;
-  margin-right: 12px;
-  font-size: 22px;
-}
-.social-icons a:hover { color: #ffffff; }
-
-/* MAP */
-.footer-map {
-  width: 100%;
-  height: 160px;
-  border-radius: 6px;
-  border: 0;
-}
-
-.footer-bottom {
-  text-align: center;
-  margin-top: 35px;
-  padding-top: 10px;
-  font-size: 14px;
-  border-top: 1px solid #374151;
-}
-
-/* ===== RESPONSIVE ===== */
-
-@media (max-width: 992px) {
-  .nav-links { gap: 20px; }
-}
-
-@media (max-width: 768px) {
-  .menu-icon { display: block; }
-
-  .nav-links,
-  .login-btn,
-  .profile-icon {
-    display: none;
+  .nav-links {
+    position: absolute;
+    top: 70px;
+    left: -100%;
+    width: 260px;
+    flex-direction: column;
+    background: rgb(58,123,136);
+    padding: 20px;
+    transition: 0.3s ease-in-out;
   }
 
   .nav-links.active {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    background: #111827;
-    position: absolute;
-    top: 65px;
     left: 0;
-    padding: 20px 0;
   }
 
+  /* ENABLE CLICK DROPDOWN */
   .dropdown-menu {
-    position: relative;
-    background: #1f2937;
-    top: 0;
-    width: 100%;
-  }
-
-  .footer-container {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 480px) {
-  .header { padding: 12px 20px; }
-  .logo { font-size: 22px; }
-}
-
-
-
-
-
-
-////////////////////
-
-
-
-/* RESET */
-* { margin: 0; padding: 0; box-sizing: border-box; font-family: Poppins, sans-serif; }
-
-/* ===== HEADER ===== */
-.header {
-  width: 100%;
-  background:rgb(58, 123, 136);
-  padding: 15px 35px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  color: white;
-  position: fixed;
-  top: 0;
-  z-index: 1000;
-}
-
-.logo {
-  font-size: 26px;
-  font-weight: 700;
-}
-
-/* NAVIGATION */
-.nav-links {
-  display: flex;
-  list-style: none;
-  gap: 25px;
-}
-
-.nav-links a {
-  color: #d1d5db;
-  text-decoration: none;
-  font-weight: 500;
-  transition: 0.3s;
-}
-
-.nav-links a:hover { color: #ffffff; }
-
-/* DROPDOWN */
-.dropdown { position: relative; }
-
-.dropdown-menu {
-  display: none;
-  position: static;
-  list-style: none;
-  top: 40px;
-  left: 0;
-  width: 170px;
-  border-radius: 6px;
-  padding: 8px 0;
-}
-
-.dropdown-menu li a {
-  /* padding: 10px 15px; */
-  display: block;
-}
-
-.dropdown:hover .dropdown-menu { 
-  display: block; 
-}
-
-
-/* LOGIN BUTTON */
-.login-btn {
-  background: #2563eb;
-  padding: 8px 18px;
-  border-radius: 6px;
-  color: white;
-  text-decoration: none;
-  margin-right: 10px;
-  font-weight: 600;
-}
-
-/* PROFILE ICON */
-.profile-icon {
-  font-size: 27px;
-  cursor: pointer;
-}
-
-/* HAMBURGER */
-.menu-icon {
-  font-size: 28px;
-  display: none;
-  cursor: pointer;
-}
-
-
-/* HERO SECTION */
-.hero {
-    margin-top: 90px;
-    padding: 80px 5%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-  }
-
-  .hero-text {
-    max-width: 550px;
-  }
-
-  .hero-text h1 {
-    font-size: 48px;
-    color: #0b2a66;
-    line-height: 1.3;
-  }
-
-  .hero-text p {
-    margin: 15px 0;
-    font-size: 18px;
-    color: #444;
-  }
-
-  .hero-btn {
-    background: #0a4cff;
-    padding: 12px 25px;
-    border-radius: 6px;
-    color: #fff;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 17px;
-    display: inline-block;
-    margin-top: 10px;
-  }
-
-  .hero-img img {
-    width: 500px;
-    max-width: 100%;
-  }
-
-  /* FEATURES */
-  .features {
-    background:rgb(58, 123, 136);;
-    padding: 60px 5%;
-    text-align: center;
-  }
-
-  .features h2 {
-    font-size: 32px;
-    margin-bottom: 30px;
-    color: #0b2a66;
-  }
-
-  .feature-box {
-    display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
-    gap: 25px;
-  }
-
-  .feature {
-    background: #fff;
-    padding: 25px;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-    transition: 0.3s;
-  }
-
-  .feature i {
-    font-size: 40px;
-    color: #0a4cff;
-    margin-bottom: 10px;
-  }
-
-  .feature:hover {
-    transform: translateY(-5px);
-  }
-
-  /* HOW IT WORKS */
-  .how {
-    padding: 70px 5%;
-    background:white;
-  }
-
-  .how h2 {
-    text-align: center;
-    margin-bottom: 30px;
-    font-size: 32px;
-    color: #0b2a66;
-  }
-
-  .step-box {
-    display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(260px,1fr));
-    gap: 25px;
-  }
-
-  .step {
-    background: linear-gradient(135deg, #647e2b, #2563eb);
-    padding: 25px;
-    border-radius: 10px;
-    text-align: center;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
-  }
-
-  .step span {
-    background: #0a4cff;
-    color: #fff;
-    width: 45px;
-    height: 45px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    font-size: 20px;
-    margin-bottom: 10px;
-  }
-/* ===== FOOTER ===== */
-.footer {
-  background: url('https://www.shutterstock.com/image-illustration/abstract-art-blue-paint-background-260nw-2461406397.jpg')no-repeat center center/cover;;
-  color: white;
-  padding: 50px 35px;
-  margin-top: 120px;
-}
-
-.footer-container {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 35px;
-}
-
-.footer-logo { font-size: 28px; }
-
-.footer-section ul { list-style: none; }
-.footer-section ul li { margin: 8px 0; }
-
-.footer-section ul li a {
-  color: #d1d5db;
-  text-decoration: none;
-}
-.footer-section ul li a:hover { color: #ffffff; }
-
-/* SOCIAL ICONS */
-.social-icons a {
-  color: #d1d5db;
-  margin-right: 12px;
-  font-size: 22px;
-}
-.social-icons a:hover { color: #ffffff; }
-
-/* MAP */
-.footer-map {
-  width: 100%;
-  height: 160px;
-  border-radius: 6px;
-  border: 0;
-}
-
-.footer-bottom {
-  text-align: center;
-  margin-top: 35px;
-  padding-top: 10px;
-  font-size: 14px;
-  border-top: 1px solid #374151;
-}
-
-/* ===== RESPONSIVE ===== */
-
-@media (max-width: 992px) {
-  .nav-links { gap: 20px; }
-}
-
-@media (max-width: 768px) {
-  .menu-icon { display: block; }
-
-  .nav-links,
-  .login-btn,
-  .profile-icon {
+    position: static;
+    background: rgb(255,255,255);
     display: none;
-  }
-
-  .nav-links.active {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    background: #111827;
-    position: absolute;
-    top: 65px;
-    left: 0;
-    padding: 20px 0;
-  }
-
-  .dropdown-menu {
-    position: relative;
-    background: #1f2937;
-    top: 0;
     width: 100%;
   }
 
-  .footer-container {
-    grid-template-columns: 1fr;
+  .dropdown.open .dropdown-menu {
+    display: block;
+  }
+
+  .dropdown-toggle i {
+    margin-left: 6px;
   }
 }
 
-@media (max-width: 480px) {
-  .header { padding: 12px 20px; }
-  .logo { font-size: 22px; }
-}
+</style>
+
+<body>
+
+<!-- HEADER -->
+<header class="header">
+
+  <a href="index.html">
+    <img src="./logo.webp" alt="Stackly Logo" style="height: 60px;">
+  </a>
+
+  <!-- NAVIGATION -->
+  <nav class="nav">
+    <ul class="nav-links">
+
+      <!-- HOME DROPDOWN -->
+      <li class="dropdown">
+        <a class="dropdown-toggle">Home <i class="fa fa-angle-down"></i></a>
+        <ul class="dropdown-menu">
+          <li><a href="./home2.html">Home2</a></li>
+          <!-- <li><a href="./home2.html">Home2</a></li> -->
+        </ul>
+      </li>
+
+      <li><a href="./about.html">About</a></li>
+      <li><a href="./services.html">Services</a></li>
+
+      <!-- TICKET DROPDOWN -->
+      <li class="dropdown">
+        <a class="dropdown-toggle">Tickets <i class="fa fa-angle-down"></i></a>
+        <ul class="dropdown-menu">
+          <li><a href="./ticket.html">Ticket</a></li>
+          <li><a href="./ticket-details.html">Ticket Details</a></li>
+        </ul>
+      </li>
+
+      <li><a href="./contact.html">Contact</a></li>
+      <li><a href="./admin-dashboard.html">Dashboard</a></li>
+      <li><a href="./login.html">Login</a></li>
+
+    </ul>
+  </nav>
+
+  <!-- HAMBURGER -->
+  <div class="menu-icon">
+    <i class="fa fa-bars"></i>
+  </div>
+
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-text">
+    <h1>Streamline Your IT Support with Stackly Ticketing</h1>
+    <p>Submit, track, and resolve IT issues faster with an intuitive ticketing tool designed for efficiency and transparency.</p>
+    <a href="./auth.html" class="hero-btn">Get Started</a>
+  </div>
+
+  <div class="hero-img">
+    <img src="https://cdn-icons-png.flaticon.com/512/9412/9412103.png" alt="IT Ticketing">
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="features">
+  <h2>Why Choose Stackly?</h2>
+  <div class="feature-box">
+
+    <div class="feature">
+      <i class="fa-solid fa-ticket"></i>
+      <h3>Easy Ticket Creation</h3>
+      <p>Create support tickets easily with simple forms and priority options.</p>
+    </div>
+
+    <div class="feature">
+      <i class="fa-solid fa-chart-line"></i>
+      <h3>Track Progress</h3>
+      <p>Monitor ticket updates, status, and resolution in real-time.</p>
+    </div>
+
+    <div class="feature">
+      <i class="fa-solid fa-users"></i>
+      <h3>User Friendly</h3>
+      <p>Designed for both users and admins with clean UI layouts.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how">
+  <h2>How It Works</h2>
+  <div class="step-box">
+
+    <div class="step">
+      <span>1</span>
+      <h3>Submit Issue</h3>
+      <p>Provide details, screenshots, and priority level.</p>
+    </div>
+
+    <div class="step">
+      <span>2</span>
+      <h3>IT Assigns</h3>
+      <p>Tickets are assigned to the right technician instantly.</p>
+    </div>
+
+    <div class="step">
+      <span>3</span>
+      <h3>Track & Resolve</h3>
+      <p>Follow updates until your issue is completely resolved.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-container">
+
+    <div class="footer-section">
+      <img src="./logo.webp" style="height:60px;">
+      <p>Delivering reliable IT solutions with modern workflow automation.</p>
+    </div>
+
+    <div class="footer-section">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="./index.html">Home</a></li>
+        <li><a href="./about.html">About</a></li>
+        <li><a href="./services.html">Services</a></li>
+        <li><a href="./ticket.html">Tickets</a></li>
+        <li><a href="./admin-dashboard.html">Dashboard</a></li>
+        <li><a href="./contact.html">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-section">
+      <h3>Contact</h3>
+      <p>Email: support@thestackly.com</p>
+      <p>Phone: +91 98765 43210</p>
+    </div>
+
+    <div class="footer-section">
+      <h3>Location</h3>
+      <iframe class="footer-map" src="https://www.google.com/maps?q=Salem&output=embed"></iframe>
+    </div>
+
+  </div>
+</footer>
+
+<script >
+    // MOBILE MENU
+const menuIcon = document.querySelector(".menu-icon");
+const navLinks = document.querySelector(".nav-links");
+
+menuIcon.addEventListener("click", () => {
+  navLinks.classList.toggle("active");
+});
+
+// MOBILE DROPDOWN
+document.querySelectorAll(".dropdown-toggle").forEach(btn => {
+  btn.addEventListener("click", () => {
+    let parent = btn.parentElement;
+    parent.classList.toggle("open");
+  });
+});
+
+</script>
+</body>
+</html>

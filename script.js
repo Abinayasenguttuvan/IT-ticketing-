@@ -42,6 +42,9 @@ dropdowns.forEach(drop => {
   });
 });
 
+
+
+
 // // Close dropdown when clicking outside
 // document.addEventListener("click", (e) => {
 //   dropdowns.forEach(drop => {
@@ -84,6 +87,18 @@ document.addEventListener("click", (e) => {
     }
   });
 });
+
+
+
+
+
+
+
+
+
+
+
+
 
   
   
