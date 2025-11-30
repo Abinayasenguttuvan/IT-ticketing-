@@ -1,233 +1,536 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IT Solutions & Technology</title>
-
-    <!-- CSS Files -->
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="home.css">
-    <link rel="stylesheet" href="index.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stackly ITSM – ServiceNow Style</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
-    
+<style>
+  /* ===== HERO SECTION WITH BACKGROUND IMAGE ===== */
+.hero {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 60px 10%;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+
+  /* Background Image */
+  background-image: url("./img1.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Dark overlay (ServiceNow style) */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  /* background: rgba(0, 0, 0, 0.55); */
+  backdrop-filter: blur(1px);
+  z-index: 0;
+}
+
+/* Text stays above overlay */
+.hero .hero-text,
+.hero .hero-img {
+  position: relative;
+  z-index: 1;
+}
+
+
+@media (max-width: 900px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 40px 7%;
+    height: auto;
+    padding-top: 120px;
+  }
+
+  .hero-img img {
+    width: 60%;
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 500px) {
+  .hero-img img {
+    width: 80%;
+  }
+}
+
+/* Feature Card Base */
+.feature-box {
+  display: flex;
+  gap: 25px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.feature {
+  background: #ffffff;
+  padding: 30px 25px;
+  border-radius: 15px;
+  text-align: center;
+  width: 300px;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  cursor: pointer;
+}
+
+/* Icon Style */
+.feature i {
+  font-size: 45px;
+  margin-bottom: 15px;
+  color: #0ea5e9; /* sky-blue */
+  transition: 0.3s ease;
+}
+
+/* Title */
+.feature h3 {
+  margin: 10px 0;
+  font-size: 20px;
+}
+
+/* Hover Effects */
+.feature:hover {
+  transform: translateY(-12px) scale(1.03);
+  background: linear-gradient(135deg, #647e2b, #2563eb);
+  color: #fff;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+/* Change icon + text color on hover */
+.feature:hover i {
+  color: #fff;
+}
+
+.feature:hover p {
+  color: #e8e8e8;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .feature {
+    width: 100%;
+  }
+}
+
+/* Section styling */
+.how {
+  
+  text-align: center;
+  padding: 80px 20px;
+  background: #f5f8ff;
+}
+
+.how h2 {
+  font-size: 32px;
+  /* color: #1b2945; */
+  margin-bottom: 40px;
+  opacity: 0;
+  animation: fadeUp 1s forwards ease-in-out;
+}
+
+/* Step container */
+.step-box {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+/* Step card */
+.step {
+  background: linear-gradient(135deg, #647e2b, #2563eb);
+  width: 260px;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  transition: 0.4s ease;
+  cursor: pointer;
+  transform: translateY(40px);
+  opacity: 0;
+}
+
+/* Fade-up animation with delay for stagger effect */
+.step:nth-child(1) { animation: fadeUp 0.8s forwards ease-in-out 0.2s; }
+.step:nth-child(2) { animation: fadeUp 0.8s forwards ease-in-out 0.4s; }
+.step:nth-child(3) { animation: fadeUp 0.8s forwards ease-in-out 0.6s; }
+
+/* Hover effects */
+.step:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 10px 25px rgba(118, 175, 193, 0.4);
+}
+
+/* Number styling */
+.step span {
+  font-size: 38px;
+  font-weight: bold;
+  color: #4cc9f0;
+  margin-bottom: 10px;
+  display: inline-block;
+  transition: 0.3s ease;
+}
+
+/* Number hover animation */
+.step:hover span {
+  transform: rotate(10deg) scale(1.2);
+}
+
+/* Title */
+.step h3 {
+  margin-bottom: 10px;
+  font-size: 22px;
+  color: #1b2945;
+}
+
+/* Text */
+.step p {
+  color: #444;
+  line-height: 1.5;
+}
+
+/* Fade-up animation */
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.how {
+  text-align: center;
+  padding: 80px 20px;
+  background: linear-gradient(135deg, #0f1f3d, #1e335c);
+  color: #fff;
+}
+.how h2,
+.step h3,
+.step p,
+.step span {
+  color: #fff;
+}
+/* .step {
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.2);
+} */
+
+
+/* ============================
+   SERVICE NOW STYLE SCROLLING SECTION
+   ============================ */
+
+   .sn-scroll-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 80px 10%;
+  background: #425d90;
+  color: #fff;
+  gap: 40px;
+  overflow: hidden;
+  position: relative;
+}
+
+.sn-content {
+  width: 50%;
+}
+
+.sn-content h2 {
+  font-size: 34px;
+  margin-bottom: 20px;
+  color: #4cc9f0;
+  text-shadow: 0 0 4px rgba(255,255,255,0.3);
+}
+
+.sn-content p {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  color: #d9e6ff;
+}
+
+.sn-list li {
+  list-style: none;
+  margin-bottom: 12px;
+  font-size: 17px;
+  color: #e1eaff;
+}
+
+.sn-list li i {
+  color: #25d366;
+  margin-right: 10px;
+  font-size: 18px;
+}
+
+
+/* ===== VERTICAL FEED SECTION ===== */
+.vertical-feed {
+  padding: 60px 10%;
+  background:rgb(58, 123, 136);
+  color: #fff;
+  text-align: center;
+  overflow: hidden;
+}
+
+.vertical-feed h2 {
+  font-size: 30px;
+  margin-bottom: 25px;
+  color: #4cc9f0;
+}
+
+/* Container height controls visible items */
+.feed-container {
+  background: linear-gradient(135deg, #647e2b, #2563eb);
+  height: 160px; /* Shows 3–4 items at a time */
+  overflow: hidden;
+  position: relative;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.2);
+}
+
+/* List styling */
+.feed-list {
+  
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  animation: scrollFeed 14s linear infinite;
+}
+
+.feed-list li {
+  padding: 15px 10px;
+  font-size: 18px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  background: rgba(19, 105, 235, 0.05);
+  transition: 0.3s ease;
+}
+
+/* Hover pause */
+.feed-container:hover .feed-list {
+  animation-play-state: paused;
+}
+
+/* Auto scroll animation */
+@keyframes scrollFeed {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
+}
+
+
+</style>
+
 <body>
+<!-- ===== HEADER ===== -->
+<header class="header">
+  <a href="index.html">
+    <img src="./logo.webp" alt="Stackly Logo" style="height: 60px; ">
+  </a>
+  <nav class="nav">
+    <ul class="nav-links">
 
-    <!-- ================= HEADER ================= -->
-    <header class="header">
-        <a href="index.html">   
-            <img src="./white.webp" alt="Stackly Logo" style="height: 60px; ">
-          </a>
+      <!-- HOME DROPDOWN -->
+      <li class="dropdown">
+        <a href="./index.html">Home1 <i class="fa fa-angle-down"></i></a>
+        <ul class="dropdown-menu">
+          <li><a href="./home2.html">Home2</a></li>
           
+        </ul>
+      </li>
 
-        <!-- <div class="logo">Tech<span>Solutions</span></div> -->
-
-        <!-- Navigation -->
-        <nav class="navbar">
-            <ul class="nav-links" >
-
-                <li class="dropdown">
-                    <a href="javascript:void(0)" class="dropdown-btn">Home <i class="fa-solid fa-caret-down"></i></a>
-                
-                    <ul class="dropdown-content">
-                        <li><a href="./index.html">Home 1</a></li>
-                        <li><a href="./home2.html">Home 2</a></li>
-                    </ul>
-                </li>
-                
-
-                <li><a href="./services.html">Services</a></li>
-                <li><a href="./about.html">About</a></li>
-                <li><a href="./blog.html">Blog</a></li>
-                <li><a href="./projects.html">Projects</a></li>
-                <li><a href="./dashbored.html">dashboard</a></li>
-                <li><a href="./contact.html">Contact</a></li>
-                <li><a href="./login.html">Login</a></li>
-
-            </ul>
-        </nav>
-
-
-        
-
-        <!-- Toggle -->
-        <div class="menu-toggle" id="menu-toggle">
-            <i class="fa-solid fa-bars"></i>
-        </div>
-
-    </header>
+      <li><a href="./about.html">About</a></li>
+      <li><a href="./services.html">Services</a></li>
 
 
     
-    
 
-    <!-- ============= HERO SECTION =============== -->
-    <section class="hero">
-        <div class="hero-content">
-            <h1>Next-Gen IT Solutions for Modern Businesses</h1>
-            <p>Cloud, Cybersecurity, AI Automation, App Development & More.</p><br>
+      <!-- TICKET DROPDOWN -->
+      <li class="dropdown">
+        <a href="./ticket.html">Tickets <i class="fa fa-angle-down"></i></a>
+        <ul class="dropdown-menu">
+          <li><a href="./ticket-details.html"> Ticket-details</a></li>
+        </ul>
+      </li>
 
-            <!-- <a href="./services.html" class="btn">Explore Services</a> -->
-            <button onclick="window.location.href='services.html'" class="btn">
-                Explore Services
-            </button><br><br><br>
-            
-        </div>
+      <!-- <li><a href="./profile.html">Profile</a></li> -->
+      <li><a href="./contact.html">Contact</a></li>
+      <li><a href="./admin-dashboard.html">Dashboard</a></li>
+      <li><a href="./login.html" >Login</a></li>
+    </ul>
+  </nav>
 
-        <div class="hero-images">
-            <img src="./ima.webp" class="img-1">
-            <img src="./ima2.webp" class="img-2">
-            <img src="./ima3.webp" class="img-3">
-        </div>
-    </section>
+  
 
-    <!-- ============= SERVICES SECTION =============== -->
-    <section class="services">
-        <h2>Our Key IT Services</h2>
+ 
+  
+  <!-- MENU ICON -->
+  <div class="menu-icon">
+    <i class="fa fa-bars"></i>
+  </div>
+</header>
 
-        <div class="service-container">
-
-            <div class="service-box">
-                <i class="fa-solid fa-cloud"></i>
-                <h3>Cloud Services</h3>
-                <p>Scalable cloud migration & smart solutions.</p>
-            </div>
-
-            <div class="service-box">
-                <i class="fa-solid fa-lock"></i>
-                <h3>Cybersecurity</h3>
-                <p>Advanced threat protection & monitoring.</p>
-            </div>
-
-            <div class="service-box">
-                <i class="fa-solid fa-robot"></i>
-                <h3>AI Automation</h3>
-                <p>Automate business operations with AI.</p>
-            </div>
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-text">
+    <h1>Streamline Your IT Support with Stackly Ticketing</h1>
+    <p>Submit, track, and resolve IT issues faster with an intuitive ticketing tool designed for efficiency and transparency.</p>
+    <a href="./login.html" class="hero-btn">Get Started</a>
+  </div>
 
 
-            
+  <div class="hero-img">
+    <img src="https://cdn-icons-png.flaticon.com/512/9412/9412103.png" alt="IT Ticketing">
+  </div>
+</section>
 
-        </div>
-    </section>
+<!-- FEATURES -->
+<section class="features">
+  <h2>Why Choose Stackly?</h2>
+  <div class="feature-box">
+
+    <div class="feature">
+      <i class="fa-solid fa-ticket"></i>
+      <h3>Easy Ticket Creation</h3>
+      <p>Create support tickets with simple forms and quick priority options.</p>
+    </div>
+
+    <div class="feature">
+      <i class="fa-solid fa-chart-line"></i>
+      <h3>Track Progress</h3>
+      <p>Monitor ticket status, updates, and resolution in real-time.</p>
+    </div>
+
+    <div class="feature">
+      <i class="fa-solid fa-users"></i>
+      <h3>User Friendly</h3>
+      <p>Designed for both users and admins with clean UI layouts.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how">
+  <h2>How It Works</h2>
+  <div class="step-box">
+
+    <div class="step">
+      <span>1</span>
+      <h3>Submit Issue</h3>
+      <p>Provide details, screenshots, and priority levels.</p>
+    </div>
+
+    <div class="step">
+      <span>2</span>
+      <h3>IT Team Assigns</h3>
+      <p>Tickets get assigned instantly to the right technician.</p>
+    </div>
+
+    <div class="step">
+      <span>3</span>
+      <h3>Track & Resolve</h3>
+      <p>Get notified about every update until the issue is resolved.</p>
+    </div>
+
+  </div>
+</section>
+
+
+
+  <!-- ===== VERTICAL SCROLLING FEED ===== -->
+<section class="vertical-feed">
+  <h2>Live Ticket Updates</h2>
+
+  <div class="feed-container">
+    <ul class="feed-list">
+
+      <li>🚀 Automation applied — AI routing boosted efficiency by 35%.</li>
+      <li>🔧 Server downtime resolved in 22 minutes.</li>
+      <li>📩 12 new tickets created (mostly VPN login issues).</li>
+      <li>⚠️ SLA breach warning — 3 incidents close to deadline.</li>
+      <li>📊 Weekly performance report published.</li>
+      <li>🔒 Security patch deployed to all systems.</li>
+      <li>💬 User feedback: Faster response after new update.</li>
+      <li>🛠 Technician reassigned to high-priority issue #4562.</li>
+
+    </ul>
+  </div>
+</section>
 
 
 
 
 
-    <section class="news-area">
-        <h2 class="news-title">Our Latest News & Articles</h2>
-    
-        <div class="news-container">
-    
-            <div class="news-card">
-                <img src="./news.webp" alt="Latest News">
-                <div class="news-text">
-                    <h3>Latest News</h3>
-                    <p>Stay updated with the latest IT innovations and trends.</p>
-                </div>
-            </div>
-    
-            <div class="news-card">
-                <img src="./customer.webp" alt="Articles">
-                <div class="news-text">
-                    <h3>News & Articles</h3>
-                    <p>Expert insights to help your business grow with technology.</p>
-                </div>
-            </div>
-    
-            <div class="news-card">
-                <img src="./corporate.webp" alt="Marketing">
-                <div class="news-text">
-                    <h3>Marketing</h3>
-                    <p>Explore digital marketing strategies for modern IT solutions.</p>
-                </div>
-            </div>
-    
-            <div class="news-card">
-                <img src="./workflow.webp" alt="Strategy">
-                <div class="news-text">
-                    <h3>Strategy</h3>
-                    <p>Smart business strategies used by top tech companies.</p>
-                </div>
-            </div>
-    
-        </div>
-    </section>
-    
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="footer-container">
 
-    
-    
-<!-- <footer> -->
-    <footer class="footer">
-        <div class="footer-container">
-    
-            <!-- Logo / About -->
-            <div class="footer-box">
-                <img src="./white.webp" alt="Stackly Logo" class="footer-logo"  style="height:60px;">
+    <!-- LOGO -->
+    <div class="footer-section">
+      <img src="./logo.webp" alt="Stackly Logo" class="footer-logo"  style="height:60px;">
    
-               
-                <!-- <p>We deliver secure, scalable and innovative IT services for global businesses.</p><br> -->
-    
-                <!-- Social Icons -->
-                <div class="footer-social">
-                    <a href="./404.html"><i class="fa-brands fa-facebook-f"></i></a>
-                    <a href="./404.html"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="./404.html"><i class="fa-brands fa-linkedin-in"></i></a>
-                    <a href="./404.html"><i class="fa-brands fa-x-twitter"></i></a>
-                </div>
-            </div>
-    
-            <!-- Quick Links -->
-            <div class="footer-box">
-                <h3>Quick Links</h3>
-                <ul>
-                    <li><a href="./index.html">Home 1</a></li>
-                    <li><a href="./services.html">Services</a></li>
-                    <li><a href="./about.html">About</a></li>
-                    <li><a href="./blog.html">Blog</a></li>
-                    <li><a href="./projects.html">Projects</a></li>
-                    <li><a href="./contact.html">Contact</a></li>
-                </ul>
-            </div>
-    
-            <!-- Address -->
-            <div class="footer-box">
-                <h3>Our Address</h3>
-                <p>
-                    MMR complex.<br>
-                    chinna tirupathi kovil street,<br>
-                    salem,Tamil nadu-636008<br>
-                    <!-- Bengaluru, Karnataka – 560066<br> -->
-                    India<br><br>
-    
-                    <strong>Phone:</strong> +91 98765 43210<br>
-                    <strong>Email:</strong> support@thestackly.com
-                </p>
-            </div>
-    
-            <!-- Google Map -->
-            <div class="footer-box">
-                <h3>Location</h3>
-                <iframe 
-                src="https://www.google.com/maps?q=Salem%20Tamil%20Nadu&output=embed"
-                    allowfullscreen="" 
-                    loading="lazy">
-                </iframe>
-            </div>
-    
-        </div>
-    
-        <div class="footer-bottom">
-            <p>© 2025 stackly | All Rights Reserved</p>
-        </div>
-    </footer>
-    
-    <!-- Script -->
-    <script src="main.js"></script>
-    
+      <p>Delivering reliable IT solutions with modern workflow automation.</p>
+    </div>
 
-</body>
-</html>
+    <!-- QUICK LINKS -->
+    <div class="footer-section">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="./index.html">Home</a></li>
+        <li><a href="./about.html">About</a></li>
+        <li><a href="./services.html">services</a></li>
+        <li><a href="./ticket.html">Tickets</a></li>
+        <li><a href="./admin-dashboard.html">Dashboard</a></li>
+        <li><a href="./contact.html">contact</a></li>
+      </ul>
+    </div>
+
+    <!-- GET IN TOUCH -->
+    <div class="footer-section">
+      <h3>Get in Touch</h3>
+      <p>Email: support@thestackly.com</p>
+      <p>Phone: +91 98765 43210</p>
+
+      <div class="social-icons">
+        <a href="./404.html"><i class="fa-brands fa-facebook"></i></a>
+        <a href="./404.html"><i class="fa-brands fa-instagram"></i></a>
+        <a href="./404.html"><i class="fa-brands fa-x-twitter"></i></a>
+        <a href="./404.html"><i class="fa-brands fa-linkedin"></i></a>
+      </div>
+    </div>
+
+    <!-- MAP -->
+    <div class="footer-section">
+      <h3>Location</h3>
+      <iframe 
+      src="https://www.google.com/maps?q=Salem%20Tamil%20Nadu&output=embed"
+      class="footer-map">
+    </iframe>
+    </div> 
+    
+    <!-- <div class="footer-bottom">
+      <p>© 2025 Stackly. All rights reserved</p>
+    </div>
+  </footer>
+ -->
+
+<!-- Script -->
+<script src="script.js"></script>
