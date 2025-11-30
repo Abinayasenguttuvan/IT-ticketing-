@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IT Solutions & Technology</title>
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+
+<body>
+
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family: "Poppins", sans-serif;
+        }
+
+        body{
+            background:url('./back.webp') no-repeat center/cover fixed;
+        }
+
+        
+        .projects-section{
+            padding:80px 50px;
+            background:rgba(255,255,255,0.1);
+            backdrop-filter: blur(8px);
+            border-radius:20px;
+            margin:40px;
+        }
+
+        .projects-title{
+            text-align:center;
+            color:#fff;
+            font-size:42px;
+            font-weight:700;
+            margin-bottom:40px;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn{
+            from{opacity:0; transform:translateY(20px);} to{opacity:1; transform:translateY(0);}
+        }
+
+        .project-grid{
+            display:grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
+            gap:30px;
+        }
+
+        .project-card{
+            background:#ffffff;
+            border-radius:20px;
+            padding:20px;
+            box-shadow:0 10px 25px rgba(0,0,0,0.2);
+            transition:.4s;
+            overflow:hidden;
+            position:relative;
+        }
+
+        .project-card:hover{
+            transform:translateY(-10px) scale(1.03);
+            box-shadow:0 15px 35px rgba(0,0,0,0.3);
+        }
+
+        .project-img{
+            width:100%;
+            height:200px;
+            border-radius:15px;
+            object-fit:cover;
+            margin-bottom:15px;
+        }
+
+        .project-card h3{
+            margin-bottom:10px;
+            font-size:22px;
+            color:#333;
+            font-weight:700;
+        }
+
+        .project-card p{
+            color:#555;
+            font-size:15px;
+            line-height:1.6;
+        }
+
+        /* Default (Desktop Large Screens) */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+/* Desktop Medium (1024px and below) */
+@media (max-width: 1024px) {
+    .project-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+    }
+
+    .project-img {
+        height: 220px;
+    }
+}
+
+/* Tablet (768px and below) */
+@media (max-width: 768px) {
+    .project-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .project-img {
+        height: 200px;
+    }
+
+    .project-card h3 {
+        font-size: 18px;
+    }
+
+    .project-card p {
+        font-size: 14px;
+    }
+}
+
+/* Mobile (Below 600px) */
+@media (max-width: 600px) {
+    .project-grid {
+        grid-template-columns: 1fr;  /* single column */
+        gap: 15px;
+    }
+
+    .project-img {
+        height: 180px;
+    }
+
+    .project-card {
+        padding: 15px;
+    }
+
+    .project-card h3 {
+        font-size: 16px;
+    }
+
+    .project-card p {
+        font-size: 13px;
+    }
+}
+
+        /* Project Images */
+.project-img {
+    width: 100%;
+    height: 250px;       /* Uniform height */
+    border-radius: 15px;
+    object-fit: cover;   /* Ensures image fills box without distortion */
+    margin-bottom: 15px;
+}
+
+/* Slider Images */
+.slides img {
+    width: 300px;        /* Uniform width */
+    height: 200px;       /* Uniform height */
+    border-radius: 20px;
+    object-fit: cover;   /* Ensures images fill their box */
+    scroll-snap-align: start;
+    transition: .4s;
+}
+
+/* Brand Logos */
+.brand-logos img {
+    width: 150px;
+    height: 100px;
+    object-fit: cover;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+/* Team Member Images */
+.team-card img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;   /* Circle avatars */
+    margin-bottom: 10px;
+}
+
+    </style>
+</head>
+<body>
+
+<!-- ================= HEADER ================= -->
+<header class="header">
+
+    <a href="index.html">
+        <img src="./white.webp" alt="Stackly Logo" style="height: 60px; ">
+      </a>
+      
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <ul class="nav-links">
+
+            <li class="dropdown">
+                <a href="javascript:void(0)" class="dropdown-btn">Home <i class="fa-solid fa-caret-down"></i></a>
+            
+                <ul class="dropdown-content">
+                    <li><a href="./index.html">Home 1</a></li>
+                    <li><a href="./home2.html">Home 2</a></li>
+                </ul>
+            </li>
+
+            <li><a href="./services.html">Services</a></li>
+            <li><a href="./about.html">About</a></li>
+            <li><a href="./blog.html">Blog</a></li>
+            <li><a href="./projects.html">Projects</a></li>
+            <li><a href="./dashbored.html">dashboard</a></li>
+            <li><a href="./contact.html">Contact</a></li>
+            <li><a href="./login.html">Login</a></li>
+
+        </ul>
+    </nav>
+
+
+    
+
+    <!-- Toggle -->
+    <div class="menu-toggle" id="menu-toggle">
+        <i class="fa-solid fa-bars"></i>
+    </div>
+
+</header>
+
+
+
+
+<section class="projects-section">
+    <h2 class="projects-title">Our Projects</h2>
+
+    <div class="project-grid">
+
+        <div class="project-card">
+            <img src="./tech1.webp" class="project-img">
+             <h3>IT Ticketing System</h3>
+            <p>A complete automated support ticketing solution with SLA, reports, and real-time tracking.</p> 
+        
+   
+        </div>
+
+        <div class="project-card">
+            <img src="./ESS.webp" class="project-img">
+            <h3>ESS Portal</h3>
+            <p>Employee Self-Service platform for HR operations, forms, attendance, and payroll info.</p>
+        </div>
+
+        <div class="project-card">
+            <img src="./workflow.webp" class="project-img">
+            <h3>Workflow Automation Engine</h3>
+            <p>End-to-end business workflow automation with approvals and dynamic forms.</p>
+        </div>
+
+        <div class="project-card">
+            <img src="./cloud.webp" class="project-img">
+            <h3>Cloud Asset Manager</h3>
+            <p>Tracks company assets, warranty, allocation, and lifecycle from one dashboard.</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- <footer> -->
+    <footer class="footer">
+        <div class="footer-container">
+    
+            <!-- Logo / About -->
+            <div class="footer-box">
+                <img src="./white.webp" alt="Stackly Logo" class="footer-logo"  style="height:60px;">
+   
+               
+                <!-- <p>We deliver secure, scalable and innovative IT services for global businesses.</p><br> -->
+    
+                <!-- Social Icons -->
+                <div class="footer-social">
+                    <a href="./404.html"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="./404.html"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="./404.html"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="./404.html"><i class="fa-brands fa-x-twitter"></i></a>
+                </div>
+            </div>
+    
+            <!-- Quick Links -->
+            <div class="footer-box">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="./index.html">Home 1</a></li>
+                    <li><a href="./services.html">Services</a></li>
+                    <li><a href="./about.html">About</a></li>
+                    <li><a href="./blog.html">Blog</a></li>
+                    <li><a href="./projects.html">Projects</a></li>
+                    <li><a href="./contact.html">Contact</a></li>
+                </ul>
+            </div>
+    
+            <!-- Address -->
+            <div class="footer-box">
+                <h3>Our Address</h3>
+                <p>
+                    MMR complex.<br>
+                    chinna tirupathi kovil street,<br>
+                    salem,Tamil nadu-636008<br>
+                    <!-- Bengaluru, Karnataka – 560066<br> -->
+                    India<br><br>
+    
+                    <strong>Phone:</strong> +91 98765 43210<br>
+                    <strong>Email:</strong> support@thestackly.com
+                </p>
+            </div>
+    
+            <!-- Google Map -->
+            <div class="footer-box">
+                <h3>Location</h3>
+                <iframe 
+                src="https://www.google.com/maps?q=Salem%20Tamil%20Nadu&output=embed"
+                    allowfullscreen="" 
+                    loading="lazy">
+                </iframe>
+            </div>
+    
+        </div>
+    
+        <div class="footer-bottom">
+            <p>© 2025 stackly | All Rights Reserved</p>
+        </div>
+    </footer>
+    
+    <!-- Script -->
+    <script src="main.js"></script>
+    
+
+</body>
+</html>

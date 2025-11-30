@@ -6,9 +6,9 @@
   }
   
   body {
-    background: url("./corp1.webp") no-repeat center center/cover;
-    
-    color: rgb(7, 6, 6);
+    background: url("./signup.webp") no-repeat center/cover fixed;
+
+    color: white;
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -48,7 +48,7 @@
   }
   
   .auth-box p {
-    color: black;
+    color: #ccc;
     margin-bottom: 2rem;
   }
   
