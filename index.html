@@ -9,335 +9,1164 @@
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <style>
-  /* ===== HERO SECTION WITH BACKGROUND IMAGE ===== */
-.hero {
-  height: 100vh;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 60px 10%;
+  /* ===== HERO SECTION ===== */
+.hero-saas {
+  background: linear-gradient(135deg,#0ce2d8,rgb(98, 186, 183));
   color: #fff;
+  padding: 100px 20px;
+}
+
+.hero-inner {
+  max-width: 1300px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 50px;
+  align-items: center;
+}
+
+/* ===== MASKED TEXT ===== */
+.masked-title {
+  font-size: 52px;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.masked-title span {
+  background: url("https://images.unsplash.com/photo-1557683316-973673baf926");
+  background-size: 200%;
+  background-position: 0% 50%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 6s linear infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
+}
+
+/* TEXT */
+.hero-desc {
+  color: #cfd9e0;
+  max-width: 500px;
+  margin-bottom: 30px;
+  line-height: 1.7;
+}
+
+/* BUTTONS */
+.hero-buttons {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 14px 22px;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.primary {
+  background: #f9b000;
+  color: #000;
+}
+
+.secondary {
+  background: #1dd75b;
+  color: #000;
+}
+
+/* ===== INFO CARD (Chris Smith style) ===== */
+.info-card {
+  width: 280px;
+  height: 170px;
+  margin-top: 40px;
   position: relative;
   overflow: hidden;
-
-  /* Background Image */
-  background-image: url("./img1.webp");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-/* Dark overlay (ServiceNow style) */
-.hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  /* background: rgba(0, 0, 0, 0.55); */
-  backdrop-filter: blur(1px);
-  z-index: 0;
-}
-
-/* Text stays above overlay */
-.hero .hero-text,
-.hero .hero-img {
-  position: relative;
-  z-index: 1;
-}
-
-
-@media (max-width: 900px) {
-  .hero {
-    flex-direction: column;
-    text-align: center;
-    padding: 40px 7%;
-    height: auto;
-    padding-top: 120px;
-  }
-
-  .hero-img img {
-    width: 60%;
-    margin-top: 20px;
-  }
-}
-
-@media (max-width: 500px) {
-  .hero-img img {
-    width: 80%;
-  }
-}
-
-/* Feature Card Base */
-.feature-box {
-  display: flex;
-  gap: 25px;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.feature {
-  background: #ffffff;
-  padding: 30px 25px;
-  border-radius: 15px;
-  text-align: center;
-  width: 300px;
-  transition: all 0.3s ease-in-out;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  border-radius: 16px;
+  background: #0d3554;
   cursor: pointer;
 }
 
-/* Icon Style */
-.feature i {
-  font-size: 45px;
-  margin-bottom: 15px;
-  color: #0ea5e9; /* sky-blue */
-  transition: 0.3s ease;
+.info-cover,
+.info-content {
+  position: absolute;
+  inset: 0;
+  padding: 20px;
+  transition: transform .5s ease;
 }
 
-/* Title */
-.feature h3 {
+.info-cover {
+  background: linear-gradient(135deg,#00e676,#00bfa5);
+  color: #003;
+}
+
+.info-content {
+  background: #fff;
+  color: #333;
+  transform: translateY(100%);
+}
+
+.info-card:hover .info-cover {
+  transform: translateY(-100%);
+}
+
+.info-card:hover .info-content {
+  transform: translateY(0);
+}
+
+/* ===== RIGHT IMAGE ===== */
+.hero-image {
+  position: relative;
+}
+
+.hero-image img {
+  width: 100%;
+  border-radius: 18px;
+  box-shadow: 0 30px 80px rgba(0,0,0,.4);
+  animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+/* FLOATING BADGE */
+.floating-badge {
+  position: absolute;
+  top: 20px;
+  right: -30px;
+  background: #fff;
+  color: #000;
+  padding: 12px 18px;
+  border-radius: 12px;
+  font-size: 14px;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 992px) {
+  .hero-inner {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .hero-desc {
+    margin: auto auto 30px;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+  }
+
+  .floating-badge {
+    right: 10px;
+  }
+}
+
+@media (max-width: 576px) {
+  .masked-title {
+    font-size: 34px;
+  }
+
+  .info-card {
+    margin: 30px auto 0;
+  }
+}
+
+
+
+
+
+.software-trust {
+  background: linear-gradient(180deg,#bff6f2 0%,#ffffff 60%);
+  padding: 100px 20px 80px;
+  position: relative;
+}
+
+/* ANNOUNCEMENT */
+.announcement-wrapper {
+  max-width: 700px;
+  margin: auto;
+  text-align: center;
+}
+
+.announcement-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 24px;
+  display: flex;
+  gap: 18px;
+  align-items: center;
+  box-shadow: 0 20px 50px rgba(0,0,0,.1);
+}
+
+.announcement-card img {
+  width: 60px;
+}
+
+.announcement-card h4 {
+  margin-bottom: 6px;
+  font-size: 18px;
+}
+
+.announcement-card p {
+  font-size: 14px;
+  color: #555;
+}
+
+.announcement-card a {
+  color: #0077ff;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+/* DOTS */
+.announcement-dots {
+  margin-top: 18px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  background: #ccc;
+  display: inline-block;
+  border-radius: 50%;
+  margin: 0 4px;
+}
+
+.dot.active {
+  background: #005eff;
+}
+
+/* SIDE CTA */
+.side-cta {
+  position:absolute;
+  right: 30px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.side-cta button {
+  padding: 12px 18px;
+  border-radius: 8px;
+  border: none;
+  background: #00b36b;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.side-cta .outline {
+  background: #fff;
+  color: #00b36b;
+  border: 2px solid #00b36b;
+}
+
+/* TRUSTED */
+.trusted-block {
+  margin-top: 90px;
+  text-align: center;
+}
+
+.trusted-text {
+  font-size: 13px;
+  letter-spacing: 1px;
+  margin-bottom: 30px;
+  color: #666;
+}
+
+.brand-logos {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.brand-logos img {
+  height: 62px;
+  opacity: .7;
+  transition: .3s;
+}
+
+.brand-logos img:hover {
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+/* SCROLL ANIMATION */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: 1s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* RESPONSIVE */
+@media (max-width: 992px) {
+  .side-cta {
+    position: static;
+    transform: none;
+    margin: 40px auto 0;
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 576px) {
+  .announcement-card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .brand-logos {
+    gap: 20px;
+  }
+}
+
+
+.feature-section {
+  padding: 100px 20px;
+  background: #ffffff;
+}
+
+.feature-container {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 60px;
+  align-items: center;
+}
+
+/* LEFT CONTENT */
+.feature-left h1 {
+  font-size: 42px;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.feature-left h1 span {
+  color: #1a7cff;
+}
+
+.feature-left .highlight {
+  background: linear-gradient(90deg, #00c6ff, #0072ff);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.feature-left p {
+  font-size: 17px;
+  color: #555;
+  max-width: 520px;
+}
+
+/* RIGHT CONTENT */
+.feature-right {
+  height: 360px;
+  overflow: hidden;
+  position: relative;
+}
+
+.scroll-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  animation: scrollUp 12s linear infinite;
+}
+
+@keyframes scrollUp {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-50%); }
+}
+
+/* FEATURE CARD */
+.feature-card {
+  padding: 22px;
+  border-radius: 16px;
+  background: #f9fafb;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  transition: transform 0.4s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-6px);
+}
+
+.feature-card .icon {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.feature-card h4 {
+  font-size: 18px;
+  margin-bottom: 6px;
+}
+
+/* COLOR VARIANTS */
+.green { border-left: 6px solid #00c48c; }
+.blue { border-left: 6px solid #1a7cff; }
+.purple { border-left: 6px solid #7f56d9; }
+.orange { border-left: 6px solid #ff9f1c; }
+
+/* TABLET */
+@media (max-width: 1024px) {
+  .feature-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .feature-left h1 {
+    font-size: 34px;
+  }
+
+  .feature-right {
+    height: 320px;
+  }
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+  .feature-section {
+    padding: 60px 15px;
+  }
+
+  .feature-left h1 {
+    font-size: 28px;
+  }
+
+  .feature-left p {
+    font-size: 15px;
+  }
+
+  .feature-right {
+    height: 300px;
+  }
+}
+
+
+.ai-section {
+  background: #ecfffb;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 28px;
+  margin-bottom: 50px;
+  color: #004d40;
+}
+
+/* GRID */
+.card-grid {
+  max-width: 1100px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+/* CARD */
+.flip-card {
+  perspective: 1200px;
+  height: 340px;
+}
+
+.flip-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.8s ease;
+}
+
+/* Hover Flip */
+.flip-card:hover .flip-inner {
+  transform: rotateY(180deg);
+}
+
+/* FRONT & BACK */
+.flip-front,
+.flip-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #ffffff;
+  border-radius: 18px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+  padding: 30px;
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* FRONT */
+.flip-front .icon {
+  font-size: 48px;
+  margin-bottom: 15px;
+}
+
+.flip-front h3 {
+  font-size: 22px;
+  margin-bottom: 8px;
+}
+
+.flip-front p {
+  color: #555;
+}
+
+/* BACK */
+.flip-back {
+  transform: rotateY(180deg);
+  background: linear-gradient(135deg, #00c9a7, #1a7cff);
+  color: #ffffff;
+}
+
+.flip-back h3 {
+  margin-bottom: 12px;
+}
+
+.flip-back p {
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.flip-back a {
+  margin-top: auto;
+  display: inline-block;
+  color: #ffffff;
+  border: 1px solid #ffffff;
+  padding: 8px 16px;
+  border-radius: 20px;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+/* LAPTOP */
+@media (max-width: 1024px) {
+  .card-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* TABLET */
+@media (max-width: 768px) {
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .flip-card {
+    height: 320px;
+  }
+}
+
+/* MOBILE */
+@media (max-width: 480px) {
+  .section-title {
+    font-size: 22px;
+  }
+
+  .flip-card {
+    height: 300px;
+  }
+}
+
+.stats-gallery-section {
+  padding: 90px 20px;
+  background: linear-gradient(120deg,#f7fbff,#fff6ee);
+  text-align: center;
+}
+
+.stats-title {
+  font-size: 34px;
+  max-width: 900px;
+  margin: 0 auto 70px;
+  font-weight: 700;
+}
+
+/* GRID */
+.stats-grid {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 40px;
+}
+
+/* CARD */
+.stat-card {
+  position: relative;
+  height: 360px;
+  border-radius: 22px;
+  overflow: hidden;
+  background: #ffffff;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+  cursor: pointer;
+}
+
+/* IMAGE */
+.img-wrap {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+/* SCALE IMAGE ON HOVER */
+.stat-card:hover img {
+  transform: scale(1.15);
+}
+
+/* CONTENT */
+.stat-content {
+  position: absolute;
+  inset: 0;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #000;
+  background: rgba(255,255,255,0.88);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* DEFAULT */
+.stat-content.default {
+  opacity: 1;
+}
+
+/* HOVER CONTENT */
+.stat-content.hover {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+/* SWITCH CONTENT */
+.stat-card:hover .default {
+  opacity: 0;
+}
+
+.stat-card:hover .hover {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* NUMBER */
+.count {
+  font-size: 64px;
+  font-weight: 800;
+  color: #c97a1b;
+}
+
+.stat-content h4 {
   margin: 10px 0;
   font-size: 20px;
 }
 
-/* Hover Effects */
-.feature:hover {
-  transform: translateY(-12px) scale(1.03);
-  background: linear-gradient(135deg, #647e2b, #2563eb);
-  color: #fff;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-}
-
-/* Change icon + text color on hover */
-.feature:hover i {
-  color: #fff;
-}
-
-.feature:hover p {
-  color: #e8e8e8;
-}
-
-/* Mobile Responsive */
-@media (max-width: 768px) {
-  .feature {
-    width: 100%;
-  }
-}
-
-/* Section styling */
-.how {
-  
-  text-align: center;
-  padding: 80px 20px;
-  background: #f5f8ff;
-}
-
-.how h2 {
-  font-size: 32px;
-  /* color: #1b2945; */
-  margin-bottom: 40px;
-  opacity: 0;
-  animation: fadeUp 1s forwards ease-in-out;
-}
-
-/* Step container */
-.step-box {
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  flex-wrap: wrap;
-}
-
-/* Step card */
-.step {
-  background: linear-gradient(135deg, #647e2b, #2563eb);
-  width: 260px;
-  padding: 25px;
-  border-radius: 15px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-  transition: 0.4s ease;
-  cursor: pointer;
-  transform: translateY(40px);
-  opacity: 0;
-}
-
-/* Fade-up animation with delay for stagger effect */
-.step:nth-child(1) { animation: fadeUp 0.8s forwards ease-in-out 0.2s; }
-.step:nth-child(2) { animation: fadeUp 0.8s forwards ease-in-out 0.4s; }
-.step:nth-child(3) { animation: fadeUp 0.8s forwards ease-in-out 0.6s; }
-
-/* Hover effects */
-.step:hover {
-  transform: translateY(-10px) scale(1.05);
-  box-shadow: 0 10px 25px rgba(118, 175, 193, 0.4);
-}
-
-/* Number styling */
-.step span {
-  font-size: 38px;
-  font-weight: bold;
-  color: #4cc9f0;
-  margin-bottom: 10px;
-  display: inline-block;
-  transition: 0.3s ease;
-}
-
-/* Number hover animation */
-.step:hover span {
-  transform: rotate(10deg) scale(1.2);
-}
-
-/* Title */
-.step h3 {
-  margin-bottom: 10px;
-  font-size: 22px;
-  color: #1b2945;
-}
-
-/* Text */
-.step p {
-  color: #444;
-  line-height: 1.5;
-}
-
-/* Fade-up animation */
-@keyframes fadeUp {
-  0% {
-    opacity: 0;
-    transform: translateY(40px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.how {
-  text-align: center;
-  padding: 80px 20px;
-  background: linear-gradient(135deg, #0f1f3d, #1e335c);
-  color: #fff;
-}
-.how h2,
-.step h3,
-.step p,
-.step span {
-  color: #fff;
-}
-/* .step {
-  background: rgba(255,255,255,0.1);
-  border: 1px solid rgba(255,255,255,0.2);
-} */
-
-
-/* ============================
-   SERVICE NOW STYLE SCROLLING SECTION
-   ============================ */
-
-   .sn-scroll-section {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 80px 10%;
-  background: #425d90;
-  color: #fff;
-  gap: 40px;
-  overflow: hidden;
-  position: relative;
-}
-
-.sn-content {
-  width: 50%;
-}
-
-.sn-content h2 {
-  font-size: 34px;
-  margin-bottom: 20px;
-  color: #4cc9f0;
-  text-shadow: 0 0 4px rgba(255,255,255,0.3);
-}
-
-.sn-content p {
-  font-size: 18px;
+.stat-content p {
+  font-size: 15px;
   line-height: 1.6;
-  margin-bottom: 20px;
-  color: #d9e6ff;
 }
 
-.sn-list li {
-  list-style: none;
-  margin-bottom: 12px;
-  font-size: 17px;
-  color: #e1eaff;
+/* LAPTOP */
+@media (max-width: 1024px) {
+  .stats-grid {
+    grid-template-columns: repeat(2,1fr);
+  }
 }
 
-.sn-list li i {
-  color: #25d366;
-  margin-right: 10px;
-  font-size: 18px;
+/* TABLET */
+@media (max-width: 768px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+  .stats-title {
+    font-size: 26px;
+  }
+}
+
+/* MOBILE */
+@media (max-width: 480px) {
+  .stat-card {
+    height: 320px;
+  }
+  .count {
+    font-size: 48px;
+  }
+}
+
+.flip-inner.flipped {
+  transform: rotateY(180deg);
 }
 
 
-/* ===== VERTICAL FEED SECTION ===== */
-.vertical-feed {
-  padding: 60px 10%;
-  background:rgb(58, 123, 136);
-  color: #fff;
-  text-align: center;
-  overflow: hidden;
+.feature-compare {
+  padding: 80px 20px;
+  background: #ffffff;
 }
 
-.vertical-feed h2 {
-  font-size: 30px;
-  margin-bottom: 25px;
-  color: #4cc9f0;
+.feature-grid {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 30px;
 }
 
-/* Container height controls visible items */
-.feed-container {
-  background: linear-gradient(135deg, #647e2b, #2563eb);
-  height: 160px; /* Shows 3–4 items at a time */
-  overflow: hidden;
-  position: relative;
-  border-radius: 10px;
-  border: 1px solid rgba(255,255,255,0.2);
+
+
+/* COLORS */
+.feature-card.blue { background: #dffbff; }
+.feature-card.yellow { background: #fff7dd; }
+.feature-card.red { background: #ffe5e5; }
+
+.feature-card h3 {
+  font-size: 22px;
+  margin-bottom: 15px;
 }
 
-/* List styling */
-.feed-list {
-  
+.feature-card h4 {
+  margin-top: 30px;
+  font-size: 20px;
+}
+
+/* LIST */
+.feature-card ul {
   list-style: none;
   padding: 0;
-  margin: 0;
-  animation: scrollFeed 14s linear infinite;
 }
 
-.feed-list li {
-  padding: 15px 10px;
-  font-size: 18px;
-  border-bottom: 1px solid rgba(255,255,255,0.1);
-  background: rgba(19, 105, 235, 0.05);
-  transition: 0.3s ease;
+.feature-card li {
+  margin: 10px 0;
+  padding-left: 25px;
+  position: relative;
+  font-size: 15px;
 }
 
-/* Hover pause */
-.feed-container:hover .feed-list {
+/* CHECK ICON */
+.feature-card li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  color: #0aa;
+  font-weight: bold;
+}
+
+/* ACTIVE (ON SCROLL) */
+.feature-card.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* LAPTOP */
+@media (max-width: 1024px) {
+  .feature-grid {
+    grid-template-columns: repeat(2,1fr);
+  }
+}
+
+/* TABLET */
+@media (max-width: 768px) {
+  .feature-grid {
+    grid-template-columns: 1fr;
+  }
+  .feature-card {
+    min-height: auto;
+  }
+}
+
+/* MOBILE */
+@media (max-width: 480px) {
+  .feature-card {
+    padding: 25px;
+  }
+}
+
+
+/* =========================
+   RIGHT SCROLLING FEATURES
+   ========================= */
+
+   .feature-right {
+  background: #f7f9fc;
+  padding: 40px 20px;
+  overflow: hidden;
+}
+
+
+
+/* Pause animation on hover */
+.feature-right:hover .scroll-wrapper {
   animation-play-state: paused;
 }
 
-/* Auto scroll animation */
-@keyframes scrollFeed {
+/* CARD */
+.feature-right .feature-card {
+  padding: 25px 30px;
+  border-radius: 18px;
+  background: #ffffff;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* Hover effect */
+.feature-right .feature-card:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+}
+
+/* ICON */
+.feature-right .icon {
+  font-size: 32px;
+  margin-bottom: 12px;
+}
+
+/* TITLE */
+.feature-right h4 {
+  font-size: 18px;
+  margin-bottom: 8px;
+  color: #222;
+}
+
+/* TEXT */
+.feature-right p {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* COLOR VARIANTS */
+.feature-right .green { border-left: 6px solid #28c76f; }
+.feature-right .blue { border-left: 6px solid #00cfe8; }
+.feature-right .purple { border-left: 6px solid #7367f0; }
+.feature-right .orange { border-left: 6px solid #ff9f43; }
+
+/* SCROLL ANIMATION */
+@keyframes featureScroll {
   0% {
     transform: translateY(0);
   }
   100% {
-    transform: translateY(-100%);
+    transform: translateY(-50%);
+  }
+}
+
+/* =========================
+   RESPONSIVE MEDIA QUERIES
+   ========================= */
+
+/* LAPTOP */
+@media (max-width: 1200px) {
+  .feature-right {
+    padding: 35px 15px;
+  }
+}
+
+/* TABLET */
+@media (max-width: 768px) {
+  .feature-right .scroll-wrapper {
+    animation: none;
+  }
+
+  .feature-right .feature-card {
+    margin-bottom: 15px;
+  }
+}
+
+/* MOBILE */
+@media (max-width: 480px) {
+  .feature-right {
+    padding: 25px 15px;
+  }
+
+  .feature-right .feature-card {
+    padding: 20px;
+  }
+
+  .feature-right h4 {
+    font-size: 16px;
+  }
+
+  .feature-right p {
+    font-size: 13px;
+  }
+}
+
+/* Fixed position on right */
+.faq-mail-fixed {
+  position:absolute;
+  right: 24px;
+  bottom: 80px;
+  z-index: 999;
+}
+
+Button reset
+.faq-mail-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Container */
+.faq-mail-box {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/* Mail icon */
+.faq-mail-icon {
+  font-size: 42px;
+  background: #0bbcd6;
+  color: #fff;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+}
+
+
+
+
+
+/* FAQ panel */
+.faq-panel {
+  position: absolute;
+  right: 70px;
+  width: 340px;
+  max-height: 320px;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+  padding: 18px;
+  opacity: 0;
+  transform: translateX(40px);
+  transition: all 0.5s ease;
+}
+
+/* Scroll content */
+.faq-scroll {
+  max-height: 240px;
+  overflow-y: auto;
+  padding-right: 6px;
+}
+
+.faq-scroll p {
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+/* Title */
+.faq-panel h4 {
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+/* Hover open (desktop) */
+@media (hover: hover) {
+  .faq-mail-btn:hover .faq-panel {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .faq-mail-btn:hover .faq-envelope-top {
+    transform: rotateX(-180deg);
+  }
+}
+@media (max-width: 480px) {
+  .faq-panel {
+    width: 260px;
+    max-height: 260px;
+    right: 72px;
+  }
+
+  .faq-mail-icon {
+    width: 54px;
+    height: 54px;
+    font-size: 32px;
+  }
+}
+@media (min-width: 481px) and (max-width: 1024px) {
+  .faq-panel {
+    width: 300px;
+  }
+}
+@media (min-width: 1025px) {
+  .faq-panel {
+    width: 360px;
+  }
+}
+@media (min-width: 1025px) {
+  .faq-panel {
+    width: 360px;
+  }
+}
+
+/* SECTION */
+.feature-compare {
+  padding: 80px 6%;
+  background: linear-gradient(135deg, #f8fbff, #eef4ff);
+}
+
+/* HEADING */
+.feature-heading {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.feature-heading h2 {
+  font-size: 38px;
+  font-weight: 700;
+  color: #0f172a;
+  min-height: 52px;
+}
+
+.feature-heading p {
+  margin-top: 12px;
+  color: #475569;
+  font-size: 16px;
+}
+
+/* GRID */
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+/* CARDS */
+.feature-card {
+  border-radius: 24px;
+  padding: 32px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+  transition: transform 0.4s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-8px);
+}
+
+.feature-card h3 {
+  font-size: 22px;
+  margin-bottom: 16px;
+}
+
+.feature-card h4 {
+  margin-top: 24px;
+  font-size: 18px;
+}
+
+.feature-card ul {
+  padding-left: 18px;
+}
+
+.feature-card li {
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+/* COLOR VARIANTS */
+.feature-card.blue { background: #e6fbff; }
+.feature-card.yellow { background: #fff7e0; }
+.feature-card.red { background: #ffecec; }
+
+/* REVEAL ANIMATION */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.7s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* =====================
+   RESPONSIVE BREAKPOINTS
+===================== */
+
+/* MOBILE */
+@media (max-width: 600px) {
+  .feature-heading h2 {
+    font-size: 26px;
+  }
+
+  .feature-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .feature-card {
+    padding: 24px;
+  }
+}
+
+/* LAPTOP */
+@media (min-width: 601px) and (max-width: 1024px) {
+  .feature-heading h2 {
+    font-size: 32px;
+  }
+
+  .feature-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* DESKTOP */
+@media (min-width: 1025px) {
+  .feature-heading h2 {
+    font-size: 40px;
+  }
+}
+
+
+.faq-section {
+  position: relative; /* 🔥 IMPORTANT */
+  padding: 80px 6%;
+  background: #f9fbff;
+}
+.mail-faq {
+  position: absolute;  /* 🔥 changed from fixed */
+  right: 30px;
+  top: 120px;
+  z-index: 10;
+}
+@media (max-width: 768px) {
+  .mail-faq {
+    position: static;
+    margin-top: 40px;
   }
 }
 
 
 </style>
-
 <body>
 <!-- ===== HEADER ===== -->
 <header class="header">
@@ -376,104 +1205,429 @@
       <li><a href="./login.html" >Login</a></li>
     </ul>
   </nav>
-
-  
-
- 
-  
   <!-- MENU ICON -->
   <div class="menu-icon">
     <i class="fa fa-bars"></i>
   </div>
 </header>
 
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-text">
-    <h1>Streamline Your IT Support with Stackly Ticketing</h1>
-    <p>Submit, track, and resolve IT issues faster with an intuitive ticketing tool designed for efficiency and transparency.</p>
-    <a href="./login.html" class="hero-btn">Get Started</a>
-  </div>
+<section class="hero-saas">
 
+  <div class="hero-inner">
 
-  <div class="hero-img">
-    <img src="https://cdn-icons-png.flaticon.com/512/9412/9412103.png" alt="IT Ticketing">
-  </div>
-</section>
+    <!-- LEFT CONTENT -->
+    <div class="hero-text">
 
-<!-- FEATURES -->
-<section class="features">
-  <h2>Why Choose Stackly?</h2>
-  <div class="feature-box">
+      <h1 class="masked-title">
+        The Ultimate Tool To Manage Your <span>Support Tickets</span>
+      </h1>
 
-    <div class="feature">
-      <i class="fa-solid fa-ticket"></i>
-      <h3>Easy Ticket Creation</h3>
-      <p>Create support tickets with simple forms and quick priority options.</p>
+      <p class="hero-desc">
+        Answer customer queries faster, manage conversations efficiently, 
+        and keep your clients happy with a powerful support platform.
+      </p>
+
+      <div class="hero-buttons">
+        <a href="./404.html" class="btn primary">Buy From Envato $24</a>
+        <a href="./404.html" class="btn secondary">Try Demo ▶</a>
+      </div>
+
+      <!-- INFO CARD -->
+      <div class="info-card">
+        <div class="info-cover">
+          <h4>Smart Ticketing</h4>
+          <p>Hover to discover</p>
+        </div>
+        <div class="info-content">
+          <p>
+            Assign tickets, track status, collaborate with teams,
+            and resolve issues faster using automation.
+          </p>
+        </div>
+      </div>
+
     </div>
 
-    <div class="feature">
-      <i class="fa-solid fa-chart-line"></i>
-      <h3>Track Progress</h3>
-      <p>Monitor ticket status, updates, and resolution in real-time.</p>
-    </div>
-
-    <div class="feature">
-      <i class="fa-solid fa-users"></i>
-      <h3>User Friendly</h3>
-      <p>Designed for both users and admins with clean UI layouts.</p>
-    </div>
-
-  </div>
-</section>
-
-<!-- HOW IT WORKS -->
-<section class="how">
-  <h2>How It Works</h2>
-  <div class="step-box">
-
-    <div class="step">
-      <span>1</span>
-      <h3>Submit Issue</h3>
-      <p>Provide details, screenshots, and priority levels.</p>
-    </div>
-
-    <div class="step">
-      <span>2</span>
-      <h3>IT Team Assigns</h3>
-      <p>Tickets get assigned instantly to the right technician.</p>
-    </div>
-
-    <div class="step">
-      <span>3</span>
-      <h3>Track & Resolve</h3>
-      <p>Get notified about every update until the issue is resolved.</p>
+    <!-- RIGHT IMAGE -->
+    <div class="hero-image">
+      <img src="./ticket.webp" alt="Dashboard Preview">
+      <div class="floating-badge">📊 Total Tickets<br><strong>13%</strong></div>
     </div>
 
   </div>
+
 </section>
 
 
+<section class="software-trust">
 
-  <!-- ===== VERTICAL SCROLLING FEED ===== -->
-<section class="vertical-feed">
-  <h2>Live Ticket Updates</h2>
+  <!-- ANNOUNCEMENT CARD -->
+  <div class="announcement-wrapper">
+    <div class="announcement-card active">
+      <img src="./star-icon.webp" alt="">
+      <div>
+        <h4>Recognized in Gartner® Magic Quadrant™ 2025</h4>
+        <p>Named a Leader for AI-driven ITSM innovation.</p>
+        <a href="./404.html">Read report →</a>
+      </div>
+    </div>
 
-  <div class="feed-container">
-    <ul class="feed-list">
+    <div class="announcement-dots">
+      <span class="dot active"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+    </div>
+  </div>
 
-      <li>🚀 Automation applied — AI routing boosted efficiency by 35%.</li>
-      <li>🔧 Server downtime resolved in 22 minutes.</li>
-      <li>📩 12 new tickets created (mostly VPN login issues).</li>
-      <li>⚠️ SLA breach warning — 3 incidents close to deadline.</li>
-      <li>📊 Weekly performance report published.</li>
-      <li>🔒 Security patch deployed to all systems.</li>
-      <li>💬 User feedback: Faster response after new update.</li>
-      <li>🛠 Technician reassigned to high-priority issue #4562.</li>
+  <!-- SIDE CTA -->
+  <div class="side-cta">
+    <button onclick="go404()">Talk to ITSM Experts</button>
+    
+    <!-- <button>Talk to ITSM Experts</button> -->
+    <button onclick="go404()"class="outline">Book a Demo</button>
+  </div>
 
-    </ul>
+  <!-- TRUSTED BRANDS -->
+  <div class="trusted-block reveal">
+    <p class="trusted-text">
+      ITSM SOFTWARE TRUSTED BY LEADING ENTERPRISES ACROSS THE GLOBE
+    </p>
+
+    <div class="brand-logos">
+      <img src="./woodland.webp" alt="Honda">
+      <img src="./honda1.webp" alt="Digicel">
+      <img src="./biba.webp" alt="Lenskart">
+      <img src="./zara.webp" alt="Siemens">
+      <img src="./hm.webp" alt="NHS">
+    </div>
+  </div>
+
+</section>
+
+
+<section class="feature-section">
+  <div class="feature-container">
+
+    <!-- LEFT CONTENT -->
+    <div class="feature-left">
+      <h1>
+        Design, automate, deliver, and manage
+        <span>critical IT & business services</span>
+        with intelligence powered by <span class="highlight">GenAI</span>
+      </h1>
+
+      <p>
+        Our intelligent IT service management platform unifies ticketing,
+        asset management, CMDB, and enterprise workflows into a single,
+        scalable solution. AI-powered automation helps teams resolve issues
+        faster, reduce operational costs, and deliver exceptional service
+        experiences across departments.
+      </p>
+    </div>
+
+    <!-- RIGHT SCROLLING CONTENT -->
+    <div class="feature-right">
+      <div class="scroll-wrapper">
+
+        <div class="feature-card green">
+          <div class="icon">☁️</div>
+          <h4>Flexible Deployment</h4>
+          <p>Choose on-premise or cloud with seamless migration.</p>
+        </div>
+
+        <div class="feature-card blue">
+          <div class="icon">🔒</div>
+          <h4>Privacy-First Design</h4>
+          <p>Enterprise-grade security with zero trackers.</p>
+        </div>
+
+        <div class="feature-card purple">
+          <div class="icon">🧩</div>
+          <h4>360° ITSM Approach</h4>
+          <p>Deep integrations across enterprise IT ecosystems.</p>
+        </div>
+
+        <div class="feature-card orange">
+          <div class="icon">⚡</div>
+          <h4>AI Automation</h4>
+          <p>Smart workflows powered by GenAI intelligence.</p>
+        </div>
+
+      </div>
+    </div>
+
   </div>
 </section>
+
+
+
+
+
+
+<section class="ai-section">
+  <h2 class="section-title">Get started on your AI journey now</h2>
+
+  <div class="card-grid">
+
+    <!-- CARD 1 -->
+    <div class="flip-card">
+      <div class="flip-inner">
+
+        <div class="flip-front">
+          <div class="icon">🔍</div>
+          <h3>Efficiency</h3>
+          <p>Predictive intelligence</p>
+        </div>
+
+        <div class="flip-back">
+          <h3>Efficiency</h3>
+          <p>
+            Swift and accurate ticket triage, routing, assignment,
+            and sentiment analysis through ML-based intelligence.
+          </p>
+          <a href="./404.html">Know more →</a>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- CARD 2 -->
+    <div class="flip-card">
+      <div class="flip-inner">
+
+        <div class="flip-front">
+          <div class="icon">🤖</div>
+          <h3>Experience</h3>
+          <p>Virtual support agent</p>
+        </div>
+
+        <div class="flip-back">
+          <h3>Experience</h3>
+          <p>
+            On-demand handling of end-user requests through
+            text and voice conversations powered by AI.
+          </p>
+          <a href="./404.html">Know more →</a>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- CARD 3 -->
+    <div class="flip-card">
+      <div class="flip-inner">
+
+        <div class="flip-front">
+          <div class="icon">🧠</div>
+          <h3>Knowledge</h3>
+          <p>GenAI-powered insights</p>
+        </div>
+
+        <div class="flip-back">
+          <h3>Knowledge</h3>
+          <p>
+            Easy access to knowledge, low-code script generation,
+            summarization, and AI-driven responses.
+          </p>
+          <a href="./404.html">Know more →</a>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<section class="stats-gallery-section">
+
+  <!-- TITLE -->
+  <h2 class="stats-title">
+    ServiceDesk Plus, a world-class IT and enterprise service management platform
+  </h2>
+
+  <!-- STATS GRID -->
+  <div class="stats-grid">
+
+    <div class="stat-card gallery-card">
+      <div class="img-wrap">
+        <img src="./aa.webp" alt="">
+      </div>
+      <div class="stat-content default">
+        <span class="count" data-target="20">0</span>
+        <h4>Years of Excellence</h4>
+        <p>End-to-end IT service management expertise</p>
+      </div>
+      <div class="stat-content hover">
+        <h4>20+ Years</h4>
+        <p>Helping enterprises streamline IT operations globally.</p>
+      </div>
+    </div>
+
+    <div class="stat-card gallery-card">
+      <div class="img-wrap">
+        <img src="./ab1.webp" alt="">
+      </div>
+      <div class="stat-content default">
+        <span class="count" data-target="14">0</span>
+        <h4>ITIL® Practices</h4>
+        <p>Certified service management processes</p>
+      </div>
+      <div class="stat-content hover">
+        <h4>14 Practices</h4>
+        <p>Knowledge, monitoring, service finance & SLAs.</p>
+      </div>
+    </div>
+
+    <div class="stat-card gallery-card">
+      <div class="img-wrap">
+        <img src="./ab2.webp" alt="">
+      </div>
+      <div class="stat-content default">
+        <span class="count" data-target="10">0</span>
+        <h4>PinkVERIFY™</h4>
+        <p>Certified ITSM & ESM practices</p>
+      </div>
+      <div class="stat-content hover">
+        <h4>10 Certifications</h4>
+        <p>Incident, change, asset & release management.</p>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="feature-compare">
+
+    <!-- TYPING HEADING -->
+    <div class="feature-heading">
+      <h2 id="typeHeading"></h2>
+      <p style="font-size: 40px; font-weight: bold;">Compare powerful ITSM capabilities designed for modern enterprises</p>
+    </div>
+  
+    <div class="feature-grid">
+
+  
+
+    <!-- COLUMN 1 -->
+    <div class="feature-card blue reveal">
+      <h3>Core ITSM</h3>
+      <ul>
+        <li>No-code ticket handling automation</li>
+        <li>Self-service portal</li>
+        <li>Knowledge base</li>
+        <li>SLA management & escalations</li>
+        <li>Reporting & live dashboards</li>
+      </ul>
+
+      <h4>AI & ML</h4>
+      <ul>
+        <li>Predictive intelligence</li>
+        <li>Auto-approvals</li>
+        <li>Virtual support agent</li>
+        <li>GenAI</li>
+        <li>Reply assist</li>
+      </ul>
+    </div>
+
+    <!-- COLUMN 2 -->
+    <div class="feature-card yellow reveal">
+      <h3>Asset Management</h3>
+      <ul>
+        <li>Visual asset lifecycle builder</li>
+        <li>Software asset management</li>
+        <li>Asset loans</li>
+        <li>Inventory analytics</li>
+        <li>Purchase & contracts</li>
+      </ul>
+
+      <h4>AI & ML</h4>
+      <ul>
+        <li>Predictive intelligence</li>
+        <li>Auto-approvals</li>
+        <li>Virtual support agent</li>
+        <li>GenAI</li>
+        <li>Reply assist</li>
+      </ul>
+    </div>
+
+    <!-- COLUMN 3 -->
+    <div class="feature-card red reveal">
+      <h3>Advanced ITSM</h3>
+      <ul>
+        <li>Problem management</li>
+        <li>Change enablement</li>
+        <li>Release workflows</li>
+        <li>IT project management</li>
+        <li>CMDB</li>
+      </ul>
+
+      <h4>AI & ML</h4>
+      <ul>
+        <li>Predictive intelligence</li>
+        <li>Auto-approvals</li>
+        <li>Virtual support agent</li>
+        <li>GenAI</li>
+        <li>Reply assist</li>
+      </ul>
+    </div>
+
+  </div>
+
+</section>
+
+
+
+
+<div class="faq-mail-fixed">
+
+  <button class="faq-mail-btn" aria-label="FAQ Mail">
+    <div class="faq-mail-box">
+
+      <!-- MAIL ICON -->
+      <div class="faq-mail-icon">✉️</div>
+
+      <!-- ENVELOPE -->
+      <div class="faq-envelope">
+        <div class="faq-envelope-top"></div>
+        <div class="faq-envelope-body"></div>
+      </div>
+
+      <!-- FAQ SLIDING PANEL -->
+      <div class="faq-panel">
+        <h4>Frequently Asked Questions</h4>
+
+        <div class="faq-scroll">
+          <p><strong>Q1.</strong> What is ITSM?</p>
+          <p>IT Service Management ensures efficient delivery of IT services.</p>
+
+          <p><strong>Q2.</strong> Does it support automation?</p>
+          <p>Yes, workflow automation reduces manual effort.</p>
+
+          <p><strong>Q3.</strong> Is it cloud or on-premise?</p>
+          <p>Both deployment models are supported.</p>
+
+          <p><strong>Q4.</strong> Does it include AI features?</p>
+          <p>GenAI enables smart ticket routing and replies.</p>
+
+          <p><strong>Q5.</strong> Is it secure?</p>
+          <p>Enterprise-grade security with role-based access.</p>
+        </div>
+
+      </div>
+
+    </div>
+  </button>
+
+</div>
+
+
+
+
+
+
 
 
 
@@ -526,11 +1680,118 @@
     </iframe>
     </div> 
     
-    <!-- <div class="footer-bottom">
-      <p>© 2025 Stackly. All rights reserved</p>
-    </div>
-  </footer>
- -->
-
+    
 <!-- Script -->
 <script src="script.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    document.querySelector(".hero-saas").classList.add("loaded");
+  });
+
+
+
+  
+/* SCROLL REVEAL */
+const reveals = document.querySelectorAll(".reveal");
+
+window.addEventListener("scroll", () => {
+  reveals.forEach(el => {
+    const top = el.getBoundingClientRect().top;
+    if (top < window.innerHeight - 100) {
+      el.classList.add("active");
+    }
+  });
+});
+
+/* ANNOUNCEMENT DOT ANIMATION */
+let dots = document.querySelectorAll(".dot");
+let index = 0;
+
+setInterval(() => {
+  dots.forEach(d => d.classList.remove("active"));
+  index = (index + 1) % dots.length;
+  dots[index].classList.add("active");
+}, 3000);
+
+
+
+
+function go404() {
+  window.location.href = "404.html";
+}
+
+const scroll = document.querySelector('.scroll-wrapper');
+scroll.addEventListener('mouseenter', () => {
+  scroll.style.animationPlayState = 'paused';
+});
+scroll.addEventListener('mouseleave', () => {
+  scroll.style.animationPlayState = 'running';
+});
+
+
+
+document.querySelectorAll('.flip-card').forEach(card => {
+  card.addEventListener('click', () => {
+    card.querySelector('.flip-inner')
+        .classList.toggle('flipped');
+  });
+});
+
+
+
+const counters = document.querySelectorAll('.count');
+
+const startCounter = (counter) => {
+  const target = +counter.dataset.target;
+  let current = 0;
+  const speed = 40;
+
+  const update = () => {
+    if (current < target) {
+      current++;
+      counter.innerText = current;
+      setTimeout(update, speed);
+    } else {
+      counter.innerText = target;
+    }
+  };
+  update();
+};
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      startCounter(entry.target);
+      observer.unobserve(entry.target);
+    }
+  });
+},{threshold:0.6});
+
+counters.forEach(counter => observer.observe(counter));
+
+document.querySelector(".faq-mail-btn").addEventListener("click", function () {
+    this.classList.toggle("faq-open");
+  });
+
+
+  
+
+  const mailIcon = document.querySelector('.mail-faq');
+const footer = document.querySelector('footer');
+
+window.addEventListener('scroll', () => {
+  const footerTop = footer.getBoundingClientRect().top;
+  const windowHeight = window.innerHeight;
+
+  if (footerTop < windowHeight) {
+    mailIcon.style.opacity = '0';
+    mailIcon.style.pointerEvents = 'none';
+  } else {
+    mailIcon.style.opacity = '1';
+    mailIcon.style.pointerEvents = 'auto';
+  }
+});
+
+
+  </script>
+  
