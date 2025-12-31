@@ -1,13 +1,185 @@
-<!-- 404.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>404 Not Found</title>
+  <title>404 | Page Not Found</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="404.css">
 </head>
+<style>
+  /* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #081c3c, #0d2a55);
+  color: white;
+  min-height: 100vh;
+}
+
+/* 404 SECTION */
+.error-404 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 20px;
+  text-align: center;
+}
+
+.error-container {
+  max-width: 600px;
+  animation: fadeUp 1s ease;
+}
+
+/* 404 GLITCH */
+.glitch {
+  font-size: 160px;
+  font-weight: 800;
+  position: relative;
+  color: #00d4ff;
+}
+
+.glitch::before,
+.glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+  width: 100%;
+  opacity: 0.8;
+}
+
+.glitch::before {
+  top: -3px;
+  color: #ff3c7d;
+  animation: glitchTop 1s infinite linear;
+}
+
+.glitch::after {
+  top: 3px;
+  color: #00ffcc;
+  animation: glitchBottom 1.2s infinite linear;
+}
+
+h2 {
+  margin: 20px 0 10px;
+  font-size: 32px;
+}
+
+p {
+  font-size: 16px;
+  opacity: 0.85;
+  margin-bottom: 35px;
+}
+
+/* BUTTONS */
+.btn-group {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 14px 28px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.btn-primary {
+  background: #00d4ff;
+  color: #081c3c;
+}
+
+.btn-secondary {
+  background: transparent;
+  color: #00d4ff;
+  border: 2px solid #00d4ff;
+}
+
+.btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(0, 212, 255, 0.4);
+}
+
+/* ANIMATIONS */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes glitchTop {
+  0% { transform: translateX(0); }
+  50% { transform: translateX(-5px); }
+  100% { transform: translateX(0); }
+}
+
+@keyframes glitchBottom {
+  0% { transform: translateX(0); }
+  50% { transform: translateX(5px); }
+  100% { transform: translateX(0); }
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .glitch {
+    font-size: 110px;
+  }
+
+  h2 {
+    font-size: 24px;
+  }
+
+  p {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .glitch {
+    font-size: 90px;
+  }
+
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+</style>
 <body>
-  <h1>404 - Page Not Found</h1>
-  <p>Sorry, the page you're looking for does not exist.</p>
-  <a href="login.html">Back to Home</a>
+
+  <section class="error-404">
+    <div class="error-container">
+
+      <h1 class="glitch" data-text="404">404</h1>
+
+      <h2>Oops! Page Not Found</h2>
+      <p>
+        The page you’re looking for might have been removed,  
+        had its name changed, or is temporarily unavailable.
+      </p>
+
+      <div class="btn-group">
+        <a href="index.html" class="btn btn-primary">⬅ Back to Home page 1</a>
+        <a href="home2.html" class="btn btn-secondary">⬅ Back to Home page  2</a>
+      </div>
+
+    </div>
+  </section>
+
 </body>
 </html>
