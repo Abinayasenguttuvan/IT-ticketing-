@@ -8,7 +8,7 @@
 
 /* ---------- HEADER ---------- */
 .header {
-    background: #b7b1db;
+    /* background: rgb(200, 131, 27); */
     padding: 15px 50px;
     display: flex;
     justify-content: space-between;
@@ -24,7 +24,7 @@
 
 .navbar a {
     margin-left: 25px;
-    color: white;
+    color: black;
     text-decoration: none;
     font-size: 16px;
     transition: 0.3s;
@@ -121,7 +121,7 @@
 .footer {
     text-align: center;
     padding: 15px;
-    background: #003d66;
+    background: blanchedalmond;
     color: white;
     margin-top: 40px;
 }
@@ -190,10 +190,10 @@
 
 /* ===== FOOTER ===== */
 .footer {
-    background: url('./foot2.webp')no-repeat center center/cover;;
-    color: white;
+    /* background: rgb(200, 131, 27); */
+    color: black;
     padding: 50px 35px;
-    /* margin-top: 120px; */
+    margin-top: 120px;
   }
   
   .footer-container {
@@ -208,14 +208,14 @@
   .footer-section ul li { margin: 8px 0; }
   
   .footer-section ul li a {
-    color: #d1d5db;
+    color: black;
     text-decoration: none;
   }
-  .footer-section ul li a:hover { color: #ffffff; }
+  .footer-section ul li a:hover { color: black; }
   
   /* SOCIAL ICONS */
   .social-icons a {
-    color: #d1d5db;
+    color: blue;
     margin-right: 12px;
     font-size: 22px;
   }
