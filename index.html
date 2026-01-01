@@ -1,14 +1,271 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Stackly ITSM – ServiceNow Style</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stackly - ITSM </title>
+    <!-- CSS Files -->
+    
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
+<body>
+    <!-- ================= HEADER ================= -->
+    <header class="header">
+        <a href="index.html">   
+            <img src="./white.webp" alt="Stackly Logo" style="height: 60px; ">
+          </a> 
+        <!-- div class="logo">Tech<span>Solutions</span></div> -->
+
+        <!-- Navigation -->
+        <nav class="navbar">
+            <ul class="nav-links" >
+
+                <li class="dropdown">
+                    <a href="javascript:void(0)" class="dropdown-btn">Home <i class="fa-solid fa-caret-down"></i></a>
+                
+                    <ul class="dropdown-content">
+                        <li><a href="./index.html">Home 1</a></li>
+                        <li><a href="./home2.html">Home 2</a></li>
+                    </ul>
+                </li>
+                
+
+                <li><a href="./shop.html">Shop</a></li>
+                <li><a href="./product.html">Product</a></li>
+                <li><a href="./blog.html">Blogs</a></li>
+                <li><a href="./contact.html">Contact</a></li>
+                <li><a href="./dashboard.html">Dashboard</a></li>
+                <li><a href="./login.html">Login</a></li>
+                
+
+            </ul>
+        </nav>
+
+        <!-- Toggle -->
+        <div class="menu-toggle" id="menu-toggle">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+
+    </header>
 <style>
+
+  /* ================= GLOBAL ================= */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background: #f5f7fa;
+}
+
+a { text-decoration: none; }
+
+ul { list-style: none; }
+
+
+
+
+/* ================= HEADER ================= */
+.header {
+    width: 100%;
+    padding: 18px 40px;
+    background: #267992;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.logo span {
+    color: #00d4ff;
+}
+
+.nav-links {
+    display: flex;
+    gap: 25px;
+}
+
+/* Dropdown Wrapper */
+.dropdown {
+    position: relative;
+}
+
+/* Dropdown Button */
+.dropdown-btn {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/* Desktop Hover */
+@media (min-width: 901px) {
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+}
+
+/* Dropdown Menu */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 38px;
+    left: 0;
+    background: #aab9d4;
+    width: 160px;
+    border-radius: 8px;
+    padding: 10px 0;
+    z-index: 999;
+}
+
+.dropdown-content li a {
+    display: block;
+    padding: 10px 15px;
+    color: white;
+}
+
+.dropdown-content li a:hover {
+  background: #8095bc;
+}
+
+/* Toggle */
+.menu-toggle {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+li a{
+    color:white;
+}
+
+
+
+/* ================= FOOTER ================= */
+.footer {
+    background: #267992;
+    padding-top: 40px;
+    color: white;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 30px;
+    flex-wrap: wrap;
+}
+
+/* Footer Boxes */
+.footer-box h3 {
+    margin-bottom: 15px;
+    font-size: 20px;
+    color: #00e1ff;
+}
+
+.footer-box p, 
+.footer-box a {
+    color: #e0e0e0;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.footer-box ul {
+    list-style: none;
+}
+
+.footer-box ul li {
+    margin-bottom: 8px;
+}
+
+.footer-box ul li a {
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.footer-box ul li a:hover {
+    color: #00e1ff;
+}
+
+
+.footer-bottom {
+    text-align: center;
+    background:#267992;
+    padding: 15px 0;
+}
+
+.footer-social a {
+    display: inline-block;
+    margin-right: 12px;
+    font-size: 18px;
+    width: 38px;
+    height: 38px;
+    text-align: center;
+    line-height: 38px;
+    border-radius: 50%;
+    background: #111;
+    color: #00e1ff;
+    border: 1px solid #00e1ff;
+    transition: 0.3s;
+}
+
+.footer-social a:hover {
+    background: #00e1ff;
+    color: #000;
+    transform: translateY(-5px);
+}
+
+/* Map */
+.footer-box iframe {
+    width: 100%;
+    height: 180px;
+    border-radius: 10px;
+    border: none;
+}
+
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 900px) {
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background: #8095bc;
+        
+        position: absolute;
+        top: 70px;
+        right: 20px;
+        width: 200px;
+        padding: 20px;
+        border-radius: 10px;
+        z-index: 1000;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .footer-box {
+        width: 45%;
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 500px) {
+    .footer-box {
+        width: 100%;
+    }
+}
+
+
+
   /* ===== HERO SECTION ===== */
 .hero-saas {
   background: linear-gradient(135deg,#0ce2d8,rgb(98, 186, 183));
@@ -355,7 +612,7 @@
   align-items: center;
 }
 
-/* LEFT CONTENT */
+/* ================= LEFT CONTENT ================= */
 .feature-left h1 {
   font-size: 42px;
   line-height: 1.2;
@@ -378,26 +635,28 @@
   max-width: 520px;
 }
 
-/* RIGHT CONTENT */
+/* ================= RIGHT CONTENT ================= */
 .feature-right {
   height: 360px;
   overflow: hidden;
   position: relative;
 }
 
+/* SCROLLING WRAPPER */
 .scroll-wrapper {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  animation: scrollUp 12s linear infinite;
+  animation: scrollUpDesktop 14s linear infinite;
 }
 
-@keyframes scrollUp {
-  0% { transform: translateY(0); }
-  100% { transform: translateY(-50%); }
+/* DESKTOP SCROLL */
+@keyframes scrollUpDesktop {
+  from { transform: translateY(0); }
+  to { transform: translateY(-50%); }
 }
 
-/* FEATURE CARD */
+/* ================= FEATURE CARD ================= */
 .feature-card {
   padding: 22px;
   border-radius: 16px;
@@ -421,12 +680,12 @@
 }
 
 /* COLOR VARIANTS */
-.green { border-left: 6px solid #00c48c; }
-.blue { border-left: 6px solid #1a7cff; }
+.green  { border-left: 6px solid #00c48c; }
+.blue   { border-left: 6px solid #1a7cff; }
 .purple { border-left: 6px solid #7f56d9; }
 .orange { border-left: 6px solid #ff9f1c; }
 
-/* TABLET */
+/* ================= TABLET ================= */
 @media (max-width: 1024px) {
   .feature-container {
     grid-template-columns: 1fr;
@@ -438,11 +697,21 @@
   }
 
   .feature-right {
-    height: 320px;
+    height: 300px;
+  }
+
+  /* Slower & smoother scrolling */
+  .scroll-wrapper {
+    animation: scrollUpTablet 18s linear infinite;
+  }
+
+  @keyframes scrollUpTablet {
+    from { transform: translateY(0); }
+    to { transform: translateY(-60%); }
   }
 }
 
-/* MOBILE */
+/* ================= MOBILE ================= */
 @media (max-width: 600px) {
   .feature-section {
     padding: 60px 15px;
@@ -457,7 +726,17 @@
   }
 
   .feature-right {
-    height: 300px;
+    height: 260px;
+  }
+
+  /* Even slower for mobile readability */
+  .scroll-wrapper {
+    animation: scrollUpMobile 22s linear infinite;
+  }
+
+  @keyframes scrollUpMobile {
+    from { transform: translateY(0); }
+    to { transform: translateY(-70%); }
   }
 }
 
@@ -1165,51 +1444,36 @@ Button reset
   }
 }
 
+/* ================= TABLET ================= */
+@media (max-width: 992px) {
+  .scroll-wrapper {
+    overflow-x: auto;
+  }
+
+  .feature-card {
+    flex: 0 0 220px;
+    padding: 16px;
+  }
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 600px) {
+  .scroll-wrapper {
+    overflow-x: auto;
+  }
+
+  .feature-card {
+    flex: 0 0 180px;
+    padding: 12px;
+    font-size: 14px;
+  }
+}
+
+
 
 </style>
 <body>
-<!-- ===== HEADER ===== -->
-<header class="header">
-  <a href="index.html">
-    <img src="./logo.webp" alt="Stackly Logo" style="height: 60px; ">
-  </a>
-  <nav class="nav">
-    <ul class="nav-links">
 
-      <!-- HOME DROPDOWN -->
-      <li class="dropdown">
-        <a href="./index.html">Home1 <i class="fa fa-angle-down"></i></a>
-        <ul class="dropdown-menu">
-          <li><a href="./home2.html">Home2</a></li>
-          
-        </ul>
-      </li>
-
-      <li><a href="./about.html">About</a></li>
-      <li><a href="./services.html">Services</a></li>
-
-
-    
-
-      <!-- TICKET DROPDOWN -->
-      <li class="dropdown">
-        <a href="./ticket.html">Tickets <i class="fa fa-angle-down"></i></a>
-        <ul class="dropdown-menu">
-          <li><a href="./ticket-details.html"> Ticket-details</a></li>
-        </ul>
-      </li>
-
-      <!-- <li><a href="./profile.html">Profile</a></li> -->
-      <li><a href="./contact.html">Contact</a></li>
-      <li><a href="./admin-dashboard.html">Dashboard</a></li>
-      <li><a href="./login.html" >Login</a></li>
-    </ul>
-  </nav>
-  <!-- MENU ICON -->
-  <div class="menu-icon">
-    <i class="fa fa-bars"></i>
-  </div>
-</header>
 
 <section class="hero-saas">
 
@@ -1272,11 +1536,7 @@ Button reset
       </div>
     </div>
 
-    <div class="announcement-dots">
-      <span class="dot active"></span>
-      <span class="dot"></span>
-      <span class="dot"></span>
-    </div>
+    
   </div>
 
   <!-- SIDE CTA -->
@@ -1311,6 +1571,8 @@ Button reset
     <!-- LEFT CONTENT -->
     <div class="feature-left">
       <h1>
+        
+
         Design, automate, deliver, and manage
         <span>critical IT & business services</span>
         with intelligence powered by <span class="highlight">GenAI</span>
@@ -1633,54 +1895,68 @@ Button reset
 
 
 
-<!-- ===== FOOTER ===== -->
-<footer class="footer">
-  <div class="footer-container">
+<!-- <footer> -->
+  <footer class="footer">
+    <div class="footer-container">
 
-    <!-- LOGO -->
-    <div class="footer-section">
-      <img src="./logo.webp" alt="Stackly Logo" class="footer-logo"  style="height:60px;">
-   
-      <p>Delivering reliable IT solutions with modern workflow automation.</p>
+        <!-- Logo / About -->
+        <div class="footer-box">
+            <img src="./white.webp" alt="Stackly Logo" class="footer-logo"  style="height:60px;">
+
+           
+            <!-- <p>We deliver secure, scalable and innovative IT services for global businesses.</p><br> -->
+
+            <!-- Social Icons -->
+            <div class="footer-social">
+                <a href="./404.html"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="./404.html"><i class="fa-brands fa-instagram"></i></a>
+                <a href="./404.html"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="./404.html"><i class="fa-brands fa-x-twitter"></i></a>
+            </div>
+        </div>
+        <!-- Quick Links -->
+        <div class="footer-box">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="./index.html">Home </a></li>
+                <li><a href="./shop.html">Shop</a></li>
+                <li><a href="./product.html">Product</a></li>
+                <li><a href="./blog.html">Blog</a></li>
+                <li><a href="./contact.html">Contact</a></li>
+            </ul>
+        </div>
+
+        <!-- Address -->
+        <div class="footer-box">
+            <h3>Our Address</h3>
+            <p>
+                MMR complex.<br>
+                chinna tirupathi kovil street,<br>
+                salem,Tamil nadu-636008<br>
+                <!-- Bengaluru, Karnataka – 560066<br> -->
+                India<br><br>
+
+                <strong>Phone:</strong> +91 98765 43210<br>
+                <strong>Email:</strong> support@thestackly.com
+            </p>
+        </div>
+
+        <!-- Google Map -->
+        <div class="footer-box">
+            <h3>Location</h3>
+            <iframe 
+            src="https://www.google.com/maps?q=Salem%20Tamil%20Nadu&output=embed"
+                allowfullscreen="" 
+                loading="lazy">
+            </iframe>
+        </div>
+
     </div>
 
-    <!-- QUICK LINKS -->
-    <div class="footer-section">
-      <h3>Quick Links</h3>
-      <ul>
-        <li><a href="./index.html">Home</a></li>
-        <li><a href="./about.html">About</a></li>
-        <li><a href="./services.html">services</a></li>
-        <li><a href="./ticket.html">Tickets</a></li>
-        <li><a href="./admin-dashboard.html">Dashboard</a></li>
-        <li><a href="./contact.html">contact</a></li>
-      </ul>
+    <div class="footer-bottom">
+        <p>© 2025 stackly | All Rights Reserved</p>
     </div>
-
-    <!-- GET IN TOUCH -->
-    <div class="footer-section">
-      <h3>Get in Touch</h3>
-      <p>Email: support@thestackly.com</p>
-      <p>Phone: +91 98765 43210</p>
-
-      <div class="social-icons">
-        <a href="./404.html"><i class="fa-brands fa-facebook"></i></a>
-        <a href="./404.html"><i class="fa-brands fa-instagram"></i></a>
-        <a href="./404.html"><i class="fa-brands fa-x-twitter"></i></a>
-        <a href="./404.html"><i class="fa-brands fa-linkedin"></i></a>
-      </div>
-    </div>
-
-    <!-- MAP -->
-    <div class="footer-section">
-      <h3>Location</h3>
-      <iframe 
-      src="https://www.google.com/maps?q=Salem%20Tamil%20Nadu&output=embed"
-      class="footer-map">
-    </iframe>
-    </div> 
-    
-    
+</footer>
 <!-- Script -->
 <script src="script.js"></script>
 <script>
@@ -1790,6 +2066,29 @@ window.addEventListener('scroll', () => {
     mailIcon.style.opacity = '1';
     mailIcon.style.pointerEvents = 'auto';
   }
+});
+
+
+   // TOGGLE MENU
+   const toggleBtn = document.getElementById("menu-toggle");
+const navLinks = document.querySelector(".nav-links");
+
+toggleBtn.addEventListener("click", () => {
+    if (navLinks.style.display === "flex") {
+        navLinks.style.display = "none";
+    } else {
+        navLinks.style.display = "flex";
+    }
+});
+
+// MOBILE DROPDOWN CLICK
+const dropdownBtn = document.querySelector(".dropdown-btn");
+const dropdownMenu = document.querySelector(".dropdown-content");
+
+dropdownBtn.addEventListener("click", (e) => {
+    e.preventDefault(); 
+    dropdownMenu.style.display =
+        dropdownMenu.style.display === "block" ? "none" : "block";
 });
 
 
