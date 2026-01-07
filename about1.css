@@ -1,133 +1,202 @@
-/* About Page Sections */
-.about-hero, .about-vision-mission, .about-team, .about-values, .cta-section {
-    position: relative;
-    padding: 80px 10%;
-    border-radius: 16px;
-    color: #fff;
-    margin-bottom: 60px;
-    overflow: hidden;
-   
-
-.about-hero-overlay,
-.about-overlay,
-.team-overlay,
-.values-overlay,
-.cta-overlay {
-    background: rgba(0,0,0,0.4); /* Dark overlay to improve text visibility */
-    padding: 60px 20px;
-    border-radius: 16px;
-    animation: fadeIn 1s ease forwards;
-}
-
-/* Section Titles */
-.section-title {
+/* ===============================
+   GLOBAL STYLES
+=================================*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: "Poppins", sans-serif;
+    background: #f8f9fa;
+    color: #222;
+    line-height: 1.6;
+  }
+  
+  .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 60px 0;
+  }
+  
+  h2 {
     font-size: 32px;
     text-align: center;
-    margin-bottom: 40px;
-}
-
-/* Vision & Mission Grid */
-.vision-mission-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 30px;
-}
-
-.vision-box, .mission-box {
-    padding: 25px 20px;
-    border-radius: 16px;
-    box-shadow: 0 10px 30px rgba(16,24,40,0.1);
-    transition: transform 0.3s ease;
-}
-
-.vision-box:hover, .mission-box:hover {
-    transform: translateY(-8px) scale(1.02);
-}
-
-/* Team Section */
-.team-grid {
-    display: grid;
-    grid-template-columns: repeat(4,1fr);
-    gap: 30px;
-    margin-top: 40px;
-}
-
-.team-member {
-    padding: 20px;
-    border-radius: 16px;
+    margin-bottom: 20px;
+    color: #222;
+  }
+  
+  p {
+    font-size: 16px;
+    color: #444;
+    margin-bottom: 20px;
     text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.team-member img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 12px;
-    margin-bottom: 15px;
-}
-
-.team-member:hover {
-    transform: translateY(-10px) scale(1.03);
-    box-shadow: 0 15px 35px rgba(16,24,40,0.2);
-}
-
-/* Values Section */
-.values-grid {
+  }
+  
+  /* ===============================
+     CARDS SECTION (What We Do)
+  =================================*/
+  .cards {
+    margin-top: 30px;
     display: grid;
-    grid-template-columns: repeat(4,1fr);
-    gap: 30px;
-}
-
-.value-box {
-    padding: 25px 20px;
-    border-radius: 16px;
-    text-align: center;
-    transition: transform 0.3s ease;
-}
-
-.value-box:hover {
-    transform: translateY(-8px) scale(1.02);
-}
-
-/* CTA Section */
-.cta-section {
-    text-align: center;
-    padding: 60px 10%;
-    border-radius: 16px;
-}
-
-.cta-btn {
-    display: inline-block;
-    padding: 14px 30px;
-    border-radius: 12px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+  }
+  
+  .card {
     background: #fff;
-    color: #ff4b1f;
-    font-weight: 600;
-    text-decoration: none;
-    transition: transform 0.2s ease;
-}
-
-.cta-btn:hover {
-    transform: translateY(-4px) scale(1.05);
-}
-
-/* ----------------------------
-   ANIMATIONS
----------------------------- */
-@keyframes fadeIn {
-    from {opacity: 0; transform: translateY(20px);}
-    to {opacity: 1; transform: translateY(0);}
-}
-
-/* ----------------------------
-   RESPONSIVE
----------------------------- */
-@media(max-width:1024px){
-    .vision-mission-grid,.team-grid,.values-grid {grid-template-columns:repeat(2,1fr);}
-}
-
-@media(max-width:768px){
-    .vision-mission-grid,.team-grid,.values-grid {grid-template-columns:1fr;}
-    .about-hero,.about-vision-mission,.about-team,.about-values,.cta-section {padding:40px 5%;}
-}
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    transition: 0.3s ease;
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
+  }
+  
+  .card h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #ff6600;
+  }
+  
+  .card p {
+    font-size: 15px;
+    color: #555;
+  }
+  
+  /* ===============================
+     TEAM SECTION
+  =================================*/
+  .team {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+  }
+  
+  .team-member {
+    background: #fff;
+    padding: 20px;
+    width: 300px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  }
+  
+  .team-member img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+  }
+  
+  .team-member h4 {
+    font-size: 18px;
+    margin-bottom: 5px;
+    color: #000;
+  }
+  
+  .team-member p {
+    font-size: 15px;
+    color: #666;
+  }
+  
+  /* ===============================
+     RESPONSIVE MEDIA QUERIES
+  =================================*/
+  
+  /* -------- Laptops (max 1200px) -------- */
+  @media (max-width: 1200px) {
+    h2 { font-size: 28px; }
+  
+    .cards {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  
+  /* -------- Tablets (max 992px) -------- */
+  @media (max-width: 992px) {
+    .cards {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  
+    .card img {
+      height: 170px;
+    }
+  
+    .team {
+      gap: 20px;
+    }
+  }
+  
+  /* -------- Tablets (max 768px) -------- */
+  @media (max-width: 768px) {
+    .container {
+      padding: 40px 0;
+    }
+  
+    h2 {
+      font-size: 26px;
+    }
+  
+    p {
+      font-size: 15px;
+    }
+  
+    .cards {
+      grid-template-columns: 1fr;
+    }
+  
+    .card {
+      width: 100%;
+    }
+  
+    .team {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .team-member {
+      width: 90%;
+    }
+  }
+  
+  /* -------- Mobile (max 480px) -------- */
+  @media (max-width: 480px) {
+    h2 {
+      font-size: 24px;
+    }
+  
+    .card img {
+      height: 150px;
+    }
+  
+    .card {
+      padding: 15px;
+    }
+  
+    .team-member {
+      width: 100%;
+      padding: 15px;
+    }
+  
+    p {
+      font-size: 14px;
+    }
+  }
+  

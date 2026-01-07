@@ -1,181 +1,155 @@
-/* ----------------------------
-   SERVICES PAGE — COLOURFUL CARDS
----------------------------- */
-
-/* Hero Section */
-.services-hero {
-    padding: 80px 10%;
-    text-align: center;
-    border-radius: 16px;
-    margin-bottom: 60px;
-    color: #fff;
-    /* background: linear-gradient(135deg, #563193, #00d4ff); */
-    background:#2d4b6d;
-    animation: fadeIn 1s ease forwards;
-}
-
-.services-hero h1 {
-    font-size: 42px;
-    margin-bottom: 20px;
-}
-
-.services-hero p {
-    font-size: 18px;
-}
-
-/* Services Grid */
-.services-section {
-    padding: 40px 10%;
-}
-
-.services-section .section-title {
-    font-size: 32px;
-    text-align: center;
-    margin-bottom: 40px;
-    color: #0d2a53;
-}
-
-.services-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-}
-
-.service-card {
-    border-radius: 16px;
-    box-shadow: 0 10px 30px rgba(16,24,40,0.1);
-    overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: pointer;
-    animation: slideUp 1s ease forwards;
-}
-
-.service-card img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-bottom: 1px solid rgba(255,255,255,0.2);
-}
-
-.service-card h3 {
-    font-size: 20px;
-    font-weight: 600;
-    margin: 15px 20px 10px;
-}
-
-.service-card p {
-    font-size: 15px;
-    line-height: 1.6;
-    margin: 0 20px 20px;
-}
-
-/* Hover Animation */
-.service-card:hover {
-    transform: translateY(-10px) scale(1.03);
-    box-shadow: 0 15px 35px rgba(16,24,40,0.2);
-}
-
-/* Why Choose Us Section */
-.why-choose {
-    padding: 60px 10%;
-    text-align: center;
-    border-radius: 16px;
-    margin-top: 60px;
-}
-
-.why-choose h2 {
-    font-size: 32px;
-    margin-bottom: 40px;
-}
-
-.why-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 30px;
-}
-
-.why-box {
-    padding: 25px 20px;
-    border-radius: 16px;
-    box-shadow: 0 10px 30px rgba(16,24,40,0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: pointer;
-    animation: fadeIn 1.2s ease forwards;
-}
-
-.why-box h3 {
-    margin-bottom: 12px;
-    font-size: 20px;
-}
-
-.why-box p {
-    font-size: 14px;
-    line-height: 1.5;
-}
-
-/* Hover for Why Choose Us */
-.why-box:hover {
-    transform: translateY(-8px) scale(1.02);
-    box-shadow: 0 15px 35px rgba(16,24,40,0.2);
-}
-
-/* Call To Action */
-.cta-section {
-    padding: 60px 10%;
-    text-align: center;
-    border-radius: 16px;
-    margin-top: 60px;
-    color: #fff;
-    transition: transform 0.3s ease;
-}
-
-.cta-section h2 {
-    font-size: 32px;
-    margin-bottom: 20px;
-}
-
-.cta-section p {
-    font-size: 16px;
-    margin-bottom: 25px;
-}
-
-.cta-btn {
-    display: inline-block;
-    padding: 14px 30px;
-    border-radius: 12px;
+/* ============================
+   GLOBAL STYLES
+============================ */
+body {
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f7f9fc;
+    color: #222;
+  }
+  
+  .container {
+    width: 90%;
+    max-width: 1250px;
+    margin: auto;
+    padding: 40px 0;
+  }
+  
+  /* ============================
+     SERVICE CARD
+  ============================ */
+  .service-card {
+    display: flex;
+    align-items: center;
+    gap: 25px;
     background: #fff;
-    color: #ff4b1f;
-    font-weight: 600;
-    text-decoration: none;
-    transition: transform 0.2s ease;
-}
-
-.cta-btn:hover {
-    transform: translateY(-4px) scale(1.05);
-}
-
-/* ----------------------------
-   ANIMATIONS
----------------------------- */
-@keyframes fadeIn {
-    from {opacity: 0; transform: translateY(20px);}
-    to {opacity: 1; transform: translateY(0);}
-}
-
-@keyframes slideUp {
-    from {opacity: 0; transform: translateY(30px);}
-    to {opacity: 1; transform: translateY(0);}
-}
-
-/* ----------------------------
-   RESPONSIVE
----------------------------- */
-@media (max-width: 1024px) {
-    .services-grid {grid-template-columns: repeat(2, 1fr);}
-    .why-grid {grid-template-columns: repeat(2, 1fr);}
-}
-
-@media (max-width: 768px) {
-    .services-grid, .why-grid {grid-template-columns: 1fr;}
-    .services-hero, .services-section, .why-choose, .cta-section {padding: 40px 5%;}
-}
+    padding: 25px;
+    border-radius: 15px;
+    margin-bottom: 40px;
+    box-shadow: 0px 4px 15px rgba(0,0,0,0.08);
+    transition: transform .3s ease, box-shadow .3s ease;
+  }
+  
+  .service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 8px 25px rgba(0,0,0,0.12);
+  }
+  
+  /* ============================
+     IMAGES & IFRAME
+  ============================ */
+  .service-card img,
+  .service-card iframe {
+    width: 45%;
+    height: 260px;
+    object-fit: cover;
+    border-radius: 12px;
+  }
+  
+  /* ============================
+     TEXT CONTENT
+  ============================ */
+  .service-content {
+    width: 55%;
+  }
+  
+  .service-content h2 {
+    font-size: 26px;
+    color: #222;
+    margin-bottom: 10px;
+  }
+  
+  .service-content p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 8px;
+    color: #444;
+  }
+  
+  /* ============================
+     LAPTOP VIEW (1024px – 1366px)
+  ============================ */
+  @media (max-width: 1366px) {
+    .service-card img, 
+    .service-card iframe {
+      height: 240px;
+    }
+  
+    .service-content h2 {
+      font-size: 24px;
+    }
+  }
+  
+  /* ============================
+     TABLET VIEW (768px – 1024px)
+  ============================ */
+  @media (max-width: 1024px) {
+    .service-card {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .service-card img,
+    .service-card iframe {
+      width: 100%;
+      height: 280px;
+    }
+  
+    .service-content {
+      width: 100%;
+    }
+  
+    .service-content h2 {
+      font-size: 22px;
+    }
+  
+    .service-content p {
+      font-size: 15px;
+    }
+  }
+  
+  /* ============================
+     MOBILE VIEW (Below 768px)
+  ============================ */
+  @media (max-width: 768px) {
+    .service-card {
+      padding: 20px;
+    }
+  
+    .service-card img,
+    .service-card iframe {
+      height: 230px;
+    }
+  
+    .service-content h2 {
+      font-size: 20px;
+    }
+  
+    .service-content p {
+      font-size: 14px;
+    }
+  }
+  
+  /* ============================
+     SMALL MOBILE VIEW (Below 480px)
+  ============================ */
+  @media (max-width: 480px) {
+    .service-card {
+      padding: 15px;
+    }
+  
+    .service-card img,
+    .service-card iframe {
+      height: 200px;
+    }
+  
+    .service-content h2 {
+      font-size: 18px;
+    }
+  
+    .service-content p {
+      font-size: 13px;
+    }
+  }
+  

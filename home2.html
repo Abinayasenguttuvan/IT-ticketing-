@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ecommerce - shopfy</title>
+    <title>Digital Payment SAAS</title>
     <!-- CSS Files -->
-    <!-- <link rel="stylesheet" href="./style.css"> -->
+    <link rel="stylesheet" href="./style1.css">
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
     <!-- ================= HEADER ================= -->
     <header class="header">
-        <a href="index.html">   
+        <a href="home2.html">   
             <img src="./white.webp" alt="Stackly Logo" style="height: 60px; ">
           </a> 
         <!-- div class="logo">Tech<span>Solutions</span></div> -->
@@ -29,14 +29,12 @@
                         <li><a href="./home2.html">Home 2</a></li>
                     </ul>
                 </li>
-                
-                <li><a href="./services1.html">Services</a></li>
+              
                 <li><a href="./about1.html">About</a></li>
-                <li><a href="./dashbored1.html">dashboard</a></li>
+                <li><a href="./services1.html">Services</a></li>
                 <li><a href="./contact1.html">Contact</a></li>
+                <li><a href="./dashboard1.html">Dashboard</a></li>
                 <li><a href="./login1.html">Login</a></li>
-    
-    
                 
 
             </ul>
@@ -48,1404 +46,9 @@
         </div>
 
     </header>
-<style>
-    /* =====================
-       RESET
-    ===================== */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      
-    }
-    
-    /* =====================
-       HERO SECTION
-    ===================== */
-    .ess-hero {
-      background: #00e5ef;
-      padding: 80px 60px;
-    }
-    
-    .ess-hero-container {
-      max-width: 1200px;
-      margin: auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 60px;
-    }
-    
-    /* =====================
-       LEFT CONTENT
-    ===================== */
-    .ess-content {
-      flex: 1;
-    }
-    
-    .ess-content h1 {
-      font-size: 52px;
-      font-weight: 700;
-      line-height: 1.2;
-      color: #111;
-      margin-bottom: 20px;
-    }
-    
-    .ess-content p {
-      font-size: 18px;
-      line-height: 1.7;
-      color: #222;
-      max-width: 520px;
-      margin-bottom: 30px;
-    }
-    
-    .ess-buttons {
-      display: flex;
-      gap: 15px;
-    }
-    
-    .btn-primary {
-      background: #7a00cc;
-      color: #fff;
-      border: none;
-      padding: 12px 28px;
-      border-radius: 25px;
-      cursor: pointer;
-      font-size: 16px;
-    }
-    
-    .btn-outline {
-      background: transparent;
-      color: #7a00cc;
-      border: 2px solid #7a00cc;
-      padding: 12px 28px;
-      border-radius: 25px;
-      cursor: pointer;
-      font-size: 16px;
-    }
-    
-    /* =====================
-       RIGHT IMAGE (EXPLOSION EFFECT)
-    ===================== */
-    .ess-image {
-      flex: 1;
-      display: flex;
-      justify-content: center;
-    }
-    
-    .image-explode {
-      position: relative;
-      width: 380px;
-      aspect-ratio: 1 / 1;
-      background: url("./photo1.webp") center/cover no-repeat;
-      cursor: pointer;
-    }
-    
-    .image-explode span {
-      position: absolute;
-      inset: 0;
-      background: inherit;
-      transition: transform 0.7s ease;
-    }
-    
-    /* 8 fragments */
-    .image-explode span:nth-child(1) { clip-path: polygon(50% 0,100% 0,100% 50%); }
-    .image-explode span:nth-child(2) { clip-path: polygon(50% 0,100% 50%,50% 50%); }
-    .image-explode span:nth-child(3) { clip-path: polygon(0 0,50% 0,50% 50%); }
-    .image-explode span:nth-child(4) { clip-path: polygon(0 0,50% 50%,0 50%); }
-    .image-explode span:nth-child(5) { clip-path: polygon(0 50%,50% 50%,50% 100%); }
-    .image-explode span:nth-child(6) { clip-path: polygon(0 50%,50% 100%,0 100%); }
-    .image-explode span:nth-child(7) { clip-path: polygon(50% 50%,100% 50%,100% 100%); }
-    .image-explode span:nth-child(8) { clip-path: polygon(50% 50%,100% 100%,50% 100%); }
-    
-    /* Hover explosion */
-    .image-explode:hover span:nth-child(1) { transform: translate(60px,-60px); }
-    .image-explode:hover span:nth-child(2) { transform: translate(40px,-40px); }
-    .image-explode:hover span:nth-child(3) { transform: translate(-60px,-60px); }
-    .image-explode:hover span:nth-child(4) { transform: translate(-40px,-40px); }
-    .image-explode:hover span:nth-child(5) { transform: translate(-60px,60px); }
-    .image-explode:hover span:nth-child(6) { transform: translate(-40px,40px); }
-    .image-explode:hover span:nth-child(7) { transform: translate(60px,60px); }
-    .image-explode:hover span:nth-child(8) { transform: translate(40px,40px); }
-    
-    /* =====================
-       RESPONSIVE
-    ===================== */
-    
-    /* Laptop */
-    @media (max-width: 1200px) {
-      .ess-content h1 { font-size: 44px; }
-      .image-explode { width: 320px; }
-    }
-    
-    /* Tablet */
-    @media (max-width: 992px) {
-      .ess-hero-container {
-        flex-direction: column;
-        text-align: center;
-      }
-    
-      .ess-content p {
-        margin: auto;
-      }
-    
-      .ess-buttons {
-        justify-content: center;
-      }
-    }
-    
-    /* Mobile */
-    @media (max-width: 600px) {
-      .ess-hero {
-        padding: 50px 20px;
-      }
-    
-      .ess-content h1 {
-        font-size: 32px;
-      }
-    
-      .ess-content p {
-        font-size: 16px;
-      }
-    
-      .image-explode {
-        width: 240px;
-      }
-    
-      /* Disable explosion on mobile */
-      .image-explode:hover span {
-        transform: translate(0,0);
-      }
-    }
-
-
-    /* ===============================
-   ESS FEATURE SECTION
-================================ */
-.ess-feature-section {
-  padding: 100px 60px;
-  background: #ffffff;
-}
-
-.ess-feature-container {
-  max-width: 1200px;
-  margin: auto;
-  display: flex;
-  align-items: center;
-  gap: 60px;
-}
-
-/* IMAGE */
-.ess-image {
-  flex: 1;
-  overflow: hidden;
-}
-
-.ess-image img {
-  width: 100%;
-  max-width: 480px;
-  transition: transform 1s ease;
-}
-
-/* CONTENT */
-.ess-content {
-  flex: 1;
-}
-
-.ess-content h2 {
-  font-size: 40px;
-  line-height: 1.3;
-  margin-bottom: 20px;
-  color: #111;
-}
-
-.ess-content h2 span {
-  color: #7a00cc;
-}
-
-.ess-desc {
-  font-size: 18px;
-  color: #444;
-  line-height: 1.6;
-  margin-bottom: 30px;
-}
-
-.ess-points {
-  list-style: none;
-}
-
-.ess-points li {
-  font-size: 16px;
-  margin-bottom: 18px;
-  padding-left: 28px;
-  position: relative;
-  color: #333;
-}
-
-/* CHECK ICON */
-.ess-points li::before {
-  content: "✔";
-  position: absolute;
-  left: 0;
-  color: #7a00cc;
-  font-weight: bold;
-}
-
-/* ===============================
-   SCROLL ANIMATION STATES
-================================ */
-.animate-right {
-  opacity: 0;
-  transform: translateX(80px);
-  transition: all 0.8s ease;
-}
-
-.animate-right.show {
-  opacity: 1;
-  transform: translateX(0);
-}
-
-/* IMAGE ZOOM */
-.animate-zoom {
-  opacity: 0;
-  transform: scale(0.9);
-  transition: all 1s ease;
-}
-
-.animate-zoom.show {
-  opacity: 1;
-  transform: scale(1);
-}
-
-/* ===============================
-   RESPONSIVE
-================================ */
-
-/* Laptop */
-@media (max-width: 1200px) {
-  .ess-content h2 {
-    font-size: 34px;
-  }
-}
-
-/* Tablet */
-@media (max-width: 992px) {
-  .ess-feature-container {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .ess-image img {
-    max-width: 420px;
-  }
-
-  .ess-points li {
-    text-align: left;
-  }
-}
-
-/* Mobile */
-@media (max-width: 600px) {
-  .ess-feature-section {
-    padding: 60px 20px;
-  }
-
-  .ess-content h2 {
-    font-size: 28px;
-  }
-
-  .ess-desc {
-    font-size: 16px;
-  }
-}
-
-
-/* ===============================
-   SECTION LAYOUT
-================================ */
-.ess-benefits {
-  padding: 100px 60px;
-  background: #fff;
-}
-
-.ess-container {
-  max-width: 1200px;
-  margin: auto;
-}
-
-.ess-header {
-  text-align: center;
-  max-width: 800px;
-  margin: auto;
-}
-
-.ess-header h2 {
-  font-size: 42px;
-  line-height: 1.3;
-  margin-bottom: 20px;
-}
-
-.ess-header h2 span {
-  color: #8a00ff;
-}
-
-.ess-header p {
-  font-size: 18px;
-  color: #555;
-  line-height: 1.6;
-}
-
-/* ===============================
-   CARD GRID
-================================ */
-.ess-card-grid {
-  margin-top: 70px;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 30px;
-}
-
-/* ===============================
-   CARD WITH GALLERY HOVER EFFECT
-================================ */
-.ess-card {
-  position: relative;
-  background: #fff;
-  padding: 40px 30px;
-  border-radius: 20px;
-  text-align: center;
-  overflow: hidden;
-  cursor: pointer;
-  transition: transform 0.4s ease;
-}
-
-/* Duplicate layers for hover switch */
-.ess-card::before,
-.ess-card::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: inherit;
-  z-index: -1;
-  opacity: 0;
-  transform: scale(0.9);
-  transition: all 0.4s ease;
-}
-
-.ess-card::after {
-  opacity: 0.15;
-  transform: scale(1.1);
-}
-
-.ess-card:hover {
-  transform: scale(1.05);
-}
-
-.ess-card:hover::before {
-  opacity: 0.1;
-  transform: scale(1.05);
-}
-
-.ess-card:hover::after {
-  opacity: 0.2;
-  transform: scale(1.15);
-}
-
-/* ===============================
-   ICONS
-================================ */
-.icon-wrap {
-  width: 70px;
-  height: 70px;
-  border-radius: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 30px;
-  margin: auto;
-  margin-bottom: 20px;
-}
-
-.green { background: #e7fff4; color: #00b67a; }
-.purple { background: #f3e8ff; color: #8a00ff; }
-.orange { background: #fff3e0; color: #ff9800; }
-.blue { background: #e6f6ff; color: #00b0ff; }
-
-/* ===============================
-   CARD TEXT
-================================ */
-.ess-card h4 {
-  font-size: 18px;
-  margin-bottom: 10px;
-  color: #111;
-}
-
-.ess-card p {
-  font-size: 15px;
-  color: #555;
-  line-height: 1.5;
-}
-
-/* ===============================
-   RESPONSIVE
-================================ */
-
-/* Laptop */
-@media (max-width: 1200px) {
-  .ess-card-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .ess-header h2 {
-    font-size: 36px;
-  }
-}
-
-/* Tablet */
-@media (max-width: 992px) {
-  .ess-benefits {
-    padding: 80px 40px;
-  }
-}
-
-/* Mobile */
-@media (max-width: 600px) {
-  .ess-benefits {
-    padding: 60px 20px;
-  }
-
-  .ess-card-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .ess-header h2 {
-    font-size: 28px;
-  }
-
-  .ess-header p {
-    font-size: 16px;
-  }
-}
-
-/* ===============================
-   DANCING SHADOW HEADING
-================================ */
-.dance-text {
-  font-size: 42px;
-  line-height: 1.3;
-  text-align: center;
-  color: #111;
-  position: relative;
-}
-
-/* Highlighted line */
-.dance-text span {
-  color: #8a00ff;
-  display: inline-block;
-  animation: danceShadow 2.5s infinite ease-in-out;
-}
-
-/* Animation */
-@keyframes danceShadow {
-  0% {
-    text-shadow:
-      2px 2px 0 rgba(138, 0, 255, 0.25),
-      -2px -2px 0 rgba(0, 176, 255, 0.25);
-  }
-  25% {
-    text-shadow:
-      -3px 2px 0 rgba(255, 152, 0, 0.3),
-      3px -2px 0 rgba(138, 0, 255, 0.3);
-  }
-  50% {
-    text-shadow:
-      3px 3px 0 rgba(0, 182, 122, 0.3),
-      -3px -3px 0 rgba(138, 0, 255, 0.3);
-  }
-  75% {
-    text-shadow:
-      -2px 3px 0 rgba(0, 176, 255, 0.3),
-      2px -3px 0 rgba(255, 152, 0, 0.3);
-  }
-  100% {
-    text-shadow:
-      2px 2px 0 rgba(138, 0, 255, 0.25),
-      -2px -2px 0 rgba(0, 176, 255, 0.25);
-  }
-}
-
-/* ===============================
-   RESPONSIVE
-================================ */
-@media (max-width: 1200px) {
-  .dance-text {
-    font-size: 36px;
-  }
-}
-
-@media (max-width: 768px) {
-  .dance-text {
-    font-size: 30px;
-  }
-}
-
-@media (max-width: 480px) {
-  .dance-text {
-    font-size: 26px;
-  }
-}
-
-
-
-/* SECTION */
-.ess-slider {
-  padding: 80px 20px;
-}
-
-/* WRAPPER */
-.slider-wrapper {
-  max-width: 1200px;
-  margin: auto;
-  display: flex;
-  align-items: center;
-  gap: 80px;
-}
-
-/* IMAGE */
-.slider-image img {
-  width: 420px;
-  border-radius: 20px;
-  transition: transform 0.6s ease, opacity 0.6s ease;
-}
-
-/* CONTENT */
-.slider-content {
-  max-width: 520px;
-  animation: slideIn 0.8s ease;
-}
-
-.slider-content h2 {
-  font-size: 40px;
-  line-height: 1.3;
-  margin-bottom: 20px;
-}
-
-.slider-content h2 span {
-  color: #9b00ff;
-}
-
-.slider-content p {
-  font-size: 16px;
-  color: #444;
-  margin-bottom: 20px;
-}
-
-.slider-content ul {
-  list-style: none;
-}
-
-.slider-content ul li {
-  margin-bottom: 12px;
-  padding-left: 28px;
-  position: relative;
-}
-
-.slider-content ul li::before {
-  content: "✔";
-  position: absolute;
-  left: 0;
-  color: #9b00ff;
-  font-weight: bold;
-}
-
-/* ANIMATION */
-@keyframes slideIn {
-  from {
-    opacity: 0;
-    transform: translateX(60px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-/* IMAGE ZOOM EFFECT */
-.slider-image img.active {
-  transform: scale(1.05);
-  opacity: 1;
-}
-
-/* RESPONSIVE */
-
-/* TABLET */
-@media (max-width: 992px) {
-  .slider-wrapper {
-    gap: 40px;
-  }
-
-  .slider-content h2 {
-    font-size: 32px;
-  }
-
-  .slider-image img {
-    width: 360px;
-  }
-}
-
-/* MOBILE */
-@media (max-width: 768px) {
-  .slider-wrapper {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .slider-image img {
-    width: 300px;
-  }
-
-  .slider-content {
-    animation: none;
-  }
-}
-
-/* SCROLLING HEADER */
-.scroll-header {
-        width: 100%;
-        overflow: hidden;
-        white-space: nowrap;
-        border-bottom:  #9b00ff;
-        margin-bottom: 40px;
-    }
-
-    .scroll-header span {
-        display: inline-block;
-        padding-right: 50px;
-        font-size: 2rem;
-        font-weight: bold;
-        animation: scroll 20s linear infinite;
-    }
-
-    .scroll-header .highlight {
-        color:  #9b00ff;
-    }
-
-    @keyframes scroll {
-        0% { transform: translateX(100%); }
-        100% { transform: translateX(-100%); }
-    }
-
-    /* CLIENT IMAGES */
-    .client-images {
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 20px;
-        margin-bottom: 50px;
-    }
-
-    .client-images img {
-        width: 120px;
-        height: 120px;
-        object-fit: cover;
-        border-radius: 50%;
-        border:  #9b00ff;
-        transition: transform 0.3s;
-    }
-
-    .client-images img:hover {
-        transform: scale(1.1);
-    }
-
-    /* REVIEW CARDS */
-    .reviews-container {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 20px;
-        justify-content: center;
-    }
-
-    .review-card {
-        background: white;
-        width: 300px;
-        height: 200px;
-        perspective: 1000px;
-    }
-
-    .review-inner {
-        position: relative;
-        width: 100%;
-        height: 100%;
-        text-align: center;
-        transition: transform 0.8s;
-        transform-style: preserve-3d;
-        cursor: pointer;
-        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        border-radius: 10px;
-    }
-
-    .review-card:hover .review-inner {
-        transform: rotateY(180deg) scale(1.05);
-    }
-
-    .review-front, .review-back {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        backface-visibility: hidden;
-        border-radius: 10px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        padding: 20px;
-    }
-
-    .review-front {
-        background: #fff;
-        color: #333;
-    }
-
-    .review-back {
-        background: #9b00ff;
-        color: #fff;
-        transform: rotateY(180deg);
-    }
-
-    /* MEDIA QUERIES */
-    @media (max-width: 768px) {
-        .scroll-header span {
-            font-size: 1.5rem;
-        }
-
-        .review-card {
-            width: 90%;
-            height: 180px;
-        }
-
-        .client-images img {
-            width: 80px;
-            height: 80px;
-        }
-    }
-
-    @media (min-width: 769px) and (max-width: 1024px) {
-        .review-card {
-            width: 45%;
-            height: 200px;
-        }
-    }
-
-    
-
-    h1 {
-        text-align: center;
-        font-size: 2.5rem;
-        margin-bottom: 40px;
-        color: #333;
-    }
-
-    .faq-container {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 20px;
-        justify-content: center;
-    }
-
-    .faq-box {
-        background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
-        color: white;
-        width: 300px;
-        min-height: 150px;
-        padding: 20px;
-        border-radius: 20px;
-        overflow: hidden;
-        position: relative;
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 1rem;
-        text-align: center;
-        transition: transform 0.3s;
-    }
-
-    .faq-box:hover {
-        transform: scale(1.0);
-    }
-
-    .faq-content {
-        position: absolute;
-        width: 100%;
-        animation: scrollFAQ 10s linear infinite;
-    }
-
-    /* Liquid morph effect using border-radius animation */
-    .faq-box:before {
-        content: '';
-        position: absolute;
-        top: -20%;
-        left: -20%;
-        width: 140%;
-        height: 140%;
-        background: inherit;
-        border-radius: 45% 55% 60% 40% / 50% 45% 55% 50%;
-        animation: morph 8s infinite alternate ease-in-out;
-        z-index: -1;
-    }
-
-    @keyframes morph {
-        0% { border-radius: 45% 55% 60% 40% / 50% 45% 55% 50%; }
-        50% { border-radius: 50% 50% 45% 55% / 55% 50% 50% 45%; }
-        100% { border-radius: 45% 55% 60% 40% / 50% 45% 55% 50%; }
-    }
-
-    @keyframes scrollFAQ {
-        0% { transform: translateY(100%); opacity: 0; }
-        10% { transform: translateY(0%); opacity: 1; }
-        40% { transform: translateY(0%); opacity: 1; }
-        50% { transform: translateY(-100%); opacity: 0; }
-        100% { transform: translateY(-100%); opacity: 0; }
-    }
-
-    /* MEDIA QUERIES */
-    @media (max-width: 768px) {
-        h1 {
-            font-size: 2rem;
-        }
-
-        .faq-box {
-            width: 90%;
-            font-size: 0.9rem;
-            min-height: 120px;
-        }
-    }
-
-    @media (min-width: 769px) and (max-width: 1024px) {
-        .faq-box {
-            width: 45%;
-            font-size: 1rem;
-        }
-    }
-
-
-    /* ===== ESS AUTO SLIDER ===== */
-.essAutoSlider-section {
-  background: #5dbacd;
-  padding: 80px 20px;
-}
-
-.essAutoSlider-wrapper {
-  max-width: 1200px;
-  margin: auto;
-  display: flex;
-  align-items: center;
-  gap: 60px;
-}
-
-/* IMAGE */
-.essAutoSlider-image {
-  flex: 1;
-  position: relative;
-  min-height: 420px;
-}
-
-.essAutoSlider-img {
-  position: absolute;
-  width: 260px;
-  left: 50%;
-  transform: translateX(-50%) scale(0.95);
-  opacity: 0;
-  transition: all 0.8s ease;
-}
-
-.essAutoSlider-img.active {
-  opacity: 1;
-  transform: translateX(-50%) scale(1);
-}
-
-/* CONTENT */
-.essAutoSlider-content {
-  flex: 1;
-}
-
-.essAutoSlider-slide {
-  display: none;
-  animation: essFadeSlide 0.8s ease;
-}
-
-.essAutoSlider-slide.active {
-  display: block;
-}
-
-@keyframes essFadeSlide {
-  from {
-    opacity: 0;
-    transform: translateY(25px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.essAutoSlider-small {
-  font-size: 18px;
-  color: #333;
-}
-
-.essAutoSlider-highlight {
-  font-size: 36px;
-  color: #7b2cbf;
-  font-weight: 700;
-}
-
-.essAutoSlider-content p {
-  margin: 15px 0;
-  color: #444;
-}
-
-.essAutoSlider-content ul {
-  list-style: none;
-  padding: 0;
-}
-
-.essAutoSlider-content li {
-  margin-bottom: 10px;
-  padding-left: 25px;
-  position: relative;
-}
-
-.essAutoSlider-content li::before {
-  content: "✔";
-  color: #7b2cbf;
-  position: absolute;
-  left: 0;
-}
-
-/* ===== RESPONSIVE ===== */
-@media (max-width: 991px) {
-  .essAutoSlider-wrapper {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .essAutoSlider-image {
-    min-height: 360px;
-  }
-}
-
-@media (max-width: 576px) {
-  .essAutoSlider-highlight {
-    font-size: 26px;
-  }
-
-  .essAutoSlider-img {
-    width: 200px;
-  }
-}
-
-
-.essAutoSlider-wrapper {
-  max-width: 1300px;            /* wider layout */
-  margin: auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 90px;                    /* 🔥 proper gap between image & content */
-}
-
-
-/* IMAGE CONTAINER */
-.essAutoSlider-image {
-  flex: 1;
-  position: relative;
-  min-height: 520px; /* increased height */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-/* IMAGE */
-.essAutoSlider-img {
-  position: absolute;
-  width: 320px;          /* 🔥 increased image size */
-  max-width: 100%;
-  opacity: 0;
-  transform: scale(1);
-  transition: opacity 0.8s ease;
-}
-
-
-
-/* ACTIVE IMAGE */
-.essAutoSlider-img.active {
-  opacity: 1;
-  animation: essZoomPulse 6s ease-in-out infinite;
-}
-
-/* ZOOM IN & OUT ANIMATION */
-@keyframes essZoomPulse {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.08); /* zoom in */
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-
-/* LAPTOP */
-@media (max-width: 1200px) {
-  .essAutoSlider-img {
-    width: 280px;
-  }
-}
-
-/* TABLET */
-@media (max-width: 991px) {
-  .essAutoSlider-img {
-    width: 260px;
-  }
-}
-
-/* MOBILE */
-@media (max-width: 576px) {
-  .essAutoSlider-image {
-    min-height: 380px;
-  }
-
-  .essAutoSlider-img {
-    width: 220px;
-  }
-}
-
-/* SECTION */
-.essReview-section {
-  padding: 80px 20px;
-  background: #fff;
-  overflow: hidden;
-}
-
-.essReview-heading {
-  text-align: center;
-  font-size: 36px;
-  margin-bottom: 50px;
-  color: #222;
-}
-
-/* SLIDER */
-.essReview-slider {
-  width: 100%;
-  overflow: hidden;
-}
-
-.essReview-track {
-  display: flex;
-  gap: 30px;
-  animation: essReviewScroll 35s linear infinite;
-}
-
-/* CARD */
-.essReview-card {
-  min-width: 360px;
-  background: #fff;
-  border-radius: 16px;
-  padding: 30px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-  text-align: left;
-}
-
-/* IMAGE */
-.essReview-card img {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  margin-bottom: 15px;
-}
-
-/* TEXT */
-.essReview-text {
-  font-size: 16px;
-  min-height: 110px;
-  color: #444;
-  margin-bottom: 20px;
-}
-
-/* NAME */
-.essReview-card h4 {
-  margin: 0;
-  font-size: 18px;
-}
-
-.essReview-card span {
-  font-size: 14px;
-  color: #777;
-}
-
-/* STARS */
-.essReview-stars {
-  color: #f6a500;
-  margin-top: 10px;
-  font-size: 18px;
-}
-
-/* AUTO SCROLL */
-@keyframes essReviewScroll {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-60%);
-  }
-}
-
-/* RESPONSIVE */
-@media (max-width: 991px) {
-  .essReview-heading {
-    font-size: 28px;
-  }
-
-  .essReview-card {
-    min-width: 300px;
-  }
-}
-
-@media (max-width: 576px) {
-  .essReview-card {
-    min-width: 260px;
-  }
-
-  .essReview-text {
-    font-size: 15px;
-  }
-}
-
-/* SECTION */
-.essCTA-section {
-  padding: 80px 20px;
-  background: #fff;
-}
-
-/* CTA BOX */
-.essCTA-box {
-  position: relative;
-  max-width: 1200px;
-  margin: auto;
-  background: linear-gradient(135deg, #33b5b0, #51b2c8);
-  border-radius: 28px;
-  padding: 80px 40px;
-  text-align: center;
-  overflow: hidden;
-}
-
-/* HEADING */
-.essCTA-heading {
-  color: #fff;
-  font-size: 36px;
-  font-weight: 700;
-  line-height: 1.3;
-  margin-bottom: 40px;
-}
-
-/* BUTTON */
-.essCTA-btn {
-  display: inline-block;
-  padding: 14px 36px;
-  background: #fff;
-  color: #7b2cbf;
-  font-weight: 600;
-  border-radius: 30px;
-  text-decoration: none;
-  transition: all 0.3s ease;
-}
-
-.essCTA-btn:hover {
-  background: #f1e6ff;
-  transform: translateY(-3px);
-}
-
-/* DECORATIVE CIRCLES */
-.essCTA-circle {
-  position: absolute;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.15);
-}
-
-.essCTA-circle.left {
-  width: 180px;
-  height: 180px;
-  bottom: -60px;
-  left: -60px;
-}
-
-.essCTA-circle.right {
-  width: 260px;
-  height: 260px;
-  top: -80px;
-  right: -80px;
-}
-
-/* ===== RESPONSIVE ===== */
-
-/* LAPTOP */
-@media (max-width: 1200px) {
-  .essCTA-heading {
-    font-size: 32px;
-  }
-}
-
-/* TABLET */
-@media (max-width: 991px) {
-  .essCTA-box {
-    padding: 60px 30px;
-  }
-
-  .essCTA-heading {
-    font-size: 28px;
-  }
-}
-
-/* MOBILE */
-@media (max-width: 576px) {
-  .essCTA-box {
-    padding: 50px 20px;
-    border-radius: 20px;
-  }
-
-  .essCTA-heading {
-    font-size: 22px;
-  }
-
-  .essCTA-btn {
-    padding: 12px 28px;
-    font-size: 14px;
-  }
-
-  .essCTA-circle.right {
-    width: 180px;
-    height: 180px;
-  }
-}
-
-/* SECTION */
-.essFaq-section {
-  padding: 80px 20px;
-  background: #fff;
-}
-
-.essFaq-heading {
-  text-align: center;
-  font-size: 36px;
-  margin-bottom: 50px;
-}
-
-/* SCROLL AREA */
-.essFaq-scroll-wrapper {
-  max-width: 900px;
-  margin: auto;
-  height: 420px;               /* visible area */
-  overflow: hidden;
-  position: relative;
-}
-
-/* AUTO SCROLL */
-.essFaq-scroll {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  animation: essFaqUp 35s linear infinite;
-}
-
-/* FAQ ITEM */
-.essFaq-item {
-  border: 2px solid #e75cff;
-  border-radius: 16px;
-  padding: 20px 24px;
-  background: #fff;
-}
-
-/* QUESTION */
-.essFaq-question {
-  width: 100%;
-  background: none;
-  border: none;
-  font-size: 18px;
-  font-weight: 600;
-  text-align: left;
-  cursor: pointer;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.essFaq-question span {
-  width: 12px;
-  height: 12px;
-  border-right: 2px solid #555;
-  border-bottom: 2px solid #555;
-  transform: rotate(45deg);
-  transition: transform 0.3s ease;
-}
-
-/* ANSWER */
-.essFaq-answer {
-  max-height: 0;
-  overflow: hidden;
-  font-size: 16px;
-  color: #444;
-  transition: max-height 0.4s ease;
-  margin-top: 10px;
-}
-
-/* ACTIVE */
-.essFaq-item.active .essFaq-answer {
-  max-height: 160px;
-}
-
-.essFaq-item.active .essFaq-question span {
-  transform: rotate(-135deg);
-}
-
-/* AUTO SCROLL ANIMATION */
-@keyframes essFaqUp {
-  0% {
-    transform: translateY(0);
-  }
-  100% {
-    transform: translateY(-50%);
-  }
-}
-
-/* RESPONSIVE */
-@media (max-width: 991px) {
-  .essFaq-heading {
-    font-size: 28px;
-  }
-
-  .essFaq-scroll-wrapper {
-    height: 380px;
-  }
-}
-
-@media (max-width: 576px) {
-  .essFaq-heading {
-    font-size: 24px;
-  }
-
-  .essFaq-question {
-    font-size: 16px;
-  }
-
-  .essFaq-answer {
-    font-size: 14px;
-  }
-}
-
-  /* ================= GLOBAL ================= */
-  * {
+    <style>
+        /* ================= GLOBAL ================= */
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -1467,7 +70,7 @@ ul { list-style: none; }
 .header {
     width: 100%;
     padding: 18px 40px;
-    background: #267992;
+    background: #0b1f3a;
     color: #fff;
     display: flex;
     justify-content: space-between;
@@ -1513,7 +116,7 @@ ul { list-style: none; }
     position: absolute;
     top: 38px;
     left: 0;
-    background: #8095bc;
+    background: #12274d;
     width: 160px;
     border-radius: 8px;
     padding: 10px 0;
@@ -1527,7 +130,7 @@ ul { list-style: none; }
 }
 
 .dropdown-content li a:hover {
-  background: #8095bc;
+    background: #0e1c33;
 }
 
 /* Toggle */
@@ -1545,7 +148,7 @@ li a{
 
 /* ================= FOOTER ================= */
 .footer {
-    background: #267992;
+    background: #0b1f3a;
     padding-top: 40px;
     color: white;
 }
@@ -1591,7 +194,7 @@ li a{
 
 .footer-bottom {
     text-align: center;
-    background:#267992;
+    background: #08192e;
     padding: 15px 0;
 }
 
@@ -1657,581 +260,488 @@ li a{
     }
 }
 
-
-
-   
-    </style>
-
-  </body>
-    
-
-
-
-    <section class="ess-hero">
-        <div class="ess-hero-container">
-      
-          <!-- LEFT CONTENT -->
-          <div class="ess-content">
-            <h1>
-              Our ESS portal empowers employees with<br>
-              anytime, anywhere access
-            </h1>
-      
-            <p>
-              The Employee Self-Service (ESS) portal allows employees to access
-              payslips, attendance, leave, HR documents, and policies without
-              depending on HR teams—improving transparency and engagement.
-            </p>
-      
-            <div class="ess-buttons">
-                <a href="./404.html">
-              <button class="btn-primary">Free Trial</button></a>
-              <a href="./404.html">
-              <button class="btn-outline">Request Demo</button></a>
-            </div>
-          </div>
-      
-          <!-- RIGHT IMAGE -->
-          <div class="ess-image">
-            <div class="image-explode">
-              <span></span><span></span><span></span><span></span>
-              <span></span><span></span><span></span><span></span>
-            </div>
-          </div>
-      
-        </div>
-      </section>
-
-
-      <section class="ess-feature-section">
-        <div class="ess-feature-container">
-      
-          <!-- LEFT IMAGE -->
-          <div class="ess-image animate-zoom">
-            <img src="./ESS dahs.webp" alt="ESS Dashboard">
-          </div>
-      
-          <!-- RIGHT CONTENT -->
-          <div class="ess-content">
-            <h2>
-              Make short work of repetitive HR tasks,<br>
-              <span>Make way for high-value work</span>
-            </h2>
-      
-            <p class="ess-desc">
-              HR teams often spend valuable time on repetitive documentation and
-              administrative tasks. Our ESS portal automates routine HR activities,
-              giving HR professionals more time to focus on strategic initiatives.
-            </p>
-      
-            <ul class="ess-points">
-              <li class="animate-right">Zero-effort onboarding document collection & investment declaration</li>
-              <li class="animate-right">Streamlined workflows between employees and managers</li>
-              <li class="animate-right">Easy employee information updates without HR intervention</li>
-              <li class="animate-right">Standardised processes and uniform policy enforcement</li>
-            </ul>
-          </div>
-      
-        </div>
-      </section>
-
-
-      <section class="ess-benefits">
-        <div class="ess-container">
-      
-          <!-- SECTION HEADER -->
-          <div class="ess-header">
-            <h2 class="dance-text">
-                <span>Improved employee experience and morale</span><br>
-                Improved productivity with ESS
-              </h2>
-            <p>
-              Our ESS portal helps build an environment of efficiency,
-              transparency, and trust by giving employees instant digital
-              access to people, processes, and documents they need — anytime.
-            </p>
-          </div>
-      
-          <!-- CARD GRID -->
-          <div class="ess-card-grid">
-      
-            <!-- CARD 1 -->
-            <div class="ess-card">
-              <div class="icon-wrap green">
-                ⏱
-              </div>
-              <h4>Attendance Management</h4>
-              <p>Mark attendance via web sign-in or mobile app with ease.</p>
-            </div>
-      
-            <!-- CARD 2 -->
-            <div class="ess-card">
-              <div class="icon-wrap purple">
-                💳
-              </div>
-              <h4>Payslips & Payroll</h4>
-              <p>Access payslips and payroll details in just a few clicks.</p>
-            </div>
-      
-            <!-- CARD 3 -->
-            <div class="ess-card">
-              <div class="icon-wrap orange">
-                📅
-              </div>
-              <h4>Leave & Holidays</h4>
-              <p>View holiday calendars, apply for leave, and track attendance.</p>
-            </div>
-      
-            <!-- CARD 4 -->
-            <div class="ess-card">
-              <div class="icon-wrap blue">
-                📄
-              </div>
-              <h4>HR Documents</h4>
-              <p>View and download HR letters, policies, and documents.</p>
-            </div>
-      
-          </div>
-        </div>
-      </section>
-      
-      <section class="essAutoSlider-section">
-        <div class="essAutoSlider-wrapper">
-      
-          <!-- LEFT : IMAGE SLIDER -->
-          <div class="essAutoSlider-image">
-            <img src="./aa.webp" class="essAutoSlider-img active" alt="ESS App 1">
-            <img src="./analytics.webp" class="essAutoSlider-img" alt="ESS App 2">
-            <img src="./news.webp" class="essAutoSlider-img" alt="ESS App 3">
-          </div>
-      
-          <!-- RIGHT : CONTENT SLIDER -->
-          <div class="essAutoSlider-content">
-      
-            <div class="essAutoSlider-slide active">
-              <h2>
-                <span class="essAutoSlider-small">Mobile app</span><br>
-                <span class="essAutoSlider-highlight">For anytime, anywhere access</span>
-              </h2>
-              <p>
-                Let employees connect with their company anytime using the ESS mobile app.
-              </p>
-              <ul>
-                <li>Remote attendance marking</li>
-                <li>Leave application & approval</li>
-                <li>View & download payslips</li>
-              </ul>
-            </div>
-      
-            <div class="essAutoSlider-slide">
-              <h2>
-                <span class="essAutoSlider-small">Communication</span><br>
-                <span class="essAutoSlider-highlight">Stay connected with colleagues</span>
-              </h2>
-              <p>
-                Build stronger teams with instant communication and company updates.
-              </p>
-              <ul>
-                <li>Company announcements</li>
-                <li>Birthday & anniversary alerts</li>
-                <li>Policy updates</li>
-              </ul>
-            </div>
-      
-            <div class="essAutoSlider-slide">
-              <h2>
-                <span class="essAutoSlider-small">Payroll</span><br>
-                <span class="essAutoSlider-highlight">Payroll at your fingertips</span>
-              </h2>
-              <p>
-                Access payroll data securely from anywhere.
-              </p>
-              <ul>
-                <li>Payslip downloads</li>
-                <li>Tax declarations</li>
-                <li>Payroll reminders</li>
-              </ul>
-            </div>
-      
-          </div>
-        </div>
-      </section><br><br>
-      
-
-
-      <!-- SCROLLING HEADER -->
-    <div class="scroll-header">
-        <span>Meet the clients <span class="highlight">who made us No. 1</span> &nbsp; Meet the clients <span class="highlight">who made us No. 1</span></span>
-    </div>
-
-    <!-- CLIENT IMAGES -->
-    <div class="client-images">
-        <img src="./IT1.webp" alt="Client 1">
-        <img src="./IT2.webp" alt="Client 2">
-        <img src="./IT3.webp" alt="Client 3">
-        <img src="./IT4.webp" alt="Client 4">
-    </div>
-
-   
-    <section class="essReview-section">
-        <h2 class="essReview-heading">What Employees Say</h2>
-      
-        <div class="essReview-slider">
-          <div class="essReview-track">
-      
-            <!-- REVIEW CARD -->
-            <div class="essReview-card">
-              <img src="./nithiya.webp" alt="User">
-              <p class="essReview-text" 
-                 data-text="It is a great tool for employee management. It has many features like tax declaration, document submission, and salary slip download.">
-              </p>
-              <h4>Pramod P</h4>
-              <span>Software Engineer</span>
-              <div class="essReview-stars">★★★★★</div>
-            </div>
-      
-            <div class="essReview-card">
-              <img src="./joe.webp" alt="User">
-              <p class="essReview-text" 
-                 data-text="greytHR is the best app for every employee to check salary, attendance, leave, and HR updates at one place.">
-              </p>
-              <h4>Neeraj K</h4>
-              <span>Team Lead - Recruitment</span>
-              <div class="essReview-stars">★★★★★</div>
-            </div>
-      
-            <div class="essReview-card">
-              <img src="./sana.webp" alt="User">
-              <p class="essReview-text" 
-                 data-text="The ESS portal simplifies daily HR tasks and improves overall employee experience significantly.">
-              </p>
-              <h4>Anita R</h4>
-              <span>HR Manager</span>
-              <div class="essReview-stars">★★★★★</div>
-            </div>
-      
-          </div>
-        </div>
-      </section>
-
-
-      <section class="essCTA-section">
-        <div class="essCTA-box">
-      
-          <!-- Decorative circles -->
-          <span class="essCTA-circle left"></span>
-          <span class="essCTA-circle right"></span>
-      
-          <h2 class="essCTA-heading">
-            Discuss business needs, find out pricing or get a demo. <br>
-            We would love to talk.
-          </h2>
-      
-          <a href="./404.html" class="essCTA-btn">Request a Demo</a>
-      
-        </div>
-      </section>
-
-      <section class="essFaq-section">
-        <h2 class="essFaq-heading">FAQs</h2>
-      
-        <div class="essFaq-scroll-wrapper">
-          <div class="essFaq-scroll">
-      
-            <!-- FAQ ITEM -->
-            <div class="essFaq-item">
-              <button class="essFaq-question">
-                What is an Employee Self-Service (ESS) portal?
-                <span></span>
-              </button>
-              <div class="essFaq-answer">
-                An ESS portal allows employees to access HR services such as attendance, leave, payroll, and personal information without HR intervention.
-              </div>
-            </div>
-      
-            <div class="essFaq-item">
-              <button class="essFaq-question">
-                How does an ESS portal improve employee experience?
-                <span></span>
-              </button>
-              <div class="essFaq-answer">
-                Employees can complete HR tasks anytime, track requests, and access information instantly, leading to better transparency and satisfaction.
-              </div>
-            </div>
-      
-            <div class="essFaq-item">
-              <button class="essFaq-question">
-                What features are included in an ESS portal?
-                <span></span>
-              </button>
-              <div class="essFaq-answer">
-                Features include attendance tracking, leave management, payslip downloads, tax declarations, HR announcements, and policy access.
-              </div>
-            </div>
-      
-            <div class="essFaq-item">
-              <button class="essFaq-question">
-                How does an ESS portal reduce HR workload?
-                <span></span>
-              </button>
-              <div class="essFaq-answer">
-                By automating routine HR queries and approvals, HR teams can focus on strategic initiatives instead of repetitive tasks.
-              </div>
-            </div>
-      
-            <div class="essFaq-item">
-              <button class="essFaq-question">
-                Is an ESS portal suitable for remote or hybrid employees?
-                <span></span>
-              </button>
-              <div class="essFaq-answer">
-                Yes, ESS portals are ideal for remote and hybrid work environments as employees can access HR services from anywhere.
-              </div>
-            </div>
-      
-          </div>
-        </div>
-      </section>
-      
-      
-      
-
-    
-    </div>
-      
-      
-     <!-- <footer> -->
-      <footer class="footer">
-        <div class="footer-container">
-    
-            <!-- Logo / About -->
-            <div class="footer-box">
-                <img src="./white.webp" alt="Stackly Logo" class="footer-logo"  style="height:60px;">
-   
-               
-                <!-- <p>We deliver secure, scalable and innovative IT services for global businesses.</p><br> -->
-    
-                <!-- Social Icons -->
-                <div class="footer-social">
-                    <a href="./404.html"><i class="fa-brands fa-facebook-f"></i></a>
-                    <a href="./404.html"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="./404.html"><i class="fa-brands fa-linkedin-in"></i></a>
-                    <a href="./404.html"><i class="fa-brands fa-x-twitter"></i></a>
-                </div>
-            </div>
-            <!-- Quick Links -->
-            <div class="footer-box">
-                <h3>Quick Links</h3>
-                <ul>
-                  <li><a href="./home2.html">Home </a></li>
-                  <li><a href="./services1.html">Services</a></li>
-                  <li><a href="./about1.html">About</a></li>
-                  <li><a href="./contact.html">Contact</a></li>
-                </ul>
-            </div>
-    
-            <!-- Address -->
-            <div class="footer-box">
-                <h3>Our Address</h3>
-                <p>
-                    MMR complex.<br>
-                    chinna tirupathi kovil street,<br>
-                    salem,Tamil nadu-636008<br>
-                    <!-- Bengaluru, Karnataka – 560066<br> -->
-                    India<br><br>
-    
-                    <strong>Phone:</strong> +91 98765 43210<br>
-                    <strong>Email:</strong> support@thestackly.com
-                </p>
-            </div>
-    
-            <!-- Google Map -->
-            <div class="footer-box">
-                <h3>Location</h3>
-                <iframe 
-                src="https://www.google.com/maps?q=Salem%20Tamil%20Nadu&output=embed"
-                    allowfullscreen="" 
-                    loading="lazy">
-                </iframe>
-            </div>
-    
-        </div>
-    
-        <div class="footer-bottom">
-            <p>© 2025 stackly | All Rights Reserved</p>
-        </div>
-    </footer>
-    </div>  
-
-    <script>
-        
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add("show");
-    }
-  });
-}, { threshold: 0.3 });
-
-document.querySelectorAll(".animate-right, .animate-zoom").forEach(el => {
-  observer.observe(el);
-});
-
-const slides = [
-  {
-    title: "Mobile app<br><span>For anytime, anywhere access</span>",
-    desc: "Let employees connect with their company while on the move.",
-    list: [
-      "Remote attendance marking",
-      "Remote leave application & approval",
-      "View & download payroll information"
-    ],
-    img: "IT (1).webp"
-  },
-  {
-    title: "Open communication channels<br><span>Lets employees express themselves</span>",
-    desc: "Enable collaboration, engagement and real-time communication.",
-    list: [
-      "Networking with colleagues",
-      "Birthday & anniversary alerts",
-      "Company-wide communication feeds"
-    ],
-    img: "life.webp"
-  },
-  {
-    title: "Fair, uniform policy implementation<br><span>Designed for workplace success</span>",
-    desc: "Build trust with transparent and standardised HR policies.",
-    list: [
-      "Direct employee access to HR policies",
-      "Standardised organisational processes",
-      "Auto-validation of leave and attendance"
-    ],
-    img: "news.webp"
-  } 
-];
-
-let index = 0;
-
-const title = document.getElementById("slideTitle");
-const desc = document.getElementById("slideDesc");
-const list = document.getElementById("slideList");
-const image = document.getElementById("slideImage");
-
-function changeSlide() {
-  const slide = slides[index];
-
-  title.innerHTML = slide.title;
-  desc.textContent = slide.desc;
-
-  list.innerHTML = "";
-  slide.list.forEach(item => {
-    const li = document.createElement("li");
-    li.textContent = item;
-    list.appendChild(li);
-  });
-
-  image.classList.remove("active");
-  setTimeout(() => {
-    image.src = slide.img;
-    image.classList.add("active");
-  }, 200);
-
-  index = (index + 1) % slides.length;
+.hero-actions {
+  display: flex;
+  gap: 16px;
+  position: relative;
+  z-index: 10;            /* fixes overlay issues */
 }
 
- // JS for smooth continuous scroll for each FAQ box
- const faqBoxes = document.querySelectorAll('.faq-box');
+/* BUTTON BASE */
+.btn {
+  padding: 14px 28px;
+  border-radius: 10px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  pointer-events: auto;  /* ensure clickable */
+  transition: all 0.3s ease;
+}
 
-faqBoxes.forEach(box => {
-    const content = box.querySelector('.faq-content');
-    const paragraphs = content.querySelectorAll('p');
-    let index = 0;
+/* PRIMARY */
+.btn-primary {
+  background: #4f46e5;
+  color: #fff;
+}
 
-    setInterval(() => {
-        paragraphs.forEach((p, i) => {
-            p.style.display = 'none';
-        });
-        paragraphs[index].style.display = 'block';
-        index = (index + 1) % paragraphs.length;
-    }, 4000); // Change every 4 seconds
-});
+/* SECONDARY */
+.btn-secondary {
+  background: #f1f1f1;
+  color: #111;
+}
 
-  const essSlides = document.querySelectorAll(".essAutoSlider-slide");
-  const essImages = document.querySelectorAll(".essAutoSlider-img");
-  let essIndex = 0;
+/* HOVER */
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
 
-  function essAutoSlide() {
-    essSlides.forEach(slide => slide.classList.remove("active"));
-    essImages.forEach(img => img.classList.remove("active"));
-
-    essIndex = (essIndex + 1) % essSlides.length;
-
-    essSlides[essIndex].classList.add("active");
-    essImages[essIndex].classList.add("active");
+/* 📱 MOBILE */
+@media (max-width: 768px) {
+  .hero-actions {
+    justify-content: center;
+    flex-wrap: wrap;
   }
 
-  setInterval(essAutoSlide, 4000);
-  const reviewTexts = document.querySelectorAll(".essReview-text");
-
-  reviewTexts.forEach((el) => {
-    const words = el.dataset.text.split(" ");
-    el.textContent = "";
-    let index = 0;
-
-    const typer = setInterval(() => {
-      el.textContent += words[index] + " ";
-      index++;
-      if (index === words.length) clearInterval(typer);
-    }, 120); // typing speed
-  });
+  .btn {
+    width: 100%;
+    max-width: 260px;
+  }
+}
 
 
 
-  document.querySelectorAll(".essFaq-question").forEach(btn => {
-    btn.addEventListener("click", () => {
-      const item = btn.parentElement;
-      item.classList.toggle("active");
+.hero-actions {
+  position: relative;
+  z-index: 9999;       /* bring to very top */
+  pointer-events: auto;
+}
+
+.hero-actions * {
+  pointer-events: auto;
+}
+
+/* VERY IMPORTANT */
+.hero,
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+/* BLOCK CLICK-STEALING ELEMENTS */
+.hero-visual,
+.hero-visual *,
+.visual-wrapper,
+.visual-wrapper * {
+  pointer-events: none;
+}
+
+
+    </style>
+
+<body>
+
+    <section class="hero">
+        <div class="hero-content">
+          <h1>
+            Smarter way to serve <br>
+            <span>digital product marketing</span>
+          </h1>
+      
+          <p class="subtitle">
+            Build Your Innovations & Digital Future
+          </p>
+      
+          <div class="hero-actions">
+            <button class="btn btn-primary" data-link="./404.html">Get Started</button>
+            <button class="btn btn-secondary" data-link="./404.html">Learn More</button>
+          </div>
+          
+          
+      
+          <div class="rating-card">
+            <div class="rating">
+              <h3>4.8</h3>
+              <span>★★★★★</span>
+            </div>
+            <p>Trusted by 1200+ companies</p>
+          </div>
+        </div>
+      
+        <div class="hero-visual">
+          <img src="./saas.webp" alt="SaaS Illustration">
+        </div>
+      </section>
+
+
+      <section class="trusted-section">
+        <!-- <h2><b>THOUSANDS OF COMPANIES TRUSTED US</b></h2> -->
+      
+        <div class="logo-marquee">
+          <div class="logo-track">
+            <!-- LOGO ITEMS (DUPLICATED FOR LOOP) -->
+            
+            <!-- <div class="logo-item">Proline</div> -->
+            <div class="logo-item">
+                <img src="./proline.webp" alt="Glossy Logo">
+              </div>
+              
+            <!--  <div class="logo-item">Flash</div> -->
+            <div class="logo-item">
+                <img src="./flash.webp" alt="Glossy Logo">
+              </div>
+                
+            <!-- <div class="logo-item">Invert</div> -->
+            <div class="logo-item">
+                <img src="./invert.webp" alt="Glossy Logo">
+              </div>
+            <!-- <div class="logo-item">Techify</div> -->
+            <div class="logo-item">
+                <img src="./techify.webp" alt="Glossy Logo">
+              </div>
+            <!-- <div class="logo-item">CloudX</div> --> 
+            <div class="logo-item">
+                <img src="./cloudx.webp" alt="Glossy Logo">
+              </div>
+      
+            <!-- duplicate -->
+            <!-- <div class="logo-item">Proline</div> -->
+            <div class="logo-item">
+                <img src="./proline.webp" alt="Glossy Logo">
+              </div>
+              
+            <!--  <div class="logo-item">Flash</div> -->
+            <div class="logo-item">
+                <img src="./flash.webp" alt="Glossy Logo">
+              </div>
+                
+            <!-- <div class="logo-item">Invert</div> -->
+            <div class="logo-item">
+                <img src="./invert.webp" alt="Glossy Logo">
+              </div>
+            <!-- <div class="logo-item">Techify</div> -->
+            <div class="logo-item">
+                <img src="./techify.webp" alt="Glossy Logo">
+              </div>
+            <!-- <div class="logo-item">CloudX</div> --> 
+            <div class="logo-item">
+                <img src="./cloudx.webp" alt="Glossy Logo">
+              </div>
+      
+          </div>
+        </div>
+      </section>
+
+
+      <section class="why-choose">
+        <span class="tag">WHY CHOOSE US</span>
+        <h2>Our Mission is to change <br> Your View for SEO</h2>
+      
+        <div class="slider-wrapper">
+          <div class="card-track">
+      
+            <div class="mission-card">
+              <div class="icon cash">₹</div>
+              <h3>Free Cash Withdraw</h3>
+              <p>Lorem ipsum dummy text dolor best amet console procedez now!</p>
+            </div>
+      
+            <div class="mission-card">
+              <div class="icon crypto">₿</div>
+              <h3>Crypto Support</h3>
+              <p>Lorem ipsum dummy text dolor best amet console procedez now!</p>
+            </div>
+      
+            <div class="mission-card">
+              <div class="icon support">🧑‍💻</div>
+              <h3>24/7 Customer Support</h3>
+              <p>Lorem ipsum dummy text dolor best amet console procedez now!</p>
+            </div>
+      
+            <!-- DUPLICATE FOR LOOP -->
+            <div class="mission-card">
+              <div class="icon cash">₹</div>
+              <h3>Free Cash Withdraw</h3>
+              <p>Lorem ipsum dummy text dolor best amet console procedez now!</p>
+            </div>
+      
+            <div class="mission-card">
+              <div class="icon crypto">₿</div>
+              <h3>Crypto Support</h3>
+              <p>Lorem ipsum dummy text dolor best amet console procedez now!</p>
+            </div>
+      
+          </div>
+        </div>
+      </section>
+
+      <section class="services reveal">
+        <span class="tag">WE SPECIALIZE IN</span>
+      
+        <h2 class="glitch" data-text="Our Feature Services">
+          Our Feature Services
+        </h2>
+      
+        <div class="service-grid">
+      
+          <div class="service-card">
+            <div class="circle-icon it">💻</div>
+            <h3>IT Management</h3>
+            <p>Optimizing IT infrastructure, managing systems, and ensuring seamless business operations.</p>
+          </div>
+      
+          <div class="service-card">
+            <div class="circle-icon security">🔐</div>
+            <h3>Data Security</h3>
+            <p>Protecting digital assets with enterprise-grade security and compliance strategies.</p>
+          </div>
+      
+          <div class="service-card">
+            <div class="circle-icon seo">📈</div>
+            <h3>SEO Optimization</h3>
+            <p>Boosting visibility and organic growth through data-driven SEO solutions.</p>
+          </div>
+      
+          <div class="service-card">
+            <div class="circle-icon business">📊</div>
+            <h3>Business Consulting</h3>
+            <p>Helping organizations scale faster with strategic planning and execution.</p>
+          </div>
+      
+          
+      
+        </div>
+      </section>
+      <a href="./404.html">
+      <section class="recent-projects">
+        <h2 class="section-title">Recent Projects</h2>
+        <div class="projects-container">
+          
+          <div class="project-card" data-title="Desert" data-description="A hot, dry landscape full of adventure.">
+            <div class="overlay">
+              <!-- <h3>Desert</h3> -->
+              <p>Client onboarding portal</p>
+            </div>
+          </div>
+    
+          <div class="project-card" data-title="Forest" data-description="Lush greenery and mysterious trails.">
+            <div class="overlay">
+              <!-- <h3>Forest</h3> -->
+              <p>Automated Billing and Invoice management </p>
+            </div>
+          </div>
+    
+          <div class="project-card" data-title="Glacier" data-description="Icy landscapes with stunning formations.">
+            <div class="overlay">
+              <!-- <h3>Glacier</h3> -->
+              <p>Benefits of SAAS project</p>
+            </div>
+          </div>
+    
+          <div class="project-card" data-title="Ocean" data-description="Vast waters and serene horizons.">
+            <div class="overlay">
+              <!-- <h3>Ocean</h3> -->
+              <p> Technologies for Saas product development </p>
+            </div>
+          </div>
+    
+        </div>
+      </section></a>
+
+
+      <a href="./404.html">
+
+
+      <section class="google-reviews">
+        <h2 class="reviews-title">Google Reviews</h2>
+      
+        <div class="reviews-container">
+      
+          <!-- Review 1 -->
+          <div class="review-card">
+            <div class="review-count" tabindex="0">
+              <span class="digit">4</span>
+              <span class="digit">5</span>
+              <span class="digit">6</span>
+              
+            </div>
+            <div class="stars">
+              <span>★</span><span>★</span><span>★</span><span>★</span><span>☆</span>
+            </div>
+            <p class="review-text">Excellent service and friendly support!</p>
+          </div>
+      
+          <!-- Review 2 -->
+          <div class="review-card">
+            <div class="review-count" tabindex="0">
+              <span class="digit">2</span>
+              <span class="digit">3</span>
+              <span class="digit">4</span>
+              <span class="digit">5</span>
+              
+            </div>
+            <div class="stars">
+              <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+            </div>
+            <p class="review-text">Highly recommended, very professional.</p>
+          </div>
+      
+        </div>
+      </section></a>
+
+    <!-- <footer> -->
+        <footer class="footer">
+            <div class="footer-container">
+        
+                <!-- Logo / About -->
+                <div class="footer-box">
+                    <img src="./white.webp" alt="Stackly Logo" class="footer-logo"  style="height:60px;">
+       
+                   
+                    <!-- <p>We deliver secure, scalable and innovative IT services for global businesses.</p><br> -->
+        
+                    <!-- Social Icons -->
+                    <div class="footer-social">
+                        <a href="./404.html"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="./404.html"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="./404.html"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="./404.html"><i class="fa-brands fa-x-twitter"></i></a>
+                    </div>
+                </div>
+                <!-- Quick Links -->
+                <div class="footer-box">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="./home2.html">Home </a></li>
+                    <li><a href="./about1.html">About</a></li>
+                    <li><a href="./services1.html">Services</a></li>
+                    
+                    <li><a href="./contact1.html">Contact</a></li>
+                    </ul>
+                </div>
+        
+                <!-- Address -->
+                <div class="footer-box">
+                    <h3>Our Address</h3>
+                    <p>
+                        MMR complex.<br>
+                        chinna tirupathi kovil street,<br>
+                        salem,Tamil nadu-636008<br>
+                        <!-- Bengaluru, Karnataka – 560066<br> -->
+                        India<br><br>
+        
+                        <strong>Phone:</strong> +91 98765 43210<br>
+                        <strong>Email:</strong> support@thestackly.com
+                    </p>
+                </div>
+        
+                <!-- Google Map -->
+                <div class="footer-box">
+                    <h3>Location</h3>
+                    <iframe 
+                    src="https://www.google.com/maps?q=Salem%20Tamil%20Nadu&output=embed"
+                        allowfullscreen="" 
+                        loading="lazy">
+                    </iframe>
+                </div>
+        
+            </div>
+        
+            <div class="footer-bottom">
+                <p>© 2025 stackly | All Rights Reserved</p>
+            </div>
+        </footer>
+        <script>
+            // TOGGLE MENU
+    const toggleBtn = document.getElementById("menu-toggle");
+    const navLinks = document.querySelector(".nav-links");
+    
+    toggleBtn.addEventListener("click", () => {
+        if (navLinks.style.display === "flex") {
+            navLinks.style.display = "none";
+        } else {
+            navLinks.style.display = "flex";
+        }
     });
+    
+    // MOBILE DROPDOWN CLICK
+    const dropdownBtn = document.querySelector(".dropdown-btn");
+    const dropdownMenu = document.querySelector(".dropdown-content");
+    
+    dropdownBtn.addEventListener("click", (e) => {
+        e.preventDefault(); 
+        dropdownMenu.style.display =
+            dropdownMenu.style.display === "block" ? "none" : "block";
+    });
+    
+    // Simple CTA interaction
+
+    
+document.querySelectorAll('.logo-item').forEach(item => {
+  item.addEventListener('touchstart', () => {
+    item.classList.add('active');
   });
 
-   // TOGGLE MENU
-const toggleBtn = document.getElementById("menu-toggle");
-const navLinks = document.querySelector(".nav-links");
+  item.addEventListener('touchend', () => {
+    item.classList.remove('active');
+  });
+});
 
-toggleBtn.addEventListener("click", () => {
-    if (navLinks.style.display === "flex") {
-        navLinks.style.display = "none";
-    } else {
-        navLinks.style.display = "flex";
+document.querySelectorAll('.mission-card').forEach(card => {
+  card.addEventListener('touchstart', () => {
+    card.style.transform = 'scale(1.05)';
+  });
+
+  card.addEventListener('touchend', () => {
+    card.style.transform = 'scale(1)';
+  });
+});
+
+const revealCards = document.querySelectorAll('.service-card');
+
+const revealOnScroll = () => {
+  revealCards.forEach(card => {
+    const top = card.getBoundingClientRect().top;
+    if (top < window.innerHeight - 100) {
+      card.style.opacity = 1;
+      card.style.transform = 'translateY(0)';
     }
+  });
+};
+
+window.addEventListener('scroll', revealOnScroll);
+// Optional: add a small hover tilt effect
+const cards = document.querySelectorAll('.project-card');
+
+cards.forEach(card => {
+  card.addEventListener('mousemove', (e) => {
+    const rect = card.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+
+    card.style.transform = `scale(1.05) rotateX(${-(y - rect.height/2)/20}deg) rotateY(${(x - rect.width/2)/20}deg)`;
+  });
+
+  card.addEventListener('mouseleave', () => {
+    card.style.transform = 'scale(1)';
+  });
 });
 
-// MOBILE DROPDOWN CLICK
-const dropdownBtn = document.querySelector(".dropdown-btn");
-const dropdownMenu = document.querySelector(".dropdown-content");
 
-dropdownBtn.addEventListener("click", (e) => {
-    e.preventDefault(); 
-    dropdownMenu.style.display =
-        dropdownMenu.style.display === "block" ? "none" : "block";
+document.querySelectorAll('.hero-actions button').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const link = btn.getAttribute('data-link');
+    window.location.href = link;
+  });
 });
 
 
-</script>
-
-
-
-
-
-
-</body>
-</html>
-
-
-
-
-
-
-
-
-
+    
+        </script>
+    
+    
+        
+    
+    </body>
+    </html>
+    

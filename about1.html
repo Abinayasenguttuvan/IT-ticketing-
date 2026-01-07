@@ -3,19 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IT Solutions & Technology</title>
-
+    <title>Digital Payment</title>
     <!-- CSS Files -->
-    <!-- <link rel="stylesheet" href="style1.css"> -->
+    <link rel="stylesheet" href="./about1.css">
     
-    <link rel="stylesheet" href="about1.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
 </head>
-<style>
-    
-  /* ================= GLOBAL ================= */
-  * {
+<body>
+    <!-- ================= HEADER ================= -->
+    <header class="header">
+        <a href="home2.html">   
+            <img src="./white.webp" alt="Stackly Logo" style="height: 60px; ">
+          </a> 
+        <!-- div class="logo">Tech<span>Solutions</span></div> -->
+
+        <!-- Navigation -->
+        <nav class="navbar">
+            <ul class="nav-links" >
+
+                <li class="dropdown">
+                    <a href="javascript:void(0)" class="dropdown-btn">Home <i class="fa-solid fa-caret-down"></i></a>
+                
+                    <ul class="dropdown-content">
+                        <li><a href="./index.html">Home 1</a></li>
+                        <li><a href="./home2.html">Home 2</a></li>
+                    </ul>
+                </li>
+                
+                <li><a href="./about1.html">About</a></li>
+                <li><a href="./services1.html">Services</a></li>
+                <li><a href="./contact1.html">Contact</a></li>
+                <li><a href="./dashboard1.html">Dashboard</a></li>
+                <li><a href="./login1.html">Login</a></li>
+
+            </ul>
+        </nav>
+
+        <!-- Toggle -->
+        <div class="menu-toggle" id="menu-toggle">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+
+    </header>
+    <style>
+        /* ================= GLOBAL ================= */
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -37,7 +69,7 @@ ul { list-style: none; }
 .header {
     width: 100%;
     padding: 18px 40px;
-    background: #267992;
+    background: #0b1f3a;
     color: #fff;
     display: flex;
     justify-content: space-between;
@@ -83,7 +115,7 @@ ul { list-style: none; }
     position: absolute;
     top: 38px;
     left: 0;
-    background: #8095bc;
+    background: #12274d;
     width: 160px;
     border-radius: 8px;
     padding: 10px 0;
@@ -97,7 +129,7 @@ ul { list-style: none; }
 }
 
 .dropdown-content li a:hover {
-  background: #8095bc;
+    background: #0e1c33;
 }
 
 /* Toggle */
@@ -115,7 +147,7 @@ li a{
 
 /* ================= FOOTER ================= */
 .footer {
-    background: #267992;
+    background: #0b1f3a;
     padding-top: 40px;
     color: white;
 }
@@ -161,7 +193,7 @@ li a{
 
 .footer-bottom {
     text-align: center;
-    background:#267992;
+    background: #08192e;
     padding: 15px 0;
 }
 
@@ -229,148 +261,102 @@ li a{
 
 
 
-   
+
+
     </style>
-</style>
-
 <body>
+<div class="container">
+    <section data-aos="fade-up">
+      <h2>Who We Are</h2>
+      <p>
+        <strong>Elevate Digital</strong> is a results-driven digital marketing agency
+        dedicated to helping brands scale online. Founded in 2018, we’ve partnered with startups,
+        small businesses, and enterprises to deliver tailored marketing strategies that convert.
+      </p>
+    </section>
 
-    <!-- ================= HEADER ================= -->
-    <header class="header">
-      <a href="index.html">   
-          <img src="./white.webp" alt="Stackly Logo" style="height: 60px; ">
-        </a> 
-      <!-- div class="logo">Tech<span>Solutions</span></div> -->
+    <section data-aos="fade-up">
+      <h2>Our Mission</h2>
+      <p>
+        We empower businesses with data-driven digital solutions that foster measurable growth.
+        Our mission is to create impactful campaigns that reach the right audience
+        at the right time, across the right platforms.
+      </p>
+    </section>
 
-      <!-- Navigation -->
-      <nav class="navbar">
-          <ul class="nav-links" >
-
-              <li class="dropdown">
-                  <a href="javascript:void(0)" class="dropdown-btn">Home <i class="fa-solid fa-caret-down"></i></a>
-              
-                  <ul class="dropdown-content">
-                      <li><a href="./index.html">Home 1</a></li>
-                      <li><a href="./home2.html">Home 2</a></li>
-                  </ul>
-              </li>
-              
-              <li><a href="./services1.html">Services</a></li>
-              <li><a href="./about1.html">About</a></li>
-              <li><a href="./dashbored1.html">dashboard</a></li>
-              <li><a href="./contact1.html">Contact</a></li>
-              <li><a href="./login1.html">Login</a></li>
-  
-  
-              
-
-          </ul>
-      </nav>
-
-      <!-- Toggle -->
-      <div class="menu-toggle" id="menu-toggle">
-          <i class="fa-solid fa-bars"></i>
-      </div>
-
-  </header>
-
-
-
-<!-- ABOUT HERO SECTION -->
-<section class="about-hero" style="background: url('images/about-hero.jpg') no-repeat center/cover;">
-    <div class="about-hero-overlay">
-      <div class="about-hero-content">
-        <h1>About BrightEdge IT Consulting</h1>
-        <p>We combine innovation, expertise, and technology to transform businesses and empower growth.</p>
-      </div>
-    </div>
-  </section>
-  
-  <!-- COMPANY VISION & MISSION -->
-  <section class="about-vision-mission" style="background: url('images/about-vision.jpg') no-repeat center/cover;">
-    <div class="about-overlay">
-      <div class="container">
-        <div class="vision-mission-grid">
-          <div class="vision-box" style="background: rgba(255,106,0,0.85); color:white;">
-            <h3>Our Vision</h3>
-            <p>To be the most trusted IT consulting partner globally, delivering innovative, scalable, and secure digital solutions.</p>
-          </div>
-          <div class="mission-box" style="background: rgba(0,212,255,0.85); color:white;">
-            <h3>Our Mission</h3>
-            <p>Empower organizations with modern technology, cloud solutions, AI-driven strategies, and seamless digital transformation.</p>
-          </div>
+    <section data-aos="fade-up">
+      <h2>What We Do</h2>
+      <p>We offer a wide range of digital services to help you grow online:</p>
+    
+      <div class="cards">
+        <div class="card" data-aos="zoom-in">
+          <img src="./seo.webp" alt="SEO Services">
+          <h3>SEO Optimization</h3>
+          <p>Boost your organic traffic and rank higher on search engines with proven SEO strategies.</p>
+        </div>
+    
+        <div class="card" data-aos="zoom-in" data-aos-delay="100">
+          <img src="./pay.webp" alt="PPC Advertising">
+          <h3>PPC Advertising</h3>
+          <p>Drive instant traffic and conversions with data-driven paid ad campaigns on Google & social platforms.</p>
+        </div>
+    
+        <div class="card" data-aos="zoom-in" data-aos-delay="200">
+          <img src="./corp1.webp" alt="Social Media Marketing">
+          <h3>Social Media Marketing</h3>
+          <p>Engage your audience and grow your brand through creative and strategic social media content.</p>
+        </div>
+    
+        <div class="card" data-aos="zoom-in" data-aos-delay="300">
+          <img src="./content strategy.webp" alt="Content Marketing">
+          <h3>Content Strategy</h3>
+          <p>Create compelling blog posts, email campaigns, and landing pages that convert visitors into customers.</p>
+        </div>
+    
+        <div class="card" data-aos="zoom-in" data-aos-delay="400">
+          <img src="./email verify.webp" alt="Email Marketing">
+          <h3>Email Automation</h3>
+          <p>Automate your email marketing to nurture leads and increase customer retention with smart workflows.</p>
+        </div>
+    
+        <div class="card" data-aos="zoom-in" data-aos-delay="500">
+          <img src="./web design.webp" alt="Web Design & Development">
+          <h3>Web Design & Dev</h3>
+          <p>Build fast, responsive websites that reflect your brand and deliver seamless user experiences.</p>
         </div>
       </div>
-    </div>
-  </section>
-  
-  <!-- OUR TEAM -->
-  <section class="about-team" style="background: url('images/about-team.jpg') no-repeat center/cover;">
-    <div class="team-overlay">
-      <div class="container">
-        <h2 class="section-title">Meet Our Expert Team</h2>
-        <div class="team-grid">
-          <div class="team-member" style="background: rgba(247,151,30,0.85); color:white;">
-            <img src="./sana.webp" alt="Team Member 1">
-            <h3>Crisdella</h3>
-            <p>Chief Technology Officer</p>
-          </div>
-          <div class="team-member" style="background: rgba(123,47,247,0.85); color:white;">
-            <img src="joe.webp" alt="Team Member 2">
-            <h3>John Smith</h3>
-            <p>Head of Cloud Solutions</p>
-          </div>
-          <div class="team-member" style="background: rgba(255,75,31,0.85); color:white;">
-            <img src="./nithiya.webp" alt="Team Member 3">
-            <h3>Emily Davis</h3>
-            <p>Lead Cybersecurity Expert</p>
-          </div>
-          <div class="team-member" style="background: rgba(0,198,255,0.85); color:white;">
-            <img src="./arjun.webp" alt="Team Member 4">
-            <h3>Michael Lee</h3>
-            <p>Software Architect</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  
-  <!-- OUR VALUES -->
-  <section class="about-values" style="background: url('images/about-values.jpg') no-repeat center/cover;">
-    <div class="values-overlay">
-      <div class="container">
-        <h2 class="section-title">Our Core Values</h2>
-        <div class="values-grid">
-          <div class="value-box" style="background: rgba(255,106,0,0.85); color:white;">
-            <h3>Innovation</h3>
-            <p>We embrace emerging technologies to create transformative solutions.</p>
-          </div>
-          <div class="value-box" style="background: rgba(0,212,255,0.85); color:white;">
-            <h3>Integrity</h3>
-            <p>We maintain the highest ethical standards in all our engagements.</p>
-          </div>
-          <div class="value-box" style="background: rgba(247,151,30,0.85); color:white;">
-            <h3>Excellence</h3>
-            <p>We deliver high-quality services that exceed client expectations.</p>
-          </div>
-          <div class="value-box" style="background: rgba(123,47,247,0.85); color:white;">
-            <h3>Collaboration</h3>
-            <p>We work closely with clients and partners to achieve shared success.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  
-  <!-- CTA SECTION -->
-  <section class="cta-section" style="background: url('images/about-cta.jpg') no-repeat center/cover;">
-    <div class="cta-overlay">
-      <h2>Partner with BrightEdge Today</h2>
-      <p>Join hands with us to innovate, transform, and grow your business using cutting-edge IT solutions.</p>
-      <a href="./contact1.html" class="cta-btn">Get in Touch</a>
-    </div>
-  </section>
+    </section>
+    
 
+    <section data-aos="fade-up">
+      <h2>Meet Our Team</h2>
+      <div class="team">
+        <div class="team-member" data-aos="zoom-in">
+          <img src="./joe.webp" alt="Team Member 1">
+          <h4>James Patel</h4>
+          <p>Founder & CEO</p>
+        </div>
+        <div class="team-member" data-aos="zoom-in" data-aos-delay="100">
+          <img src="./Olivia.webp" alt="Team Member 2">
+          <h4>Sophia Lee</h4>
+          <p>Head of Strategy</p>
+        </div>
+        <div class="team-member" data-aos="zoom-in" data-aos-delay="200">
+          <img src="./Jane doe.webp" alt="Team Member 3">
+          <h4>Michael Tran</h4>
+          <p>Lead Developer</p>
+        </div>
+      </div>
+    </section>
+
+    <section data-aos="fade-up">
+      <h2>Let’s Build Something Great Together</h2>
+      <p>
+        Whether you're launching a new product, increasing brand visibility,
+        or scaling online sales — we’re here to help you win in the digital space.
+      </p>
+    </section>
+  </div>
 
   <!-- <footer> -->
     <footer class="footer">
@@ -391,15 +377,15 @@ li a{
                     <a href="./404.html"><i class="fa-brands fa-x-twitter"></i></a>
                 </div>
             </div>
-    
             <!-- Quick Links -->
             <div class="footer-box">
                 <h3>Quick Links</h3>
                 <ul>
                     <li><a href="./home2.html">Home </a></li>
-                    <li><a href="./services1.html">Services</a></li>
                     <li><a href="./about1.html">About</a></li>
-                    <li><a href="./contact.html">Contact</a></li>
+                    <li><a href="./services1.html">Services</a></li>
+                    
+                    <li><a href="./contact1.html">Contact</a></li>
                 </ul>
             </div>
     
@@ -435,7 +421,7 @@ li a{
         </div>
     </footer>
     <script>
-       // TOGGLE MENU
+        // TOGGLE MENU
 const toggleBtn = document.getElementById("menu-toggle");
 const navLinks = document.querySelector(".nav-links");
 
@@ -457,9 +443,12 @@ dropdownBtn.addEventListener("click", (e) => {
         dropdownMenu.style.display === "block" ? "none" : "block";
 });
 
+
+
+
     </script>
-    <!-- Script -->
-    <script src="main1.js"></script>
+
+
     
 
 </body>

@@ -1,158 +1,193 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Stackly | Login</title>
-  <link rel="stylesheet" href="auth.css" />
+  <title>Digital Login</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  
 </head>
 <style>
-  .forgot-password {
-      display: block;
-      text-align: right;
-      margin-top: 10px;
-      margin-bottom: 15px;
-    }
 
-    .forgot-password a {
-      color: #ffe6f2;
-      font-size: 0.9rem;
-      text-decoration: underline;
-    }
-
-
-    .back-btn {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  text-decoration: none;
-  color: #333;
-  font-size: 18px;
-  font-weight: 600;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  background:linear-gradient(135deg, #647e2b, #2563eb);
-  padding: 8px 14px;
-  border-radius: 8px;
-  backdrop-filter: blur(5px);
-  transition: 0.3s ease;
-  z-index: 1000;
-}
-
-.back-btn i {
-  font-size: 18px;
-}
-
-.back-btn:hover {
-  background: #b17f1d;
-  color: #fff;
-}
-
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+  }
+  
+  body {
+    background: rgb(22, 22, 42);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .back-btn {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: rgba(255,255,255,0.8);
+    padding: 8px 15px;
+    border-radius: 8px;
+    text-decoration: none;
+    color: #000;
+    font-weight: 500;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+  }
+  
+  .login-container {
+    width: 90%;
+    max-width: 400px;
+  }
+  
+  .login-box {
+    background: rgba(255,255,255,0.15);
+    padding: 30px;
+    border-radius: 15px;
+    backdrop-filter: blur(6px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    color: white;
+  }
+  
+  .login-box h2 {
+    text-align: center;
+    margin-bottom: 5px;
+  }
+  
+  .subtitle {
+    text-align: center;
+    margin-bottom: 20px;
+    opacity: 0.9;
+  }
+  
+  label {
+    font-weight: 500;
+    display: block;
+    margin-top: 15px;
+  }
+  
+  input {
+    width: 100%;
+    padding: 12px;
+    margin-top: 5px;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+  }
+  
+  .password-wrapper {
+    position: relative;
+  }
+  
+  .toggle-password {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+  }
+  
+  .forget-link {
+    display: block;
+    margin-top: 10px;
+    text-align: right;
+    color: #fff;
+    font-size: 0.9rem;
+  }
+  
+  .login-btn {
+    width: 100%;
+    margin-top: 20px;
+    padding: 12px;
+    background: #0d6efd;
+    border: none;
+    color: white;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .login-btn:hover {
+    background: #084298;
+  }
+  
+  .signup-text {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 0.9rem;
+  }
+  
+  .signup-link {
+    color: #fff;
+    font-weight: 600;
+    text-decoration: underline;
+  }
+  
 </style>
+
 <body>
-  <div class="auth-container" >
-    <div class="auth-box">
-      <h1 class="logo">LOGIN</h1>
-      <!-- <h2>Welcome Back</h2>
-      <p>Login to continue your shopping experience</p> -->
 
-      <form id="loginForm" class="auth-form">
-        <div class="input-group">
-          <label for="email">Email</label>
-          <input type="email" id="email" placeholder="Enter your email" required />
-        </div>
+  <!-- BACK BUTTON -->
+  <a href="index.html" class="back-btn">⬅ Back</a>
 
-        <div class="input-group">
-          <label for="password">Password</label>
-          <div class="password-wrapper">
-            <input type="password" id="password" placeholder="Enter your password" required />
-            
-            <span class="toggle-password" onclick="togglePassword('password')">👁️</span>
-          </div>
-          
-          <div class="forgot-password">
-            
-            <a href="forgot.html"><a href="./404.html" >Forgot Password?</a></a>
+  <div class="login-container">
+    <form id="loginForm" class="login-box">
 
-            <a href="index.html" class="back-btn">
-              <i class="fa fa-arrow-left"></i> Back
-            </a>
-            
-        </div>
+      <h2>Welcome Back</h2>
+      <p class="subtitle">Login to your banking account</p>
 
-        <button type="submit" class="btn new-auth-submit">Login</button>
-<p id="newAuthError" class="new-auth-error"></p>
+      <!-- Email -->
+      <label>Email</label>
+      <input type="email" id="email" placeholder="Enter your email" />
 
+      <!-- Password -->
+      <label>Password</label>
+      <div class="password-wrapper">
+        <input type="password" id="password" placeholder="Enter your password" />
+        <span class="toggle-password" onclick="togglePassword()">👁️</span>
+      </div>
 
-        
-        <!-- <button  type="submit" class="btn" onclick="window.location.href='./404.html'">Login</button> -->
+      <!-- Forget Password -->
+      <a href="404.html" class="forget-link">Forget Password?</a>
 
+      <button type="submit"  a href="404.html" class="login-btn">Login</button>
 
-        <p class="switch-text">Don't have an account? 
-          <a href="signup.html">Sign Up</a>
-        </p>
-      </form>
-    </div>
+      <!-- SIGN UP SECTION -->
+      <p class="signup-text">
+        Don't have an account?
+        <a href="./signup.html" class="signup-link">Sign Up</a>
+      </p>
+
+    </form>
   </div>
+
+ 
   <script>
-    
-document.getElementById("loginForm").addEventListener("submit", function (event) {
-    event.preventDefault(); // stop auto reload
-
-    let email = document.getElementById("email").value.trim();
-    let password = document.getElementById("password").value.trim();
-    let errorBox = document.getElementById("newAuthError");
-
-    if (email === "" || password === "") {
-        errorBox.innerText = "⚠️ Please fill all fields";
-        errorBox.style.color = "red";
-        return; 
+    function togglePassword() {
+    const pwd = document.getElementById("password");
+    pwd.type = pwd.type === "password" ? "text" : "password";
+  }
+  
+  document.getElementById("loginForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+  
+    const email = document.getElementById("email").value.trim();
+    const pass = document.getElementById("password").value.trim();
+  
+    if (email === "" || pass === "") {
+      alert("Please fill details");
+      return;
     }
-
-    // if fields filled → redirect
-    window.location.href = "./404.html";
-});
-
-    
-    document.getElementById("loginForm").addEventListener("submit", function (e) {
-        event.preventDefault(); // stop auto reload
-    
-        let email = document.getElementById("email").value.trim();
-        let password = document.getElementById("password").value.trim();
-        let errorBox = document.getElementById("newAuthError");
-    
-        if (email === "" || password === "") {
-            errorBox.innerText = "⚠️ Please fill all fields";
-            errorBox.style.color = "red";
-            return; 
-        }
-    
-        // if fields filled → redirect
-        window.location.href = "./404.html";
-    });
-    
-    function togglePassword(id) {
-        const input = document.getElementById(id);
-        const icon = input.nextElementSibling;
-    
-        if (input.type === "password") {
-            input.type = "text";
-            // icon.textContent = "🙈"; // change icon when showing password
-        } else {
-            input.type = "password";
-            icon.textContent = "👁️"; // change back when hiding password
-        }
-    }
-    
-    
-    
-      </script>
-
+  
+    // If filled → go to 404 page
+    window.location.href = "404.html";
+  });
+  
   </script>
 
-  <script src="auth.js"></script>
 </body>
 </html>
-

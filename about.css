@@ -1,323 +1,241 @@
-/* RESET */
+/* -----------------------------------------------------------
+   GLOBAL STYLES
+----------------------------------------------------------- */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
-    
-  }    
-/* ===== Mission / Vision / Values Section ===== */
-.mv-section {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  width: 90%;
-  margin: auto;
-  padding: 40px 0;
-}
-
-.mv-item {
-  background: linear-gradient(135deg, #647e2b, #2563eb);
-  padding: 25px;
-  border-radius: 12px;
-  text-align: center;
-  width: 30%;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-}
-
-/* ===== RESPONSIVE MEDIA QUERIES ===== */
-
-/* Tablet View (Below 900px) */
-@media (max-width: 900px) {
-  .mv-section {
-    flex-direction: column;
-    gap: 25px;
   }
-
-  .mv-item {
+  
+  .about-page-main,
+  .members-page-main {
     width: 100%;
-  }
-}
-
-/* Mobile View (Below 600px) */
-@media (max-width: 600px) {
-  .mv-item {
-    padding: 20px;
-  }
-
-  .mv-item h3 {
-    font-size: 20px;
-  }
-
-  .mv-item p {
-    font-size: 15px;
-  }
-
-  .mv-item i {
-    font-size: 30px;
-  }
-}
-
-  /* ===== Hero Image Background ===== */
-.hero-image-section {
-  width: 100%;
-  height: 90vh; /* Adjust height as needed */
-  background-image: url('./corp1.webp'); /* <-- Add your image path */
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  
-
-  color:white;
-  padding: 20px;
-}
-
-/* Hero Text Styling */
-.hero-content h1 {
-  font-size: 50px;
-  font-weight: 700;
-}
-
-.hero-content p {
-  font-size: 40px;
-  margin-top: 20px;
-}
-
-.hero-content {
-  animation: slideUp 1.3s ease-out forwards;
-  opacity: 0;
-  transform: translateY(40px);
-}
-
-@keyframes slideUp {
-  0% {
-    opacity: 0;
-    transform: translateY(40px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-
-/* ===== Responsive Media Queries ===== */
-@media (max-width: 768px) {
-  .hero-image-section {
-    height: 50vh; /* smaller for mobile */
-  }
-
-  .hero-content h1 {
-    font-size: 32px;
-  }
-
-  .hero-content p {
-    font-size: 16px;
-  }
-}
-
-@media (max-width: 480px) {
-  .hero-image-section {
-    height: 45vh;
-  }
-
-  .hero-content h1 {
-    font-size: 28px;
-  }
-
-  .hero-content p {
-    font-size: 14px;
-  }
-}
-
-
-
-/* Keyframes */
-@keyframes cardFadeUp {
-  0% {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-  
-  .about-info {
-    padding: 80px 10%;
-    background: #f7faff;
+    padding: 40px 8%;
   }
   
-  .about-container {
-    
+  /* Page Heading */
+  .about-header,
+  .members-header {
+    text-align: center;
+    margin-bottom: 50px;
+  }
+  
+  .about-title,
+  .members-title {
+    font-size: 36px;
+    font-weight: 700;
+    color: #111;
+  }
+  
+  .about-subtitle,
+  .members-subtitle {
+    color: #555;
+    font-size: 18px;
+    margin-top: 10px;
+  }
+  
+  /* -----------------------------------------------------------
+     ABOUT PAGE — SECTION GLOBAL
+  ----------------------------------------------------------- */
+  .about-section {
+    margin-bottom: 70px;
+  }
+  
+  /* -----------------------------------------------------------
+     SECTION 1 — HISTORY (Side-by-Side Layout)
+  ----------------------------------------------------------- */
+  .history-section {
     display: flex;
     align-items: center;
     gap: 40px;
-    justify-content: space-between;
   }
   
-  .about-text {
-    width: 55%;
+  .history-content h2 {
+    font-size: 30px;
+    margin-bottom: 20px;
   }
   
-  .about-text h2 {
-    font-size: 32px;
+  .history-content p {
     margin-bottom: 15px;
-    color: #0f1f3d;
-  }
-  
-  .about-text p {
-    font-size: 18px;
-    line-height: 1.7;
+    line-height: 1.6;
     color: #444;
   }
   
-  .about-img {
-    width: 40%;
-  }
-  
-  .about-img img {
+  .history-image img {
     width: 100%;
-    border-radius: 15px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-    transition: 0.3s ease;
+    border-radius: 14px;
+    object-fit: cover;
   }
   
-  .about-img img:hover {
-    transform: scale(1.05);
+  /* -----------------------------------------------------------
+     SECTION 2 — VALUES GRID (4 CARDS)
+  ----------------------------------------------------------- */
+  .values-section {
+    text-align: center;
   }
   
-  @media (max-width: 900px) {
-    .about-container {
+  .section-heading {
+    font-size: 30px;
+    margin-bottom: 40px;
+  }
+  
+  .values-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+  }
+  
+  .value-card {
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 12px;
+    border: 1px solid #eee;
+    transition: 0.3s;
+  }
+  
+  .value-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0px 10px 25px rgba(0,0,0,0.06);
+  }
+  
+  .value-card h3 {
+    font-size: 20px;
+    margin-bottom: 12px;
+  }
+  
+  .value-card p {
+    color: #555;
+    line-height: 1.6;
+  }
+  
+  /* -----------------------------------------------------------
+     SECTION 3 — VISION (Side-by-Side Layout)
+  ----------------------------------------------------------- */
+  .vision-section {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+  }
+  
+  .vision-image img {
+    width: 100%;
+    border-radius: 14px;
+  }
+  
+  .vision-content h2 {
+    font-size: 30px;
+    margin-bottom: 20px;
+  }
+  
+  .vision-content p {
+    color: #555;
+    line-height: 1.6;
+  }
+  
+  /* -----------------------------------------------------------
+     MEMBERS PAGE — TEAM GRID
+  ----------------------------------------------------------- */
+  .team-grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 35px;
+    padding-bottom: 60px;
+  }
+  
+  .member-card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 14px;
+    border: 1px solid #eee;
+    transition: 0.3s;
+    text-align: center;
+  }
+  
+  .member-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.08);
+  }
+  
+  .member-photo {
+    width: 100%;
+    height: 260px;
+    border-radius: 12px;
+    object-fit: cover;
+    margin-bottom: 15px;
+  }
+  
+  .member-info h3 {
+    font-size: 20px;
+    margin-bottom: 6px;
+  }
+  
+  .member-title {
+    font-size: 14px;
+    color: #777;
+    margin-bottom: 10px;
+  }
+  
+  .member-bio {
+    font-size: 15px;
+    color: #555;
+  }
+  
+  /* -----------------------------------------------------------
+     MEDIA QUERIES — RESPONSIVENESS
+  ----------------------------------------------------------- */
+  
+  /* ----------- TABLET (768px–1024px) ----------- */
+  @media (max-width: 1024px) {
+    .history-section,
+    .vision-section {
       flex-direction: column;
       text-align: center;
     }
   
-    .about-text, .about-img {
-      width: 100%;
+    .values-grid {
+      grid-template-columns: repeat(2, 1fr);
     }
   
-    .about-img img {
-      width: 80%;
-      margin: auto;
-    }
-  }
-  
-  @media (max-width: 500px) {
-    .about-img img {
-      width: 100%;
+    .team-grid-container {
+      grid-template-columns: repeat(2, 1fr);
     }
   }
   
-  /* ABOUT SECTION */
-  .about-info {
-    width: 90%;
-    max-width: 900px;
-    margin: auto;
-    text-align: center;
-    padding: 40px 0;
-  }
-  .about-info p {
-    margin-top: 15px;
-    color: #4b5563;
-  }
+  /* ----------- MOBILE (Below 767px) ----------- */
+  @media (max-width: 767px) {
   
-  /* MISSION / VISION */
-  .mv-section {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    width: 90%;
-    margin: auto;
-    padding: 40px 0;
-  }
-  .mv-item {
-    background: linear-gradient(135deg, #647e2b, #2563eb);
-    padding: 25px;
-    border-radius: 12px;
-    text-align: center;
-    width: 30%;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  }
-  .mv-item i {
-    font-size: 35px;
-    margin-bottom: 10px;
-    color: black;
-  }
+    .about-title,
+    .members-title {
+      font-size: 26px;
+    }
   
-  /* WHY CHOOSE US */
-  .choose-us { text-align: center; margin-top: 50px; }
-  .choose-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 25px;
-    width: 90%;
-    margin: 25px auto;
-  }
-  .choose-card {
-    background: linear-gradient(135deg, #647e2b, #2563eb);
-    padding: 25px;
-    border-radius: 12px;
-    text-align: center;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  }
-  .choose-card i {
-    font-size: 35px;
-    color: black;
-  }
+    .about-subtitle,
+    .members-subtitle {
+      font-size: 16px;
+      padding: 0 15px;
+    }
   
-  /* TEAM */
-  .team-section { text-align: center; margin-top: 50px; }
-  .team-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 25px;
-    width: 90%;
-    margin: 25px auto 60px;
-  }
-  .team-card img {
-    
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-  }
-  .team-card {
-    /* background:rgb(58, 123, 136); */
-    background: linear-gradient(135deg, #647e2b, #2563eb);
-    padding: 25px;
-    border-radius: 12px;
-  }
-  
-  
-  /* RESPONSIVE */
-  @media (max-width: 768px) {
-    .nav-links {
-      display: none;
-      position: absolute;
-      top: 65px; right: 0;
-      background: #111827;
-      width: 100%;
-      padding: 20px 0;
+    .history-section,
+    .vision-section {
       flex-direction: column;
-      /* text-align: center; */
+      gap: 25px;
     }
-    .nav-links li { }
-    .menu-icon { display: block; }
   
-    .mv-section, .choose-grid, .team-grid, .footer {
+    .values-grid {
       grid-template-columns: 1fr;
     }
   
-    .mv-item, .choose-card, .team-card {
-      width: 100%;
+    .team-grid-container {
+      grid-template-columns: 1fr;
+    }
+  
+    .member-card {
+      padding: 15px;
+    }
+  
+    .member-photo {
+      height: 220px;
     }
   }
-  
   

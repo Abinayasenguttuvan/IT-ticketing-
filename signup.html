@@ -1,132 +1,199 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>IT ticketing portal</title>
-  <link rel="stylesheet" href="auth.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Digital Signup</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  
 </head>
 <style>
- .back-btn {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  text-decoration: none;
-  color: #333;
-  font-size: 18px;
-  font-weight: 600;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  background: linear-gradient(135deg, #647e2b, #0e4fdd);
-  padding: 8px 14px;
-  border-radius: 8px;
-  backdrop-filter: blur(5px);
-  transition: 0.3s ease;
-  z-index: 1000;
-}
-
-.back-btn:hover {
-  background: #b17f1d;
-  color: #fff;
-}
-
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+  }
+  
+  body {
+    background: rgb(18, 18, 42);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .back-btn {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: rgba(255,255,255,0.8);
+    padding: 8px 15px;
+    border-radius: 8px;
+    text-decoration: none;
+    color: #000;
+    font-weight: 500;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+  }
+  
+  .signup-container {
+    width: 90%;
+    max-width: 420px;
+  }
+  
+  .signup-box {
+    background: rgba(255,255,255,0.15);
+    padding: 30px;
+    border-radius: 15px;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    color: white;
+  }
+  
+  .signup-box h2 {
+    text-align: center;
+    margin-bottom: 5px;
+  }
+  
+  .subtitle {
+    text-align: center;
+    margin-bottom: 20px;
+    opacity: 0.9;
+  }
+  
+  label {
+    font-weight: 500;
+    display: block;
+    margin-top: 15px;
+  }
+  
+  input {
+    width: 100%;
+    padding: 12px;
+    margin-top: 5px;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+  }
+  
+  .password-wrapper {
+    position: relative;
+  }
+  
+  .toggle-password {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+  }
+  
+  .signup-btn {
+    width: 100%;
+    margin-top: 20px;
+    padding: 12px;
+    background: #0d6efd;
+    border: none;
+    color: white;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .signup-btn:hover {
+    background: #084298;
+  }
+  
+  .login-text {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 0.9rem;
+  }
+  
+  .login-link {
+    color: #fff;
+    font-weight: 600;
+    text-decoration: underline;
+  }
+  
 </style>
 
 <body>
-  <div class="auth-container">
-    <div class="auth-box">
-      <a href="index.html" class="back-btn">
-        <i class="fa fa-arrow-left"></i> Back
-      </a>
-      <!-- <h1 class="logo">CREATE ACCOUNT</h1> -->
-      <!-- <h2>Create Account</h2> -->
-      <h3><b>CREATE ACCOUNT</b></h3>
 
-      <form id="signupForm" class="auth-form">
+  <!-- BACK BUTTON -->
+  <a href="index.html" class="back-btn">⬅ Back</a>
 
-        <div class="input-group">
-          <label for="name">Full Name</label>
-          <input type="text" id="name" placeholder="Enter your full name" required />
-        </div>
+  <div class="signup-container">
+    <form id="signupForm" class="signup-box">
 
-        <div class="input-group">
-          <label for="email">Email</label>
-          <input type="email" id="email" placeholder="Enter your email" required />
-        </div>
+      <h2>Create Account</h2>
+      <p class="subtitle">Join our secure banking platform</p>
 
-        <div class="input-group">
-          <label for="password">Password</label>
-          <div class="password-wrapper">
-            <input type="password" id="password" placeholder="Create a password" required />
-            <span class="toggle-password" onclick="togglePassword('password')">👁️</span>
-          </div>
-        </div>
+      <!-- Full Name -->
+      <label>Full Name</label>
+      <input type="text" id="fullname" placeholder="Enter your full name" />
 
-        <div class="input-group">
-          <label for="confirmPassword">Confirm Password</label>
-          <div class="password-wrapper">
-            <input type="password" id="confirmPassword" placeholder="Re-enter your password" required />
-            <span class="toggle-password" onclick="togglePassword('confirmPassword')">👁️</span>
-          </div>
-        </div>
+      <!-- Email -->
+      <label>Email</label>
+      <input type="email" id="email" placeholder="Enter your email" />
 
-        <!-- FIXED BUTTON: No inline onclick -->
-        <button type="submit" class="btn">Sign up</button>
+      <!-- Password -->
+      <label>Password</label>
+      <div class="password-wrapper">
+        <input type="password" id="password" placeholder="Enter your password" />
+        <span class="toggle-password" onclick="togglePassword('password')">👁️</span>
+      </div>
 
-        <p class="switch-text">Already have an account?
-          <a href="login.html">Login</a>
-        </p>
+      <!-- Confirm Password -->
+      <label>Confirm Password</label>
+      <div class="password-wrapper">
+        <input type="password" id="confirmPassword" placeholder="Confirm your password" />
+        <span class="toggle-password" onclick="togglePassword('confirmPassword')">👁️</span>
+      </div>
 
-      </form>
-    </div>
+      <button type="submit" class="signup-btn">Sign Up</button>
+
+      <!-- Already have account -->
+      <p class="login-text">
+        Already have an account? 
+        <a href="login.html" class="login-link">Login</a>
+      </p>
+
+    </form>
   </div>
 
+ 
   <script>
-
     function togglePassword(id) {
-      const field = document.getElementById(id);
-      field.type = field.type === "password" ? "text" : "password";
+    const field = document.getElementById(id);
+    field.type = field.type === "password" ? "text" : "password";
+  }
+  
+  document.getElementById("signupForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+  
+    const name = document.getElementById("fullname").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const pass = document.getElementById("password").value.trim();
+    const confirm = document.getElementById("confirmPassword").value.trim();
+  
+    if (name === "" || email === "" || pass === "" || confirm === "") {
+      alert("Please fill details");
+      return;
     }
-
-    // FULL VALIDATION + REDIRECT
-    document.getElementById("signupForm").addEventListener("submit", function(e){
-      e.preventDefault(); // stop auto submit
-
-      let name = document.getElementById("name").value.trim();
-      let email = document.getElementById("email").value.trim();
-      let password = document.getElementById("password").value.trim();
-      let confirmPassword = document.getElementById("confirmPassword").value.trim();
-
-      // EMPTY FIELD POPUP
-      if(name === "" || email === "" || password === "" || confirmPassword === "") {
-        alert("Please fill in all fields.");
-        return;
-      }
-
-      // PASSWORD MATCH
-      if(password !== confirmPassword) {
-        alert("Passwords do not match!");
-        return;
-      }
-
-      // SUCCESS → Redirect to 404 page
-      window.location.href = "./hp2 404.html";
-    });
-
-
-    
-
-    // Optional: confirm password validation
-    // document.getElementById("signupForm").addEventListener("submit", function (e) {
-    //   const password = document.getElementById("password").value;
-    //   const confirm = document.getElementById("confirmPassword").value;
-    //   if (password !== confirm) {
-    //     e.preventDefault();
-    //     alert("Passwords do not match!");
-    //   }
-    // });
+  
+    if (pass !== confirm) {
+      alert("Password and Confirm Password must match!");
+      return;
+    }
+  
+    // If all valid → go to 404
+    window.location.href = "404.html";
+  });
+  
   </script>
+
 </body>
 </html>

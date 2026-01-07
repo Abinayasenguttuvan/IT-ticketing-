@@ -3,173 +3,455 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IT Solutions & Technology</title>
-
+    <title>Digital Payment</title>
     <!-- CSS Files -->
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="blog.css">
+    <link rel="stylesheet" href="./blog.css">
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
 </head>
-
 <body>
+    <!-- ================= HEADER ================= -->
+    <header class="header">
+        <a href="index.html">   
+            <img src="./white.webp" alt="Stackly Logo" style="height: 60px; ">
+          </a> 
+        <!-- div class="logo">Tech<span>Solutions</span></div> -->
 
-   <!-- ================= HEADER ================= -->
-   <header class="header">
+        <!-- Navigation -->
+        <nav class="navbar">
+            <ul class="nav-links" >
 
-    <a href="index.html">
-        <img src="./white.webp" alt="Stackly Logo" style="height: 60px; ">
-      </a>
-      
-
-    <!-- Navigation -->
-    <nav class="navbar">
-        <ul class="nav-links">
-
-            <li class="dropdown">
-                <a href="javascript:void(0)" class="dropdown-btn">Home <i class="fa-solid fa-caret-down"></i></a>
-            
-                <ul class="dropdown-content">
-                    <li><a href="./index.html">Home 1</a></li>
-                    <li><a href="./home2.html">Home 2</a></li>
-                </ul>
-            </li>
-
-            <li><a href="./services.html">Services</a></li>
-            <li><a href="./about.html">About</a></li>
-            <li><a href="./blog.html">Blog</a></li>
-            <li><a href="./projects.html">Projects</a></li>
-            <li><a href="./dashbored.html">dashboard</a></li>
-            <li><a href="./contact.html">Contact</a></li>
-            <li><a href="./login.html">Login</a></li>
-
-        </ul>
-    </nav>
-
-
-    
-
-    <!-- Toggle -->
-    <div class="menu-toggle" id="menu-toggle">
-        <i class="fa-solid fa-bars"></i>
-    </div>
-
-</header>
-
-
-
-
-    
-
-
-    <!-- ================= BLOG BANNER ================= -->
-    <section class="blog-banner">
-        <h1>Our Latest Blog Articles</h1>
-        <p>Stay updated with the latest technology, innovation, and IT solutions.</p>
-    </section>
-
-    <!-- ================= BLOG CONTENT ================= -->
-    <section class="blog-container">
-
-        <div class="blog-card">
-            <img src="./ima.webp" alt="Cloud Computing">
-            <div class="blog-content">
-                <h2>Future of Cloud Computing</h2>
-                <p>Cloud services are transforming how businesses operate with secure and scalable solutions.</p>
-                <a href="./404.html" class="read-more">Read More →</a>
-            </div>
-        </div>
-
-        <div class="blog-card">
-            <img src="./cloud.webp" alt="Cybersecurity">
-            <div class="blog-content">
-                <h2>Cybersecurity Trends in 2025</h2>
-                <p>Explore new advancements and strategies to protect your digital environment.</p>
-                <a href="./404.html" class="read-more">Read More →</a>
-            </div>
-        </div>
-
-        <div class="blog-card">
-            <img src="./tech1.webp" alt="Technology Strategy">
-            <div class="blog-content">
-                <h2>Building a Powerful IT Strategy</h2>
-                <p>Learn how to build a strong, future-ready IT roadmap for your organization.</p>
-                <a href="./404.html" class="read-more">Read More →</a>
-            </div>
-        </div>
-
-    </section>
-
-    
-    <!-- <footer> -->
-        <footer class="footer">
-            <div class="footer-container">
-        
-                <!-- Logo / About -->
-                <div class="footer-box">
-                    <img src="./white.webp" alt="Stackly Logo" class="footer-logo"  style="height:60px;">
-       
-                   
-                    <!-- <p>We deliver secure, scalable and innovative IT services for global businesses.</p><br> -->
-        
-                    <!-- Social Icons -->
-                    <div class="footer-social">
-                        <a href="./404.html"><i class="fa-brands fa-facebook-f"></i></a>
-                        <a href="./404.html"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="./404.html"><i class="fa-brands fa-linkedin-in"></i></a>
-                        <a href="./404.html"><i class="fa-brands fa-x-twitter"></i></a>
-                    </div>
-                </div>
-        
-                <!-- Quick Links -->
-                <div class="footer-box">
-                    <h3>Quick Links</h3>
-                    <ul>
+                <li class="dropdown">
+                    <a href="javascript:void(0)" class="dropdown-btn">Home <i class="fa-solid fa-caret-down"></i></a>
+                
+                    <ul class="dropdown-content">
                         <li><a href="./index.html">Home 1</a></li>
-                        <li><a href="./services.html">Services</a></li>
-                        <li><a href="./about.html">About</a></li>
-                        <li><a href="./blog.html">Blog</a></li>
-                        <li><a href="./projects.html">Projects</a></li>
-                        <li><a href="./contact.html">Contact</a></li>
+                        <li><a href="./home2.html">Home 2</a></li>
                     </ul>
-                </div>
-        
-                <!-- Address -->
-                <div class="footer-box">
-                    <h3>Our Address</h3>
-                    <p>
-                        MMR complex.<br>
-                        chinna tirupathi kovil street,<br>
-                        salem,Tamil nadu-636008<br>
-                        <!-- Bengaluru, Karnataka – 560066<br> -->
-                        India<br><br>
-        
-                        <strong>Phone:</strong> +91 98765 43210<br>
-                        <strong>Email:</strong> support@thestackly.com
-                    </p>
-                </div>
-        
-                <!-- Google Map -->
-                <div class="footer-box">
-                    <h3>Location</h3>
-                    <iframe 
-                    src="https://www.google.com/maps?q=Salem%20Tamil%20Nadu&output=embed"
-                        allowfullscreen="" 
-                        loading="lazy">
-                    </iframe>
-                </div>
-        
+                </li>
+                
+
+                <li><a href="./products.html">Products</a></li>
+                <li><a href="./about.html">About</a></li>
+                <li><a href="./blog.html">Blog</a></li>
+                <li><a href="./contact.html">Contact</a></li>
+                <li><a href="./dashboard.html">Dashboard</a></li>
+                <li><a href="./login.html">Login</a></li>
+                
+                
+
+
+            </ul>
+        </nav>
+
+        <!-- Toggle -->
+        <div class="menu-toggle" id="menu-toggle">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+
+    </header>
+    <style>
+        /* ================= GLOBAL ================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background: #f5f7fa;
+}
+
+a { text-decoration: none; }
+
+ul { list-style: none; }
+
+
+
+
+/* ================= HEADER ================= */
+.header {
+    width: 100%;
+    padding: 18px 40px;
+    background: #0b1f3a;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.logo span {
+    color: #00d4ff;
+}
+
+.nav-links {
+    display: flex;
+    gap: 25px;
+}
+
+/* Dropdown Wrapper */
+.dropdown {
+    position: relative;
+}
+
+/* Dropdown Button */
+.dropdown-btn {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/* Desktop Hover */
+@media (min-width: 901px) {
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+}
+
+/* Dropdown Menu */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 38px;
+    left: 0;
+    background: #12274d;
+    width: 160px;
+    border-radius: 8px;
+    padding: 10px 0;
+    z-index: 999;
+}
+
+.dropdown-content li a {
+    display: block;
+    padding: 10px 15px;
+    color: white;
+}
+
+.dropdown-content li a:hover {
+    background: #0e1c33;
+}
+
+/* Toggle */
+.menu-toggle {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+li a{
+    color:white;
+}
+
+
+
+/* ================= FOOTER ================= */
+.footer {
+    background: #0b1f3a;
+    padding-top: 40px;
+    color: white;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 30px;
+    flex-wrap: wrap;
+}
+
+/* Footer Boxes */
+.footer-box h3 {
+    margin-bottom: 15px;
+    font-size: 20px;
+    color: #00e1ff;
+}
+
+.footer-box p, 
+.footer-box a {
+    color: #e0e0e0;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.footer-box ul {
+    list-style: none;
+}
+
+.footer-box ul li {
+    margin-bottom: 8px;
+}
+
+.footer-box ul li a {
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.footer-box ul li a:hover {
+    color: #00e1ff;
+}
+
+
+.footer-bottom {
+    text-align: center;
+    background: #08192e;
+    padding: 15px 0;
+}
+
+.footer-social a {
+    display: inline-block;
+    margin-right: 12px;
+    font-size: 18px;
+    width: 38px;
+    height: 38px;
+    text-align: center;
+    line-height: 38px;
+    border-radius: 50%;
+    background: #111;
+    color: #00e1ff;
+    border: 1px solid #00e1ff;
+    transition: 0.3s;
+}
+
+.footer-social a:hover {
+    background: #00e1ff;
+    color: #000;
+    transform: translateY(-5px);
+}
+
+/* Map */
+.footer-box iframe {
+    width: 100%;
+    height: 180px;
+    border-radius: 10px;
+    border: none;
+}
+
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 900px) {
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background: #0b1f3a;
+        position: absolute;
+        top: 70px;
+        right: 20px;
+        width: 200px;
+        padding: 20px;
+        border-radius: 10px;
+        z-index: 1000;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .footer-box {
+        width: 45%;
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 500px) {
+    .footer-box {
+        width: 100%;
+    }
+}
+    </style>
+    <body>
+        <main class="blog-page-main">
+            <div class="blog-header">
+              <h1>Payment & Economy Insights</h1>
+              <p>
+                Your source for news on fintech, global markets, and digital currency
+                trends.
+              </p>
             </div>
-        
-            <div class="footer-bottom">
-                <p>© 2025 stackly | All Rights Reserved</p>
+      
+            <div class="blog-container">
+              <!-- Main Content Column -->
+              <div class="main-content">
+                <!-- Blog Post 1: Payments -->
+                <article class="blog-post">
+                  <span class="post-tag">Payments</span>
+                  <h2>
+                    The Rise of Instant Payments: What it Means for Small Businesses
+                  </h2>
+                  <p class="post-meta">Posted by Jane Doe on October 12, 2025</p>
+                  <p>
+                    Instant payment systems are rapidly reshaping the global financial
+                    landscape. For small businesses, this shift offers unprecedented
+                    advantages, including immediate access to funds, improved cash
+                    flow management, and enhanced customer satisfaction. We dive into
+                    the technology driving this change, focusing on real-time gross
+                    settlement (RTGS) and its practical application for local
+                    merchants.
+                  </p>
+                  <a href="404.html" class="read-more">Continue Reading &rarr;</a>
+                </article>
+      
+                <!-- Blog Post 2: Economy -->
+                <article class="blog-post">
+                  <span class="post-tag">Economy</span>
+                  <h2>
+                    Global Inflation vs. Digital Currency Adoption: A Correlative
+                    Study
+                  </h2>
+                  <p class="post-meta">Posted by John Smith on September 28, 2025</p>
+                  <p>
+                    As major world economies grapple with sustained inflation,
+                    interest in digital and decentralized currencies has soared. This
+                    article explores the relationship between high consumer price
+                    indexes and the rate at which businesses and consumers are
+                    adopting stablecoins and central bank digital currencies (CBDCs).
+                    Is crypto a hedge against economic instability, or simply a
+                    parallel market?
+                  </p>
+                  <a href="404.html" class="read-more">Continue Reading &rarr;</a>
+                </article>
+      
+                <!-- Blog Post 3: Fintech -->
+                <article class="blog-post">
+                  <span class="post-tag">Fintech</span>
+                  <h2>
+                    Future-Proofing Your Fintech Strategy with AI-Powered Risk
+                    Assessment
+                  </h2>
+                  <p class="post-meta">Posted by Alex Lee on September 15, 2025</p>
+                  <p>
+                    Artificial Intelligence is no longer an optional feature in
+                    financial technology; it's a necessity. From detecting subtle
+                    fraud patterns to automating credit scoring, AI tools provide
+                    precision and speed traditional models cannot match. Learn how to
+                    implement cutting-edge machine learning models to strengthen your
+                    platform's security and compliance posture.
+                  </p>
+                  <a href="404.html" class="read-more">Continue Reading &rarr;</a>
+                </article>
+              </div>
+      
+              <!-- Sidebar Column -->
+              <aside class="sidebar">
+                <h3>Categories</h3>
+                <ul>
+                  <li><a href="404.html">Payment Tech (12)</a></li>
+                  <li><a href="404.html">Macro Economy (8)</a></li>
+                  <li><a href="404.html">Digital Currency (5)</a></li>
+                  <li><a href="404.html">Fintech Regulation (4)</a></li>
+                </ul>
+      
+                <h3>Recent Posts</h3>
+                <ul>
+                  <li>
+                    <a href="404.html">Q3 Earnings: Payment Processor Review</a>
+                  </li>
+                  <li>
+                    <a href="404.html"
+                      >The Impact of Interest Rate Hikes on Credit</a
+                    >
+                  </li>
+                  <li>
+                    <a href="404.html">Why QR Code Payments Are Dominating Asia</a>
+                  </li>
+                </ul>
+              </aside>
             </div>
-        </footer>
-        
-        <!-- Script -->
-        <script src="main.js"></script>
-        
+          </main>
+
+          <!-- <footer> -->
+    <footer class="footer">
+        <div class="footer-container">
     
-    </body>
-    </html>
+            <!-- Logo / About -->
+            <div class="footer-box">
+                <img src="./white.webp" alt="Stackly Logo" class="footer-logo"  style="height:60px;">
+   
+               
+                <!-- <p>We deliver secure, scalable and innovative IT services for global businesses.</p><br> -->
     
+                <!-- Social Icons -->
+                <div class="footer-social">
+                    <a href="./404.html"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="./404.html"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="./404.html"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="./404.html"><i class="fa-brands fa-x-twitter"></i></a>
+                </div>
+            </div>
+    
+            <!-- Quick Links -->
+            <div class="footer-box">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="./index.html">Home </a></li>
+                    <li><a href="./products.html">products</a></li>
+                    <li><a href="./about.html">About</a></li>
+                    <li><a href="./blog.html">Blog</a></li>
+                    <li><a href="./contact.html">Contact</a></li>
+                    
+                </ul>
+            </div>
+    
+            <!-- Address -->
+            <div class="footer-box">
+                <h3>Our Address</h3>
+                <p>
+                    MMR complex.<br>
+                    chinna tirupathi kovil street,<br>
+                    salem,Tamil nadu-636008<br>
+                    <!-- Bengaluru, Karnataka – 560066<br> -->
+                    India<br><br>
+    
+                    <strong>Phone:</strong> +91 98765 43210<br>
+                    <strong>Email:</strong> support@thestackly.com
+                </p>
+            </div>
+    
+            <!-- Google Map -->
+            <div class="footer-box">
+                <h3>Location</h3>
+                <iframe 
+                src="https://www.google.com/maps?q=Salem%20Tamil%20Nadu&output=embed"
+                    allowfullscreen="" 
+                    loading="lazy">
+                </iframe>
+            </div>
+    
+        </div>
+    
+        <div class="footer-bottom">
+            <p>© 2025 stackly | All Rights Reserved</p>
+        </div>
+    </footer>
+    <script>
+        // TOGGLE MENU
+const toggleBtn = document.getElementById("menu-toggle");
+const navLinks = document.querySelector(".nav-links");
+
+toggleBtn.addEventListener("click", () => {
+    if (navLinks.style.display === "flex") {
+        navLinks.style.display = "none";
+    } else {
+        navLinks.style.display = "flex";
+    }
+});
+
+// MOBILE DROPDOWN CLICK
+const dropdownBtn = document.querySelector(".dropdown-btn");
+const dropdownMenu = document.querySelector(".dropdown-content");
+
+dropdownBtn.addEventListener("click", (e) => {
+    e.preventDefault(); 
+    dropdownMenu.style.display =
+        dropdownMenu.style.display === "block" ? "none" : "block";
+});
+    </script>
+</body>
+</html>
+
+

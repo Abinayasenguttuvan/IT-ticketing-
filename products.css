@@ -1,0 +1,316 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+  }
+  
+  body {
+    background: #f8f9fa;
+    color: #222;
+    line-height: 1.6;
+  }
+  
+  /* ================================
+     PRODUCT HERO SECTION
+  ================================ */
+  .product-page-main {
+    width: 100%;
+    padding-bottom: 50px;
+  }
+  
+  .product-intro-hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 60px 8%;
+    background: #ffffff;
+    flex-wrap: wrap;
+  }
+  
+  .intro-content {
+    flex: 1 1 450px;
+    padding-right: 40px;
+  }
+  
+  .product-tagline {
+    display: inline-block;
+    padding: 6px 12px;
+    background: #dff4ff;
+    color: #0077b6;
+    border-radius: 5px;
+    font-weight: 600;
+  }
+  
+  .product-hero-title {
+    font-size: 40px;
+    margin: 15px 0;
+    font-weight: 700;
+  }
+  
+  .title-highlight-product {
+    color: #0077ff;
+  }
+  
+  .product-hero-subtitle {
+    font-size: 18px;
+    margin-bottom: 25px;
+    color: #444;
+  }
+  
+  .intro-visual {
+    flex: 1 1 450px;
+    text-align: center;
+  }
+  
+  .product-mockup-img {
+    width: 100%;
+    max-width: 450px;
+    border-radius: 15px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.10);
+  }
+  
+  /* Buttons */
+  .cta-button {
+    display: inline-block;
+    padding: 12px 24px;
+    font-weight: 600;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: 0.3s;
+  }
+  
+  .cta-button-primary {
+    background: #0077ff;
+    color: #fff;
+  }
+  
+  .cta-button-primary:hover {
+    background: #005fcc;
+  }
+  
+  /* ================================
+     FEATURES GRID
+  ================================ */
+  .product-section {
+    padding: 70px 8%;
+    text-align: center;
+  }
+  
+  .section-title {
+    font-size: 32px;
+    margin-bottom: 40px;
+    font-weight: 700;
+  }
+  
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+  }
+  
+  .feature-card {
+    padding: 25px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  }
+  
+  .feature-icon {
+    width: 60px;
+    margin-bottom: 15px;
+  }
+  
+  .feature-card h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  /* ================================
+     THREE STEPS SECTION
+  ================================ */
+  .product-steps-section .steps-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin-top: 30px;
+  }
+  
+  .step-item {
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.07);
+  }
+  
+  .step-number {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #0077ff;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    margin: auto;
+    margin-bottom: 15px;
+  }
+  
+  /* ================================
+     FINAL CTA SECTION
+  ================================ */
+  .product-cta-section {
+    padding: 70px 8%;
+    background: #0077ff;
+    color: white;
+    text-align: center;
+  }
+  
+  .section-title-white {
+    font-size: 32px;
+    margin-bottom: 15px;
+  }
+  
+  .cta-button-secondary-white {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 28px;
+    background: #ffffff;
+    color: #0077ff;
+    border-radius: 6px;
+    font-weight: 700;
+  }
+  
+  /* ================================
+     ABOUT STACKLY WALLET
+  ================================ */
+  #about {
+    padding: 60px 8%;
+    max-width: 900px;
+    margin: auto;
+  }
+  
+  #about h2 {
+    font-size: 28px;
+    margin-bottom: 15px;
+  }
+  
+  /* ================================
+     WALLET CARD SECTION
+  ================================ */
+  .wallet-card {
+    margin: 60px auto;
+    max-width: 1100px;
+    padding: 40px;
+    background: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.10);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  
+  .wallet-card .left {
+    flex: 1 1 450px;
+  }
+  
+  .wallet-card .right {
+    flex: 1 1 300px;
+    padding: 20px;
+    background: #0077ff;
+    color: #fff;
+    border-radius: 12px;
+    text-align: center;
+  }
+  
+  .wallet-card .features {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin: 20px 0;
+  }
+  
+  .feature {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  /* ================================
+     STACKLY API SECTION
+  ================================ */
+  .container {
+    padding: 60px 8%;
+  }
+  
+  .container h2 {
+    font-size: 28px;
+    text-align: center;
+  }
+  
+  .container .features {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    margin-top: 40px;
+  }
+  
+  .container .feature {
+    background: #fff;
+    padding: 20px;
+    text-align: center;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  }
+  
+  /* ================================
+     RESPONSIVE MEDIA QUERIES
+  ================================ */
+  
+  /* Tablets */
+  @media (max-width: 992px) {
+    .product-intro-hero {
+      text-align: center;
+    }
+  
+    .intro-content {
+      padding-right: 0;
+    }
+  
+    .features-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  
+    .product-steps-section .steps-container {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  
+    .container .features {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  /* Mobile */
+  @media (max-width: 600px) {
+    .product-hero-title {
+      font-size: 32px;
+    }
+  
+    .features-grid,
+    .product-steps-section .steps-container,
+    .wallet-card .features,
+    .container .features {
+      grid-template-columns: 1fr;
+    }
+  
+    .wallet-card {
+      text-align: center;
+    }
+  
+    .wallet-card .right {
+      margin-top: 20px;
+    }
+  }
+  

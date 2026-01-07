@@ -3,644 +3,505 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Dashboard</title>
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <title>Digital payment</title>
+
+    <!-- CSS Files -->
     
+   
+    <link rel="stylesheet" href="./Dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-    <!-- Chart.js -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<style>
+    /* ================= GLOBAL ================= */
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box; 
+}
 
-    <!-- GSAP Animation -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+body {
+font-family: "Poppins", sans-serif;
+background: #f5f7fa;
+}
 
-    <style>
-        *{
-            margin:0;
-            padding:0;
-            box-sizing:border-box;
-            font-family: "Poppins", sans-serif;
-        }
-       
-        /* ---------- HEADER ---------- */
+a { text-decoration: none; }
+
+ul { list-style: none; }
+
+
+
+
+/* ================= HEADER ================= */
 .header {
-    background: #b7b1db;
-    padding: 15px 50px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    color: white;
+width: 100%;
+padding: 18px 40px;
+background: #0b1f3a;
+color: #fff;
+display: flex;
+justify-content: space-between;
+align-items: center;
 }
 
 .logo {
-    font-size: 22px;
-    font-weight: 600;
+font-size: 28px;
+font-weight: 700;
 }
 
-.navbar a {
-    margin-left: 25px;
-    color: white;
-    text-decoration: none;
-    font-size: 16px;
-    transition: 0.3s;
+.logo span {
+color: #00d4ff;
 }
 
-.navbar a:hover {
-    color: #ffd166;
+.nav-links {
+display: flex;
+gap: 25px;
 }
 
-/* hamburger */
-.menu-icon {
-    display: none;
-    font-size: 28px;
-    cursor: pointer;
+/* Dropdown Wrapper */
+.dropdown {
+position: relative;
+}
+
+/* Dropdown Button */
+.dropdown-btn {
+display: flex;
+align-items: center;
+gap: 5px;
+}
+
+/* Desktop Hover */
+@media (min-width: 901px) {
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+}
+
+/* Dropdown Menu */
+.dropdown-content {
+display: none;
+position: absolute;
+top: 38px;
+left: 0;
+background: #12274d;
+width: 160px;
+border-radius: 8px;
+padding: 10px 0;
+z-index: 999;
+}
+
+.dropdown-content li a {
+display: block;
+padding: 10px 15px;
+color: white;
+}
+
+.dropdown-content li a:hover {
+background: #0e1c33;
+}
+
+/* Toggle */
+.menu-toggle {
+display: none;
+font-size: 28px;
+cursor: pointer;
+}
+
+li a{
+color:white;
 }
 
 
-        body{
-            /* background: url("./img1.webp") no-repeat center/cover fixed; */
-            background-size: cover;
-            /* padding-bottom: 50px; */
-            background-color: #110c2f;
-        }
 
-        
-        /* MAIN HEADING */
-        .page-title{
-            text-align:center;
-            padding:25px 0;
-            color:white;
-            font-size:32px;
-            font-weight:700;
-            text-shadow:0 3px 6px rgba(0,0,0,0.6);
-            letter-spacing:1px;
-        }
-
-        /* Stats Cards */
-        .stats{
-            padding:20px;
-            display:grid;
-            grid-template-columns:repeat(4, 1fr);
-            gap:20px;
-        }
-
-        .card{
-            background:white;
-            padding:20px;
-            border-radius:12px;
-            box-shadow:0 3px 8px rgba(0,0,0,0.1);
-            text-align:center;
-        }
-
-        .card p{
-            font-size:32px;
-            font-weight:700;
-            color:#1e40af;
-            margin-top:10px;
-        }
-
-        /* Charts section */
-        .charts{
-            padding:20px;
-            display:grid;
-            grid-template-columns:repeat(2, 1fr);
-            gap:20px;
-        }
-
-        .chart-box{
-            background:white;
-            padding:20px;
-            border-radius:12px;
-            box-shadow:0 3px 8px rgba(0,0,0,0.1);
-        }
-
-        /* Table Section */
-        .table-section{
-            padding:20px;
-        }
-
-        .table-section h3{
-            margin-bottom:10px;
-            color:white;
-            text-shadow:0 2px 4px rgba(0,0,0,0.6);
-        }
-
-        table{
-            width:100%;
-            border-collapse:collapse;
-            background:white;
-            border-radius:10px;
-            overflow:hidden;
-            box-shadow:0 3px 8px rgba(0,0,0,0.1);
-        }
-
-        thead{
-            background:#1e40af;
-            color:white;
-        }
-
-        thead th{
-            padding:12px;
-            text-align:left;
-        }
-
-        tbody tr{
-            border-bottom:1px solid #ddd;
-        }
-
-        tbody td{
-            padding:12px;
-        }
-
-        .active{
-            color:#10b981;
-            font-weight:bold;
-        }
-
-        .inactive{
-            color:#ef4444;
-            font-weight:bold;
-        }
-
-        /* ====================== RESPONSIVE ====================== */
-
-        /* Tablets */
-        @media(max-width:992px){
-            .stats{
-                grid-template-columns:repeat(2,1fr);
-            }
-            .charts{
-                grid-template-columns:1fr;
-            }
-        }
-
-        /* Mobile */
-        @media(max-width:600px){
-
-            .admin-header{
-                flex-direction:column;
-                gap:10px;
-                text-align:center;
-            }
-
-            .stats{
-                grid-template-columns:1fr;
-            }
-
-            .charts{
-                grid-template-columns:1fr;
-            }
-
-            .page-title{
-                font-size:26px;
-                padding:18px 0;
-            }
-
-            .card p{
-                font-size:26px;
-            }
-        }
-
-
-/* =====================
-   RESPONSIVE MEDIA QUERY
-   ===================== */
-
-/* Tablets */
-@media (max-width: 991px) {
-    .hero {
-        flex-direction: column;
-        text-align: center;
-    }
-    .hero-img {
-        width: 80%;
-        margin-top: 20px;
-    }
-
-    .service-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-/* Mobile */
-@media (max-width: 700px) {
-    .navbar {
-        position: absolute;
-        top: 70px;
-        right: 0;
-        background: #061b43;
-        width: 200px;
-        display: none;
-        flex-direction: column;
-        padding: 15px;
-    }
-    .navbar a {
-        margin: 12px 0;
-    }
-
-    .navbar.active {
-        display: flex;
-        z-index: 1;
-    }
-
-    .menu-icon {
-        display: block;
-    }
-
-    .header {
-        padding: 15px 25px;
-    }
-
-    .service-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .hero h1 {
-        font-size: 28px;
-    }
-
-}
-
-/* ===== FOOTER ===== */
+/* ================= FOOTER ================= */
 .footer {
-    background: url('./back.webp')no-repeat center center/cover;;
-    color: white;
-    padding: 50px 35px;
-    /* margin-top: 120px; */
-  }
-  
-  .footer-container {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 35px;
-  }
-  
-  .footer-logo { font-size: 28px; }
-  
-  .footer-section ul { list-style: none; }
-  .footer-section ul li { margin: 8px 0; }
-  
-  .footer-section ul li a {
-    color: #d1d5db;
-    text-decoration: none;
-  }
-  .footer-section ul li a:hover { color: #ffffff; }
-  
-  /* SOCIAL ICONS */
-  .social-icons a {
-    color: #d1d5db;
-    margin-right: 12px;
-    font-size: 22px;
-  }
-  .social-icons a:hover { color: #ffffff; }
-  
-  /* MAP */
-  .footer-map {
-    width: 100%;
-    height: 160px;
-    border-radius: 6px;
-    border: 0;
-  }
-  
-  .footer-bottom {
-    text-align: center;
-    margin-top: 35px;
-    padding-top: 10px;
-    font-size: 14px;
-    /* border-top: 1px solid #374151; */
-  }
-  
-  /* ===== RESPONSIVE ===== */
-  
-  @media (max-width: 992px) {
-    .nav-links { gap: 20px; }
-  }
-  
-  @media (max-width: 768px) {
-    .menu-icon { display: block; }
-  
-    .nav-links,
-    .login-btn,
-    .dropdown-menu,
-    .profile-icon {
-      display: none;
-    }
-  
-    .nav-links.active {
-      display: flex;
-      flex-direction: column;
-      width: 100%;
-      background: linear-gradient(135deg, #647e2b, #2563eb);
-      width: 260px;
-      position: absolute;
-      top: 65px;
-      left: 0;
-      padding: 20px 0;
-    }
-  
-    .dropdown-menu {
-      position: relative;
-      background: #1f2937;
-      top: 0;
-      width: 100%;
-    } 
-  
-    .dropdown-menu li a {
-      padding: 0px 0px;
-      display: block;
-      position: relative;
-    }
-  
-    .footer-container {
-      grid-template-columns: 1fr;
-    }
-  }
-  
-  @media (max-width: 480px) {
-    .header { padding: 12px 20px; }
-    .logo { font-size: 22px; }
-  }
+background: #0b1f3a;
+padding-top: 40px;
+color: white;
+}
 
-   ============================
-   /* 🌟 MEDIA QUERIES START HERE */
-   ============================ 
+.footer-container {
+display: flex;
+justify-content: space-between;
+padding: 30px;
+flex-wrap: wrap;
+}
 
-/* ===== Tablet (900px ↓) ===== */
+/* Footer Boxes */
+.footer-box h3 {
+margin-bottom: 15px;
+font-size: 20px;
+color: #00e1ff;
+}
+
+.footer-box p, 
+.footer-box a {
+color: #e0e0e0;
+font-size: 14px;
+line-height: 1.6;
+}
+
+.footer-box ul {
+list-style: none;
+}
+
+.footer-box ul li {
+margin-bottom: 8px;
+}
+
+.footer-box ul li a {
+text-decoration: none;
+transition: 0.3s;
+}
+
+.footer-box ul li a:hover {
+color: #00e1ff;
+}
+
+
+.footer-bottom {
+text-align: center;
+background: #08192e;
+padding: 15px 0;
+}
+
+.footer-social a {
+display: inline-block;
+margin-right: 12px;
+font-size: 18px;
+width: 38px;
+height: 38px;
+text-align: center;
+line-height: 38px;
+border-radius: 50%;
+background: #111;
+color: #00e1ff;
+border: 1px solid #00e1ff;
+transition: 0.3s;
+}
+
+.footer-social a:hover {
+background: #00e1ff;
+color: #000;
+transform: translateY(-5px);
+}
+
+/* Map */
+.footer-box iframe {
+width: 100%;
+height: 180px;
+border-radius: 10px;
+border: none;
+}
+
+
+/* ================= RESPONSIVE ================= */
 @media (max-width: 900px) {
-    .charts {
-        flex-direction: column;
-        align-items: center;
-    }
 
-    .chart-box {
-        width: 90%;
-    }
-
-    .chart-box h3 {
-        font-size: 18px;
-    }
+.nav-links {
+    display: none;
+    flex-direction: column;
+    background: #0b1f3a;
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    width: 200px;
+    padding: 20px;
+    border-radius: 10px;
+    z-index: 1000;
 }
 
-/* ===== Big Mobile & Small Tablet (600px ↓) ===== */
-@media (max-width: 600px) {
-    .chart-box {
-        width: 100%;
-        padding: 15px;
-    }
-
-    .chart-box h3 {
-        font-size: 16px;
-    }
-
-    .charts {
-        padding: 10px;
-    }
+.menu-toggle {
+    display: block;
 }
 
-/* ===== Mobile Phones (450px ↓) ===== */
-@media (max-width: 450px) {
-    .chart-box {
-        padding: 12px;
-    }
-
-    .chart-box h3 {
-        font-size: 15px;
-    }
-
-    table th,
-    table td {
-        font-size: 13px;
-        padding: 8px;
-    }
+.footer-box {
+    width: 45%;
+    margin-bottom: 30px;
+}
 }
 
-/* ===== Small Mobile (360px ↓) ===== */
-@media (max-width: 360px) {
-    .chart-box h3 {
-        font-size: 14px;
-    }
-
-    table th,
-    table td {
-        font-size: 12px;
-    }
+@media (max-width: 500px) {
+.footer-box {
+    width: 100%;
 }
-  
-  
-    </style>
+}
+</style>
+
+<body>
+<!-- ================= HEADER ================= -->
+<header class="header">
+
+    <a href="index.html">
+        <img src="./white.webp" alt="Stackly Logo" style="height: 60px; ">
+      </a>
+      
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <ul class="nav-links">
+
+            <li class="dropdown">
+                <a href="javascript:void(0)" class="dropdown-btn">Home <i class="fa-solid fa-caret-down"></i></a>
+            
+                <ul class="dropdown-content">
+                    <li><a href="./index.html">Home 1</a></li>
+                    <li><a href="./home2.html">Home 2</a></li>
+                </ul>
+            </li>
+
+                <li><a href="./products.html">Products</a></li>
+                <li><a href="./about.html">About</a></li>
+                <li><a href="./blog.html">Blog</a></li>
+                <li><a href="./contact.html">Contact</a></li>
+                <li><a href="./dashboard.html">Dashboard</a></li>
+                <li><a href="./login.html">Login</a></li>
+                
+                
+
+        </ul>
+    </nav>
+
+
+    
+
+    <!-- Toggle -->
+    <div class="menu-toggle" id="menu-toggle">
+        <i class="fa-solid fa-bars"></i>
+    </div>
+
+</header>
+
+
+<!-- Chart.js CDN -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
 
-    <header class="header">
-        
-            <a href="home2.html">
-                <img src="./logo.webp" alt="Stackly Logo" style="height: 60px; ">
-              </a>
-          </a>
-        
-    
-        <nav class="navbar" id="navbar">
-            <a href="./home2.html">Home2</a>
-            <a href="./index.html">Home1</a>
-            <a href="./profile.html">My Profile</a>
-            <a href="./contact1.html">contact</a>
-            <a href="./IT-ticket.html">IT tickets</a>
-            <a href="./dashboard.html">Dashboard</a>
-            <a href="./login1.html">Login</a>
-        </nav>
-    
-        <!-- Hamburger -->
-        <div class="menu-icon" id="menuIcon">&#9776;</div>
-    </header>
+<section class="dashboard">
 
-    <!-- Page Main Heading -->
-    <div class="page-title">
-        Dashboard Overview
+  <h1>Digital Payments Dashboard</h1>
+  <p class="subtitle">Analytics Overview – UPI • Wallet • NetBanking • Cards</p>
+
+  <!-- Overview Cards -->
+  <div class="cards">
+
+    <div class="card">
+      <h3>Total Transactions</h3>
+      <p class="value">8.2M</p>
     </div>
 
-    <!-- Stats Cards -->
-    <section class="stats">
-        <div class="card">
-            <h3>Total Employees</h3>
-            <p>154</p>
+    <div class="card">
+      <h3>Successful Payments</h3>
+      <p class="value">7.9M</p>
+    </div>
+
+    <div class="card">
+      <h3>Failed Payments</h3>
+      <p class="value">0.3M</p>
+    </div>
+
+    <div class="card">
+      <h3>Total Revenue</h3>
+      <p class="value">₹12.5 Cr</p>
+    </div>
+
+  </div>
+
+  <!-- Charts Section -->
+  <div class="chart-section">
+
+    <!-- Pie Chart -->
+    <div class="chart-box">
+      <h3>Payment Method Share</h3>
+      <canvas id="pieChart" width="300" height="300"></canvas>
+    </div>
+
+    <!-- Bar Chart -->
+    <div class="chart-box">
+      <h3>Transactions by Platform</h3>
+      <canvas id="barChart" width="400" height="300"></canvas>
+    </div>
+
+    <!-- Line Graph -->
+    <div class="chart-box line-box">
+      <h3>Daily Payment Trends</h3>
+      <canvas id="lineChart" width="600" height="320"></canvas>
+    </div>
+
+  </div>
+
+</section>
+
+<script>
+    // PIE CHART
+new Chart(document.getElementById("pieChart"), {
+  type: "pie",
+  data: {
+    labels: ["UPI", "Wallet", "NetBanking", "Card"],
+    datasets: [{
+      data: [55, 20, 15, 10],
+      backgroundColor: ["#4d60ff", "#ff914d", "#2cd1c3", "#ff4d6d"],
+      borderWidth: 1
+    }]
+  },
+  options: {
+    responsive: false,
+    plugins: { legend: { position: "bottom" } }
+  }
+});
+
+// BAR CHART
+new Chart(document.getElementById("barChart"), {
+  type: "bar",
+  data: {
+    labels: ["Google Pay", "PhonePe", "Paytm", "Amazon Pay"],
+    datasets: [{
+      label: "Transactions (in millions)",
+      data: [3.2, 2.8, 1.5, 0.9],
+      backgroundColor: "#4d60ff"
+    }]
+  },
+  options: {
+    responsive: false,
+    scales: {
+      y: { beginAtZero: true }
+    }
+  }
+});
+
+// LINE GRAPH
+new Chart(document.getElementById("lineChart"), {
+  type: "line",
+  data: {
+    labels: ["Mon","Tue","Wed","Thu","Fri","Sat","Sun"],
+    datasets: [{
+      label: "Payments",
+      data: [900, 1100, 950, 1250, 1400, 1500, 1700],
+      borderColor: "#2cd1c3",
+      borderWidth: 3,
+      tension: 0.3
+    }]
+  },
+  options: {
+    responsive: false,
+    scales: {
+      y: { beginAtZero: true }
+    }
+  }
+});
+
+</script>
+
+<!-- <footer> -->
+    <footer class="footer">
+        <div class="footer-container">
+    
+            <!-- Logo / About -->
+            <div class="footer-box">
+                <img src="./white.webp" alt="Stackly Logo" class="footer-logo"  style="height:60px;">
+   
+               
+                <!-- <p>We deliver secure, scalable and innovative IT services for global businesses.</p><br> -->
+    
+                <!-- Social Icons -->
+                <div class="footer-social">
+                    <a href="./404.html"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="./404.html"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="./404.html"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="./404.html"><i class="fa-brands fa-x-twitter"></i></a>
+                </div>
+            </div>
+    
+            <!-- Quick Links -->
+            <div class="footer-box">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="./index.html">Home </a></li>
+                    <li><a href="./products.html">products</a></li>
+                    <li><a href="./about.html">About</a></li>
+                    <li><a href="./blog.html">Blog</a></li>
+                    <li><a href="./contact.html">Contact</a></li>
+            </div>
+    
+            <!-- Address -->
+            <div class="footer-box">
+                <h3>Our Address</h3>
+                <p>
+                    MMR complex.<br>
+                    chinna tirupathi kovil street,<br>
+                    salem,Tamil nadu-636008<br>
+                    <!-- Bengaluru, Karnataka – 560066<br> -->
+                    India<br><br>
+    
+                    <strong>Phone:</strong> +91 98765 43210<br>
+                    <strong>Email:</strong> support@thestackly.com
+                </p>
+            </div>
+    
+            <!-- Google Map -->
+            <div class="footer-box">
+                <h3>Location</h3>
+                <iframe 
+                src="https://www.google.com/maps?q=Salem%20Tamil%20Nadu&output=embed"
+                    allowfullscreen="" 
+                    loading="lazy">
+                </iframe>
+            </div>
+    
         </div>
-        <div class="card">
-            <h3>Active Tickets</h3>
-            <p>23</p>
+    
+        <div class="footer-bottom">
+            <p>© 2025 stackly | All Rights Reserved</p>
         </div>
-        <div class="card">
-            <h3>Departments</h3>
-            <p>08</p>
-        </div>
-        <div class="card">
-            <h3>Attendance Today</h3>
-            <p>92%</p>
-        </div>
-    </section>
-
-    <!-- Charts Section -->
-    <section class="charts">
-        <div class="chart-box">
-            <h3>User Registration Trend</h3>
-            <canvas id="userChart"></canvas>
-        </div>
-
-        <div class="chart-box">
-            <h3>Tickets Overview</h3>
-            <canvas id="ticketChart"></canvas>
-        </div>
-    </section>
-
-    <!-- Employee Table -->
-    <section class="table-section">
-        <h3>Recent Employees</h3>
-
-        <table>
-            <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Department</th>
-                    <th>Role</th>
-                    <th>Status</th>
-                </tr>
-            </thead>
-
-            <tbody>
-                <tr>
-                    <td>Abinaya S</td>
-                    <td>IT</td>
-                    <td>Developer</td>
-                    <td class="active">Active</td>
-                </tr>
-
-                <tr>
-                    <td>Rahul Kumar</td>
-                    <td>HR</td>
-                    <td>HR Manager</td>
-                    <td class="inactive">Inactive</td>
-                </tr>
-
-                <tr>
-                    <td>Priya Menon</td>
-                    <td>Finance</td>
-                    <td>Accountant</td>
-                    <td class="active">Active</td>
-                </tr>
-
-                <tr>
-                    <td>Vijay Patel</td>
-                    <td>Support</td>
-                    <td>Tech Support</td>
-                    <td class="active">Active</td>
-                </tr>
-            </tbody>
-        </table>
-    </section>
-
+    </footer>
+    
+    <!-- Script -->
+    <script src="responsive.js"></script>
     <script>
-        // User Registration Trend Chart
-        const ctx1 = document.getElementById("userChart").getContext("2d");
+        // KPI Values
+document.getElementById("revAmount").innerText = "₹4,20,450";
+document.getElementById("successRate").innerText = "96%";
+document.getElementById("txnCount").innerText = "12,540";
+document.getElementById("activeUsers").innerText = "3,210";
 
-        new Chart(ctx1, {
-            type: "line",
-            data: {
-                labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun"],
-                datasets: [{
-                    label: "New Employees",
-                    data: [10, 25, 18, 32, 28, 40],
-                    borderColor: "#1e40af",
-                    borderWidth: 3,
-                    tension: 0.4,
-                    fill: false
-                }]
-            },
-            options: { responsive: true }
-        });
+// BAR CHART (Monthly Transactions)
+const barCtx = document.getElementById("barChart");
 
-        // Ticket Overview Chart
-        const ctx2 = document.getElementById("ticketChart").getContext("2d");
+new Chart(barCtx, {
+    type: "bar",
+    data: {
+        labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun"],
+        datasets: [{
+            label: "Transactions",
+            data: [1200, 1500, 1800, 2200, 2600, 3000],
+            backgroundColor: [
+                "#1a237e", "#283593", "#3949ab", "#5c6bc0", "#7986cb", "#9fa8da"
+            ],
+            borderRadius: 8
+        }]
+    }
+});
 
-        new Chart(ctx2, {
-            type: "bar",
-            data: {
-                labels: ["Open", "In Progress", "Closed"],
-                datasets: [{
-                    label: "Tickets",
-                    data: [12, 7, 35],
-                    backgroundColor: ["#facc15", "#fb923c", "#22c55e"]
-                }]
-            },
-            options: { responsive: true }
-        });
+// PIE CHART (Payment Methods)
+const pieCtx = document.getElementById("pieChart");
 
-        // GSAP Animations
-        gsap.from(".page-title", { opacity:0, y:-20, duration:1 });
-        gsap.from(".card", { opacity:0, y:40, duration:0.8, stagger:0.2 });
-        gsap.from(".chart-box", { opacity:0, y:40, duration:1, delay:0.3 });
-        gsap.from("table", { opacity:0, y:40, duration:1, delay:0.6 });
+new Chart(pieCtx, {
+    type: "pie",
+    data: {
+        labels: ["UPI", "Card", "Netbanking", "Wallet"],
+        datasets: [{
+            data: [55, 25, 10, 10],
+            backgroundColor: [
+                "#ff5252", "#ffca28", "#29b6f6", "#66bb6a"
+            ]
+        }]
+    }
+});
 
-
-       
-        // Mobile Toggle
-        const menuIcon = document.getElementById("menuIcon");
-        const navbar = document.getElementById("navbar");
-
-        menuIcon.addEventListener("click", () => {
-            navbar.classList.toggle("active");
-        });
     </script>
     
-    <!-- ===== FOOTER ===== -->
-<footer class="footer">
-    <div class="footer-container">
-  
-      <!-- LOGO -->
-      <div class="footer-section">
-        <img src="./logo.webp" alt="Stackly Logo" class="footer-logo"  style="height:60px;">
-        <!-- <p>Delivering reliable IT solutions with modern workflow automation.</p> -->
-      </div>
-  
-      <!-- QUICK LINKS -->
-      <div class="footer-section">
-        <h3>Quick Links</h3>
-        <ul>
-            <li><a href="./home2.html">Home</a></li>
-            <li><a href="./IT-ticket.html">Tickets</a></li>
-            <li><a href="./profile.html">Profile</a></li>
-            <li><a href="./dashboard.html">Dashboard</a></li>
-            <li><a href="./login1.html">Login</a></li>
-          </ul>
-      </div>
-  
-      <!-- GET IN TOUCH -->
-      <div class="footer-section">
-        <h3>Get in Touch</h3>
-        <p>Email: support@stackly.com</p>
-        <p>Phone: +91 98765 43210</p>
-  
-        <div class="social-icons">
-          <a href="./404.html"><i class="fa-brands fa-facebook"></i></a>
-          <a href="./404.html"><i class="fa-brands fa-instagram"></i></a>
-          <a href="./404.html"><i class="fa-brands fa-x-twitter"></i></a>
-          <a href="./404.html"><i class="fa-brands fa-linkedin"></i></a>
-        </div>
-      </div>
-  
-      <!-- MAP -->
-      <div class="footer-section">
-        <h3>Location</h3>
-        <iframe 
-        src="https://maps.google.com/maps?q=chennai&t=&z=13&ie=UTF8&iwloc=&output=embed"
-        class="footer-map">
-      </iframe>
-      </div>
-  
-      
-      </div>
-    </footer>
-  
-    </div>
-  </body>
-  </html>
-  
+
+
+
+
 
